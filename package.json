@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build:sass": "node-sass --output-style expanded "
+    "build:sass": "node-sass -w --output-style expanded ./assets/sass/ -o ./css/",
+    "build:jade": "pug3 -w -P ./assets/pug/ -o ./",
+    "build:dev": "run-p build:sass build:jade"
   },
   "keywords": [],
   "author": "",
