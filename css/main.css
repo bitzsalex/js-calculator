@@ -1,0 +1,61 @@
+:root {
+  --color-main: #F28E13;
+  --color-gray: #7A8187;
+  --light-primary: #F5F9FC;
+  --light-secondary: #E4E9EC;
+  --light-gradient1: #E2E9EC;
+  --light-gradient2: #E5EAED;
+  --light-gradient3: #E7EBEE;
+  --light-text: #273940;
+  --dark-primary: #202D35;
+  --dark-secondary: #232D36;
+  --dark-gradient1: #202A33;
+  --dark-gradient2: #222F37;
+  --dark-gradient3:#25323B {}
+    --dark-text: #F2F2F2;
+}
+
+html {
+  box-sizing: border-box;
+  font: normal 400 16px/1.45 "Poppins", sans-serif;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font: inherit;
+}
+
+body {
+  --primary: var(--light-primary);
+  --secondary: var(--light-secondary);
+  --gradient1: var(--light-gradient1);
+  --gradient2: var(--light-gradient2);
+  --gradient3: var(--light-gradient3);
+  background-color: var(--secondary);
+}
+
+body.dark-theme {
+  --primary: var(--dark-primary);
+  --secondary: var(--dark-secondary);
+  --gradient1: var(--dark-gradient1);
+  --gradient2: var(--dark-gradient2);
+  --gradient3: var(--dark-gradient3);
+}
+
+ul {
+  list-style: none;
+}
+
+input[type="text"] {
+  border: none;
+  background: transparent;
+}
+
+.btn {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+}
