@@ -30,181 +30,182 @@ html(lang="en")
         // including the main js file
         script(src="/js/main.js", defer)
     body
-        main
-            .calculator
-                .history__container
+        main.flex.flex--m-center.flex--a-center
+            .calculator.flex
+                .calculator__history
                     ul.history__list
                         li.history
                             span.history__expression 78x23
                             span.history__result 1,794
 
-                .screen__container
-                    .screen__header
-                        div
-                            .calculator__type
-                                label.calculator__simple(for="simple")
-                                    input(type="radio", name="type", value="simple", id="simple")
-                                    i(data-feather="grid")
-                                label.calculator__simple(for="scientific")
-                                    input(type="radio", name="type", value="scientific", id="scientific")
-                                    i(data-feather="cpu")
-                                label.calculator__simple(for="units", title="")
-                                    input(type="radio", name="type", value="units", id="units")
-                                    i(data-feather="sliders")
-
+                .flex.flex--column
+                    .screen__container
+                        .screen__header
                             div
-                                button(type="button")
-                                    span #[i(data-feather="sun")]
-                                    span #[i(data-feather="moon")]
+                                .calculator__type
+                                    label.calculator__simple(for="simple")
+                                        input(type="radio", name="type", value="simple", id="simple")
+                                        i(data-feather="grid")
+                                    label.calculator__simple(for="scientific")
+                                        input(type="radio", name="type", value="scientific", id="scientific")
+                                        i(data-feather="cpu")
+                                    label.calculator__simple(for="units", title="")
+                                        input(type="radio", name="type", value="units", id="units")
+                                        i(data-feather="sliders")
 
-                    .screen
-                        .screen__basic
-                            input.screen__input.screen__input--input(type="text", name="input", id="input")
-                            input.screen__input.screen__input--result(type="text", name="result", id="result")
-                        .screen__unit
-                            .screen__group
-                                .screen__group__item
-                                    .select
-                                        span.select__arrow #[i(data-feather="chevron-down")]
-                                        span.select__placeholder Choose one
+                                div
+                                    button.btn(type="button")
+                                        span #[i(data-feather="sun")]
+                                        span #[i(data-feather="moon")]
 
-                                        ul.select__options
-                                            li
-                                                label
-                                                    input(type="radio", name="option")
-                                                    | Area
-                                            li
-                                                label
-                                                    input(type="radio", name="option")
-                                                    | Area
-                                            li
-                                                label
-                                                    input(type="radio", name="option")
-                                                    | Area
-                                    input.screen__input(type="text", name="input", id="group1")
-                                    label(for="group1")
-                                .screen__group__item
-                                    .select
-                                        span.select__arrow #[i(data-feather="chevron-down")]
-                                        span.select__placeholder Choose one
+                        .screen
+                            .screen__basic
+                                input.screen__input.screen__input--input(type="text", name="input", id="input")
+                                input.screen__input.screen__input--result(type="text", name="result", id="result")
+                            .screen__unit
+                                .screen__group
+                                    .screen__group__item
+                                        .select
+                                            span.select__arrow #[i(data-feather="chevron-down")]
+                                            span.select__placeholder Choose one
 
-                                        ul.select__options
-                                            li
-                                                label
-                                                    input(type="radio", name="option")
-                                                    | Area
-                                            li
-                                                label
-                                                    input(type="radio", name="option")
-                                                    | Area
-                                            li
-                                                label
-                                                    input(type="radio", name="option")
-                                                    | Area
-                                    input.screen__input(type="text", name="input", id="group2")
-                                    label(for="group2")
-                                .screen__group__item
-                                    .select
-                                        span.select__arrow #[i(data-feather="chevron-down")]
-                                        span.select__placeholder Choose one
+                                            ul.select__options
+                                                li
+                                                    label
+                                                        input(type="radio", name="option")
+                                                        | Area
+                                                li
+                                                    label
+                                                        input(type="radio", name="option")
+                                                        | Area
+                                                li
+                                                    label
+                                                        input(type="radio", name="option")
+                                                        | Area
+                                        input.screen__input(type="text", name="input", id="group1")
+                                        label(for="group1")
+                                    .screen__group__item
+                                        .select
+                                            span.select__arrow #[i(data-feather="chevron-down")]
+                                            span.select__placeholder Choose one
 
-                                        ul.select__options
-                                            li
-                                                label
-                                                    input(type="radio", name="option")
-                                                    | Area
-                                            li
-                                                label
-                                                    input(type="radio", name="option")
-                                                    | Area
-                                            li
-                                                label
-                                                    input(type="radio", name="option")
-                                                    | Area
-                                    input.screen__input(type="text", name="input", id="group3")
-                                    label(for="group3")
-                    .screen__footer
-                        button.btn.btn__history(type="button")
-                            i(data-feather="clock")
-                        button.btn.btn__delete(type="button")
-                            i(data-feather="delete")
+                                            ul.select__options
+                                                li
+                                                    label
+                                                        input(type="radio", name="option")
+                                                        | Area
+                                                li
+                                                    label
+                                                        input(type="radio", name="option")
+                                                        | Area
+                                                li
+                                                    label
+                                                        input(type="radio", name="option")
+                                                        | Area
+                                        input.screen__input(type="text", name="input", id="group2")
+                                        label(for="group2")
+                                    .screen__group__item
+                                        .select
+                                            span.select__arrow #[i(data-feather="chevron-down")]
+                                            span.select__placeholder Choose one
 
-                .keypad
-                    .keypad__calculator
-                        .keypad__simple
+                                            ul.select__options
+                                                li
+                                                    label
+                                                        input(type="radio", name="option")
+                                                        | Area
+                                                li
+                                                    label
+                                                        input(type="radio", name="option")
+                                                        | Area
+                                                li
+                                                    label
+                                                        input(type="radio", name="option")
+                                                        | Area
+                                        input.screen__input(type="text", name="input", id="group3")
+                                        label(for="group3")
+                        .screen__footer
+                            button.btn.btn__history(type="button")
+                                i(data-feather="clock")
+                            button.btn.btn__delete(type="button")
+                                i(data-feather="delete")
+
+                    .keypad
+                        .keypad__calculator
+                            .keypad__simple
+                                .keypad__container
+                                    button.btn.btn__clear.btn__operator(type="button") C
+                                    button.btn.btn__delete.btn__operator ()
+                                    button.btn.btn__percent.btn__operator(type="button") %
+                                    button.btn.btn__operator(type="button") /
+                                    button.btn(type="button") 7
+                                    button.btn(type="button") 8
+                                    button.btn(type="button") 9
+                                    button.btn.btn__operator(type="button") &#8727;
+                                    button.btn(type="button") 4
+                                    button.btn(type="button") 5
+                                    button.btn(type="button") 6
+                                    button.btn.btn__operator(type="button") -
+                                    button.btn(type="button") 1
+                                    button.btn(type="button") 2
+                                    button.btn(type="button") 3
+                                    button.btn.btn__operator(type="button") +
+                                    button.btn.btn__operator(type="button") &#177;
+                                    button.btn(type="button") 0
+                                    button.btn(type="button") .
+                                    button.btn.btn__equal(type="button") =
+                            .keypad__scientific
+                                .keypad__scientific--first
+                                    .keypad__container
+                                        button.btn(type="button") &#x21cb;
+                                        button.btn(type="button") Mod
+                                        button.btn(type="button") x!
+                                        button.btn(type="button") e
+                                        button.btn(type="button") x#[sup 2]
+                                        button.btn(type="button") x#[sup y]
+                                        button.btn(type="button") &#8730;
+                                        button.btn(type="button") #[sup y]&#8730;x
+                                        button.btn(type="button") |x|
+                                        button.btn(type="button") 2#[sup x]
+                                        button.btn(type="button") 10#[sup x]
+                                        button.btn(type="button") 1/x
+                                        button.btn(type="button") &Pi;
+                                        button.btn(type="button") log x
+                                        button.btn(type="button") ln
+
+                                .keypad__scientific--second
+                                    .keypad__container
+                                        button.btn(type="button") &#x21cb;
+                                        button.btn(type="button") Rad
+                                        button.btn(type="button") hyp
+                                        button.btn(type="button") sin
+                                        button.btn(type="button") cos
+                                        button.btn(type="button") tan
+                                        button.btn(type="button") sin#[sup -1]
+                                        button.btn(type="button") cos#[sup -1]
+                                        button.btn(type="button") tan#[sup -1]
+                                        button.btn(type="button") sec
+                                        button.btn(type="button") csc
+                                        button.btn(type="button") cot
+                                        button.btn(type="button") sec#[sup -1]
+                                        button.btn(type="button") csc#[sup -1]
+                                        button.btn(type="button") cot#[sup -1]
+
+                        .keypad__unit
                             .keypad__container
-                                button.btn.btn__clear.btn__operator(type="button") C
-                                button.btn.btn__delete.btn__operator ()
-                                button.btn.btn__percent.btn__operator(type="button") %
-                                button.btn.btn__operator(type="button") /
                                 button.btn(type="button") 7
                                 button.btn(type="button") 8
                                 button.btn(type="button") 9
-                                button.btn.btn__operator(type="button") &#8727;
+                                button.btn.btn__delete.btn__operator(type="button") #[i(data-feather="delete")]
                                 button.btn(type="button") 4
                                 button.btn(type="button") 5
                                 button.btn(type="button") 6
-                                button.btn.btn__operator(type="button") -
+                                button.btn.btn__operator.btn__clear(type="button") C
                                 button.btn(type="button") 1
                                 button.btn(type="button") 2
                                 button.btn(type="button") 3
-                                button.btn.btn__operator(type="button") +
-                                button.btn.btn__operator(type="button") &#177;
+                                button.btn.btn__operator(type="button") &#8593;
+                                button.btn.btn__operator.btn__disabled(type="button", disabled) &#177;
                                 button.btn(type="button") 0
                                 button.btn(type="button") .
-                                button.btn.btn__equal(type="button") =
-                        .keypad__scientific
-                            .keypad__scientific--first
-                                .keypad__container
-                                    button.btn(type="button") &#x21cb;
-                                    button.btn(type="button") Mod
-                                    button.btn(type="button") x!
-                                    button.btn(type="button") e
-                                    button.btn(type="button") x#[sup 2]
-                                    button.btn(type="button") x#[sup y]
-                                    button.btn(type="button") &#8730;
-                                    button.btn(type="button") #[sup y]&#8730;x
-                                    button.btn(type="button") |x|
-                                    button.btn(type="button") 2#[sup x]
-                                    button.btn(type="button") 10#[sup x]
-                                    button.btn(type="button") 1/x
-                                    button.btn(type="button") &#8511;
-                                    button.btn(type="button") log x
-                                    button.btn(type="button") ln
-
-                            .keypad__scientific--second
-                                .keypad__container
-                                    button.btn(type="button") &#x21cb;
-                                    button.btn(type="button") Rad
-                                    button.btn(type="button") hyp
-                                    button.btn(type="button") sin
-                                    button.btn(type="button") cos
-                                    button.btn(type="button") tan
-                                    button.btn(type="button") sin#[sup -1]
-                                    button.btn(type="button") cos#[sup -1]
-                                    button.btn(type="button") tan#[sup -1]
-                                    button.btn(type="button") sec
-                                    button.btn(type="button") csc
-                                    button.btn(type="button") cot
-                                    button.btn(type="button") sec#[sup -1]
-                                    button.btn(type="button") csc#[sup -1]
-                                    button.btn(type="button") cot#[sup -1]
-
-                    .keypad__unit
-                        .keypad__container
-                            button.btn(type="button") 7
-                            button.btn(type="button") 8
-                            button.btn(type="button") 9
-                            button.btn.btn__delete.btn__operator(type="button") #[i(data-feather="delete")]
-                            button.btn(type="button") 4
-                            button.btn(type="button") 5
-                            button.btn(type="button") 6
-                            button.btn.btn__operator.btn__clear(type="button") C
-                            button.btn(type="button") 1
-                            button.btn(type="button") 2
-                            button.btn(type="button") 3
-                            button.btn.btn__operator(type="button") &#8593;
-                            button.btn.btn__operator.btn__disabled(type="button", disabled) &#177;
-                            button.btn(type="button") 0
-                            button.btn(type="button") .
-                            button.btn.btn__operator(type="button") &#8595;
+                                button.btn.btn__operator(type="button") &#8595;

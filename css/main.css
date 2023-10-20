@@ -11,8 +11,8 @@
   --dark-secondary: #232D36;
   --dark-gradient1: #202A33;
   --dark-gradient2: #222F37;
-  --dark-gradient3:#25323B {}
-    --dark-text: #F2F2F2;
+  --dark-gradient3: #25323B;
+  --dark-text: #F2F2F2;
 }
 
 html {
@@ -33,6 +33,8 @@ body {
   --gradient1: var(--light-gradient1);
   --gradient2: var(--light-gradient2);
   --gradient3: var(--light-gradient3);
+  --text-color: var(--light-text);
+  color: var(--text-color);
   background-color: var(--secondary);
 }
 
@@ -42,6 +44,7 @@ body.dark-theme {
   --gradient1: var(--dark-gradient1);
   --gradient2: var(--dark-gradient2);
   --gradient3: var(--dark-gradient3);
+  --text-color: var(--dark-text);
 }
 
 ul {
@@ -51,6 +54,8 @@ ul {
 input[type="text"] {
   border: none;
   background: transparent;
+  outline: none;
+  text-align: right;
 }
 
 .btn {
@@ -58,4 +63,42 @@ input[type="text"] {
   border: none;
   outline: none;
   background: transparent;
+  color: inherit;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0.5px 1px rgba(255, 255, 255, 0.075), 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0.3px 0.4px rgba(0, 0, 0, 0.02), 0 0.9px 1.5px rgba(0, 0, 0, 0.045), 0 3.5px 6px rgba(0, 0, 0, 0.09);
+  position: relative;
+}
+
+.calculator__history {
+  width: 100%;
+  position: absolute;
+  visibility: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.flex--m-center {
+  justify-content: center;
+}
+
+.flex--a-center {
+  align-items: center;
 }
