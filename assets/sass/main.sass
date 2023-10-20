@@ -1,6 +1,7 @@
 \:root
     --color-main: #F28E13
     --color-gray: #7A8187
+    --color-while: #f3f3fa
     --light-primary: #F5F9FC
     --light-secondary: #E4E9EC
     --light-gradient1: #E2E9EC
@@ -58,6 +59,7 @@ input[type="text"]
     outline: none
     background: transparent
     color: inherit
+    cursor: pointer
 
 main
     width: 100vw
@@ -78,6 +80,82 @@ main
         position: absolute
         visibility: hidden
 
+.screen
+    padding: 30px 20px
+    background-color: var(--secondary)
+    background-image: linear-gradient(to top, var(--gradient1), var(--gradient2), var(--gradient3))
+
+    &__header
+        margin-bottom: 20px
+
+.type
+    gap: 10px
+
+    &__group
+
+    &__label
+        width: 34px
+        height: 34px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 6px
+        color: var(--color-gray)
+        border: 2px solid var(--color-gray)
+        cursor: pointer
+        transition: all .4s ease-in-out
+
+        & svg
+            width: 20px
+            height: 20px
+            color: currentColor
+
+    &__input
+        @extend .visually-hidden
+
+    &__input:checked + &__label
+        color: var(--color-while)
+        background-color: var(--color-main)
+        border-color: var(--color-main)
+
+.theme
+    &__label
+        @extend .type__label
+        border: none !important
+        display: grid !important
+        border-radius: 50%
+        place-items: center
+        line-height: 1
+
+        &:hover
+            background-color: var(--primary)
+
+    &__icon
+        grid-column: 1 / 1
+        grid-row: 1 / 1
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: transform .5s
+
+        &--sun
+            transition-delay: .2s
+
+        &--moon
+            transform: scale(0)
+
+    &__input
+        @extend .visually-hidden
+
+    &__input:checked + &__icon--sun
+        transform: rotate(360deg) scale(0)
+
+    &__input:checked ~ &__icon--moon
+        transition-delay: .2s
+        transform: scale(1) rotate(360deg)
+
+.keypad
+    background-color: var(--primary)
 
 
 // utility classes
@@ -90,5 +168,19 @@ main
     &--m-center
         justify-content: center
 
+    &--m-between
+        justify-content: space-between
+
     &--a-center
         align-items: center
+
+.visually-hidden
+    border: 0
+    clip: rect(0 0 0 0)
+    height: auto
+    margin: 0
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+    white-space: nowrap

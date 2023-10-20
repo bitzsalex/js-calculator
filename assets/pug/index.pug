@@ -39,26 +39,28 @@ html(lang="en")
                             span.history__result 1,794
 
                 .flex.flex--column
-                    .screen__container
-                        .screen__header
-                            div
-                                .calculator__type
-                                    label.calculator__simple(for="simple")
-                                        input(type="radio", name="type", value="simple", id="simple")
+                    .screen
+                        .screen__header.flex.flex--m-between
+                            .type.flex.flex--a-center
+                                .type__group.flex.flex--a-center.flex--m-center
+                                    input.type__input(type="radio", name="type", value="simple", id="simple", checked)
+                                    label.type__label(for="simple", title="Simple")
                                         i(data-feather="grid")
-                                    label.calculator__simple(for="scientific")
-                                        input(type="radio", name="type", value="scientific", id="scientific")
+                                .type__group.flex.flex--a-center.flex--m-center
+                                    input.type__input(type="radio", name="type", value="scientific", id="scientific")
+                                    label.type__label(for="scientific", title="Scientific")
                                         i(data-feather="cpu")
-                                    label.calculator__simple(for="units", title="")
-                                        input(type="radio", name="type", value="units", id="units")
+                                .type__group.flex.flex--a-center.flex--m-center
+                                    input.type__input(type="radio", name="type", value="units", id="units")
+                                    label.type__label(for="units", title="Units")
                                         i(data-feather="sliders")
 
-                                div
-                                    button.btn(type="button")
-                                        span #[i(data-feather="sun")]
-                                        span #[i(data-feather="moon")]
+                            label.theme__label(for="theme")
+                                input.theme__input(type="checkbox", id="theme")
+                                span.theme__icon.theme__icon--sun #[i(data-feather="sun")]
+                                span.theme__icon.theme__icon--moon #[i(data-feather="moon")]
 
-                        .screen
+                        .screen__display
                             .screen__basic
                                 input.screen__input.screen__input--input(type="text", name="input", id="input")
                                 input.screen__input.screen__input--result(type="text", name="result", id="result")
@@ -124,6 +126,7 @@ html(lang="en")
                                                         | Area
                                         input.screen__input(type="text", name="input", id="group3")
                                         label(for="group3")
+
                         .screen__footer
                             button.btn.btn__history(type="button")
                                 i(data-feather="clock")

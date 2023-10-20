@@ -1,6 +1,7 @@
 :root {
   --color-main: #F28E13;
   --color-gray: #7A8187;
+  --color-while: #f3f3fa;
   --light-primary: #F5F9FC;
   --light-secondary: #E4E9EC;
   --light-gradient1: #E2E9EC;
@@ -64,6 +65,7 @@ input[type="text"] {
   outline: none;
   background: transparent;
   color: inherit;
+  cursor: pointer;
 }
 
 main {
@@ -87,6 +89,87 @@ main {
   visibility: hidden;
 }
 
+.screen {
+  padding: 30px 20px;
+  background-color: var(--secondary);
+  background-image: linear-gradient(to top, var(--gradient1), var(--gradient2), var(--gradient3));
+}
+
+.screen__header {
+  margin-bottom: 20px;
+}
+
+.type {
+  gap: 10px;
+}
+
+.type__label, .theme__label {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  color: var(--color-gray);
+  border: 2px solid var(--color-gray);
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+
+.type__label svg, .theme__label svg {
+  width: 20px;
+  height: 20px;
+  color: currentColor;
+}
+
+.type__input:checked + .type__label, .type__input:checked + .theme__label {
+  color: var(--color-while);
+  background-color: var(--color-main);
+  border-color: var(--color-main);
+}
+
+.theme__label {
+  border: none !important;
+  display: grid !important;
+  border-radius: 50%;
+  place-items: center;
+  line-height: 1;
+}
+
+.theme__label:hover {
+  background-color: var(--primary);
+}
+
+.theme__icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .5s;
+}
+
+.theme__icon--sun {
+  transition-delay: .2s;
+}
+
+.theme__icon--moon {
+  transform: scale(0);
+}
+
+.theme__input:checked + .theme__icon--sun {
+  transform: rotate(360deg) scale(0);
+}
+
+.theme__input:checked ~ .theme__icon--moon {
+  transition-delay: .2s;
+  transform: scale(1) rotate(360deg);
+}
+
+.keypad {
+  background-color: var(--primary);
+}
+
 .flex {
   display: flex;
 }
@@ -99,6 +182,22 @@ main {
   justify-content: center;
 }
 
+.flex--m-between {
+  justify-content: space-between;
+}
+
 .flex--a-center {
   align-items: center;
+}
+
+.visually-hidden, .type__input, .theme__input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }

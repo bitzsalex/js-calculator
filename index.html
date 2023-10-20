@@ -34,26 +34,27 @@
           </ul>
         </div>
         <div class="flex flex--column">
-          <div class="screen__container">
-            <div class="screen__header">
-              <div>
-                <div class="calculator__type">
-                  <label class="calculator__simple" for="simple">
-                    <input type="radio" name="type" value="simple" id="simple"><i data-feather="grid"></i>
-                  </label>
-                  <label class="calculator__simple" for="scientific">
-                    <input type="radio" name="type" value="scientific" id="scientific"><i data-feather="cpu"></i>
-                  </label>
-                  <label class="calculator__simple" for="units" title="">
-                    <input type="radio" name="type" value="units" id="units"><i data-feather="sliders"></i>
-                  </label>
+          <div class="screen">
+            <div class="screen__header flex flex--m-between">
+              <div class="type flex flex--a-center">
+                <div class="type__group flex flex--a-center flex--m-center">
+                  <input class="type__input" type="radio" name="type" value="simple" id="simple" checked>
+                  <label class="type__label" for="simple" title="Simple"><i data-feather="grid"></i></label>
                 </div>
-                <div>
-                  <button class="btn" type="button"><span><i data-feather="sun"></i></span><span><i data-feather="moon"></i></span></button>
+                <div class="type__group flex flex--a-center flex--m-center">
+                  <input class="type__input" type="radio" name="type" value="scientific" id="scientific">
+                  <label class="type__label" for="scientific" title="Scientific"><i data-feather="cpu"></i></label>
+                </div>
+                <div class="type__group flex flex--a-center flex--m-center">
+                  <input class="type__input" type="radio" name="type" value="units" id="units">
+                  <label class="type__label" for="units" title="Units"><i data-feather="sliders"></i></label>
                 </div>
               </div>
+              <label class="theme__label" for="theme">
+                <input class="theme__input" type="checkbox" id="theme"><span class="theme__icon theme__icon--sun"><i data-feather="sun"></i></span><span class="theme__icon theme__icon--moon"><i data-feather="moon"></i></span>
+              </label>
             </div>
-            <div class="screen">
+            <div class="screen__display">
               <div class="screen__basic">
                 <input class="screen__input screen__input--input" type="text" name="input" id="input">
                 <input class="screen__input screen__input--result" type="text" name="result" id="result">
