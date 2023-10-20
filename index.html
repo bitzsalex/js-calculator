@@ -16,6 +16,215 @@
     <meta name="theme-color" content="#ffffff">
     <!-- including stylesheets-->
     <link rel="stylesheet" href="/css/main.css">
+    <!-- include google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&amp;family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <!-- including feather icons-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js" defer></script>
+    <!-- including the main js file-->
+    <script src="/js/main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <div class="calculator">
+        <div class="history__container">
+          <ul class="history__list">
+            <li class="history"><span class="history__expression">78x23</span><span class="history__result">1,794</span></li>
+          </ul>
+        </div>
+        <div class="screen__container">
+          <div class="screen__header">
+            <div>
+              <div class="calculator__type">
+                <label class="calculator__simple" for="simple">
+                  <input type="radio" name="type" value="simple" id="simple"><i data-feather="grid"></i>
+                </label>
+                <label class="calculator__simple" for="scientific">
+                  <input type="radio" name="type" value="scientific" id="scientific"><i data-feather="cpu"></i>
+                </label>
+                <label class="calculator__simple" for="units" title="">
+                  <input type="radio" name="type" value="units" id="units"><i data-feather="sliders"></i>
+                </label>
+              </div>
+              <div>
+                <button type="button"><span><i data-feather="sun"></i></span><span><i data-feather="moon"></i></span></button>
+              </div>
+            </div>
+          </div>
+          <div class="screen">
+            <div class="screen__basic">
+              <input class="screen__input screen__input--input" type="text" name="input" id="input">
+              <input class="screen__input screen__input--result" type="text" name="result" id="result">
+            </div>
+            <div class="screen__unit">
+              <div class="screen__group">
+                <div class="screen__group__item">
+                  <div class="select"><span class="select__arrow"><i data-feather="chevron-down"></i></span><span class="select__placeholder">Choose one</span>
+                    <ul class="select__options">
+                      <li>
+                        <label>
+                          <input type="radio" name="option">Area
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="radio" name="option">Area
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="radio" name="option">Area
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <input class="screen__input" type="text" name="input" id="group1">
+                  <label for="group1"></label>
+                </div>
+                <div class="screen__group__item">
+                  <div class="select"><span class="select__arrow"><i data-feather="chevron-down"></i></span><span class="select__placeholder">Choose one</span>
+                    <ul class="select__options">
+                      <li>
+                        <label>
+                          <input type="radio" name="option">Area
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="radio" name="option">Area
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="radio" name="option">Area
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <input class="screen__input" type="text" name="input" id="group2">
+                  <label for="group2"></label>
+                </div>
+                <div class="screen__group__item">
+                  <div class="select"><span class="select__arrow"><i data-feather="chevron-down"></i></span><span class="select__placeholder">Choose one</span>
+                    <ul class="select__options">
+                      <li>
+                        <label>
+                          <input type="radio" name="option">Area
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="radio" name="option">Area
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="radio" name="option">Area
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <input class="screen__input" type="text" name="input" id="group3">
+                  <label for="group3"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="screen__footer">
+            <button class="btn btn__history" type="button"><i data-feather="clock"></i></button>
+            <button class="btn btn__delete" type="button"><i data-feather="delete"></i></button>
+          </div>
+        </div>
+        <div class="keypad">
+          <div class="keypad__calculator">
+            <div class="keypad__simple">
+              <div class="keypad__container">
+                <button class="btn btn__clear btn__operator" type="button">C</button>
+                <button class="btn btn__delete btn__operator">()</button>
+                <button class="btn btn__percent btn__operator" type="button">%</button>
+                <button class="btn btn__operator" type="button">/</button>
+                <button class="btn" type="button">7</button>
+                <button class="btn" type="button">8</button>
+                <button class="btn" type="button">9</button>
+                <button class="btn btn__operator" type="button">&#8727;</button>
+                <button class="btn" type="button">4</button>
+                <button class="btn" type="button">5</button>
+                <button class="btn" type="button">6</button>
+                <button class="btn btn__operator" type="button">-</button>
+                <button class="btn" type="button">1</button>
+                <button class="btn" type="button">2</button>
+                <button class="btn" type="button">3</button>
+                <button class="btn btn__operator" type="button">+</button>
+                <button class="btn btn__operator" type="button">&#177;</button>
+                <button class="btn" type="button">0</button>
+                <button class="btn" type="button">.</button>
+                <button class="btn btn__equal" type="button">=</button>
+              </div>
+            </div>
+            <div class="keypad__scientific">
+              <div class="keypad__scientific--first">
+                <div class="keypad__container">
+                  <button class="btn" type="button">&#x21cb;</button>
+                  <button class="btn" type="button">Mod</button>
+                  <button class="btn" type="button">x!</button>
+                  <button class="btn" type="button">e</button>
+                  <button class="btn" type="button">x<sup>2</sup></button>
+                  <button class="btn" type="button">x<sup>y</sup></button>
+                  <button class="btn" type="button">&#8730;</button>
+                  <button class="btn" type="button"><sup>y</sup>&#8730;x</button>
+                  <button class="btn" type="button">|x|</button>
+                  <button class="btn" type="button">2<sup>x</sup></button>
+                  <button class="btn" type="button">10<sup>x</sup></button>
+                  <button class="btn" type="button">1/x</button>
+                  <button class="btn" type="button">&#8511;</button>
+                  <button class="btn" type="button">log x</button>
+                  <button class="btn" type="button">ln</button>
+                </div>
+              </div>
+              <div class="keypad__scientific--second">
+                <div class="keypad__container">
+                  <button class="btn" type="button">&#x21cb;</button>
+                  <button class="btn" type="button">Rad</button>
+                  <button class="btn" type="button">hyp</button>
+                  <button class="btn" type="button">sin</button>
+                  <button class="btn" type="button">cos</button>
+                  <button class="btn" type="button">tan</button>
+                  <button class="btn" type="button">sin<sup>-1</sup></button>
+                  <button class="btn" type="button">cos<sup>-1</sup></button>
+                  <button class="btn" type="button">tan<sup>-1</sup></button>
+                  <button class="btn" type="button">sec</button>
+                  <button class="btn" type="button">csc</button>
+                  <button class="btn" type="button">cot</button>
+                  <button class="btn" type="button">sec<sup>-1</sup></button>
+                  <button class="btn" type="button">csc<sup>-1</sup></button>
+                  <button class="btn" type="button">cot<sup>-1</sup></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="keypad__unit">
+            <div class="keypad__container">
+              <button class="btn" type="button">7</button>
+              <button class="btn" type="button">8</button>
+              <button class="btn" type="button">9</button>
+              <button class="btn btn__delete btn__operator" type="button"><i data-feather="delete"></i></button>
+              <button class="btn" type="button">4</button>
+              <button class="btn" type="button">5</button>
+              <button class="btn" type="button">6</button>
+              <button class="btn btn__operator btn__clear" type="button">C</button>
+              <button class="btn" type="button">1</button>
+              <button class="btn" type="button">2</button>
+              <button class="btn" type="button">3</button>
+              <button class="btn btn__operator" type="button">&#8593;</button>
+              <button class="btn btn__operator btn__disabled" type="button" disabled>&#177;</button>
+              <button class="btn" type="button">0</button>
+              <button class="btn" type="button">.</button>
+              <button class="btn btn__operator" type="button">&#8595;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
