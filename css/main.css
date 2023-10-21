@@ -91,6 +91,22 @@ textarea {
   background: transparent;
   color: inherit;
   cursor: pointer;
+  padding: 0 10px;
+  transition: all .4s ease-in-out;
+}
+
+.btn:hover {
+  color: var(--color-gray);
+}
+
+.btn__history {
+  color: var(--color-gray);
+  cursor: not-allowed;
+}
+
+.btn__history.exist {
+  color: currentColor;
+  cursor: pointer;
 }
 
 main {

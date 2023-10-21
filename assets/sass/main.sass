@@ -92,6 +92,19 @@ textarea
     background: transparent
     color: inherit
     cursor: pointer
+    padding: 0 10px
+    transition: all .4s ease-in-out
+
+    &:hover
+        color: var(--color-gray)
+
+    &__history
+        color: var(--color-gray)
+        cursor: not-allowed
+
+        &.exist
+            color: currentColor
+            cursor: pointer
 
 main
     width: 100vw
