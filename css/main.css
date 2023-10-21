@@ -57,6 +57,15 @@ body.dark-theme {
   --border: var(--border-dark);
 }
 
+body.dark-theme .theme__icon--sun {
+  transform: rotate(360deg) scale(0);
+}
+
+body.dark-theme .theme__icon--moon {
+  transition-delay: .2s;
+  transform: scale(1) rotate(360deg);
+}
+
 ul {
   list-style: none;
 }
@@ -236,7 +245,7 @@ main {
   gap: 10px;
 }
 
-.type__label, .theme__label {
+.type__label, .theme__btn {
   width: 30px;
   height: 30px;
   display: flex;
@@ -249,26 +258,26 @@ main {
   transition: all .4s ease-in-out;
 }
 
-.type__label svg, .theme__label svg {
+.type__label svg, .theme__btn svg {
   width: 17px;
   height: 17px;
   color: currentColor;
 }
 
-.type__input:checked + .type__label, .type__input:checked + .theme__label {
+.type__input:checked + .type__label, .type__input:checked + .theme__btn {
   color: var(--color-while);
   background-color: var(--color-main);
   border-color: var(--color-main);
 }
 
-.theme__label {
+.theme__btn {
   border-color: transparent;
   display: grid !important;
   place-items: center;
   line-height: 1;
 }
 
-.theme__label:hover {
+.theme__btn:hover {
   background-color: var(--border);
   border-color: var(--border);
 }
@@ -288,15 +297,6 @@ main {
 
 .theme__icon--moon {
   transform: scale(0);
-}
-
-.theme__input:checked + .theme__icon--sun {
-  transform: rotate(360deg) scale(0);
-}
-
-.theme__input:checked ~ .theme__icon--moon {
-  transition-delay: .2s;
-  transform: scale(1) rotate(360deg);
 }
 
 .keypad {
@@ -323,7 +323,7 @@ main {
   align-items: center;
 }
 
-.visually-hidden, .select__input, .type__input, .theme__input {
+.visually-hidden, .select__input, .type__input {
   border: 0;
   padding: 0;
   margin: 0;

@@ -59,6 +59,14 @@ body
         --shadow: var(--shadow-dark)
         --border: var(--border-dark)
 
+        & .theme
+            &__icon--sun
+                transform: rotate(360deg) scale(0)
+
+            &__icon--moon
+                transition-delay: .2s
+                transform: scale(1) rotate(360deg)
+
 ul
     list-style: none
 
@@ -244,7 +252,7 @@ main
         border-color: var(--color-main)
 
 .theme
-    &__label
+    &__btn
         @extend .type__label
         border-color: transparent
         display: grid !important
@@ -268,16 +276,6 @@ main
 
         &--moon
             transform: scale(0)
-
-    &__input
-        @extend .visually-hidden
-
-    &__input:checked + &__icon--sun
-        transform: rotate(360deg) scale(0)
-
-    &__input:checked ~ &__icon--moon
-        transition-delay: .2s
-        transform: scale(1) rotate(360deg)
 
 .keypad
     background-color: var(--primary)
