@@ -55,8 +55,8 @@
               </label>
             </div>
             <div class="screen__display">
-              <div class="screen__basic">
-                <input class="screen__input screen__input--input" type="text" name="input" id="input">
+              <div class="screen__basic flex flex--column">
+                <textarea class="screen__input screen__input--input" name="input" id="input" cols="30" rows="10"></textarea>
                 <input class="screen__input screen__input--result" type="text" name="result" id="result">
               </div>
               <div class="screen__unit">
@@ -81,8 +81,10 @@
                         </li>
                       </ul>
                     </div>
-                    <input class="screen__input" type="text" name="input" id="group1">
-                    <label for="group1"></label>
+                    <div class="screen__group__input">
+                      <input class="screen__input" type="text" name="input" id="group1">
+                      <label class="screen__label" for="group1">m<sup>2</sup></label>
+                    </div>
                   </div>
                   <div class="screen__group__item">
                     <div class="select"><span class="select__arrow"><i data-feather="chevron-down"></i></span><span class="select__placeholder">Choose one</span>
@@ -104,8 +106,10 @@
                         </li>
                       </ul>
                     </div>
-                    <input class="screen__input" type="text" name="input" id="group2">
-                    <label for="group2"></label>
+                    <div class="screen__group__input">
+                      <input class="screen__input" type="text" name="input" id="group2">
+                      <label class="screen__label" for="group2">m<sup>2</sup></label>
+                    </div>
                   </div>
                   <div class="screen__group__item">
                     <div class="select"><span class="select__arrow"><i data-feather="chevron-down"></i></span><span class="select__placeholder">Choose one</span>
@@ -127,15 +131,17 @@
                         </li>
                       </ul>
                     </div>
-                    <input class="screen__input" type="text" name="input" id="group3">
-                    <label for="group3"></label>
+                    <div class="screen__group__input">
+                      <input class="screen__input" type="text" name="input" id="group3">
+                      <label class="screen__label" for="group3">m<sup>2</sup></label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="screen__footer">
-              <button class="btn btn__history" type="button"><i data-feather="clock"></i></button>
+            <div class="screen__footer flex flex--m-between">
               <button class="btn btn__delete" type="button"><i data-feather="delete"></i></button>
+              <button class="btn btn__history" type="button"><i data-feather="clock"></i></button>
             </div>
           </div>
           <div class="keypad">

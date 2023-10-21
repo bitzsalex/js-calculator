@@ -61,8 +61,8 @@ html(lang="en")
                                 span.theme__icon.theme__icon--moon #[i(data-feather="moon")]
 
                         .screen__display
-                            .screen__basic
-                                input.screen__input.screen__input--input(type="text", name="input", id="input")
+                            .screen__basic.flex.flex--column
+                                textarea.screen__input.screen__input--input(name="input", id="input", cols="30", rows="10")
                                 input.screen__input.screen__input--result(type="text", name="result", id="result")
                             .screen__unit
                                 .screen__group
@@ -84,8 +84,9 @@ html(lang="en")
                                                     label
                                                         input(type="radio", name="option")
                                                         | Area
-                                        input.screen__input(type="text", name="input", id="group1")
-                                        label(for="group1")
+                                        .screen__group__input
+                                            input.screen__input(type="text", name="input", id="group1")
+                                            label.screen__label(for="group1") m#[sup 2]
                                     .screen__group__item
                                         .select
                                             span.select__arrow #[i(data-feather="chevron-down")]
@@ -104,8 +105,9 @@ html(lang="en")
                                                     label
                                                         input(type="radio", name="option")
                                                         | Area
-                                        input.screen__input(type="text", name="input", id="group2")
-                                        label(for="group2")
+                                        .screen__group__input
+                                            input.screen__input(type="text", name="input", id="group2")
+                                            label.screen__label(for="group2") m#[sup 2]
                                     .screen__group__item
                                         .select
                                             span.select__arrow #[i(data-feather="chevron-down")]
@@ -124,14 +126,15 @@ html(lang="en")
                                                     label
                                                         input(type="radio", name="option")
                                                         | Area
-                                        input.screen__input(type="text", name="input", id="group3")
-                                        label(for="group3")
+                                        .screen__group__input
+                                            input.screen__input(type="text", name="input", id="group3")
+                                            label.screen__label(for="group3") m#[sup 2]
 
-                        .screen__footer
-                            button.btn.btn__history(type="button")
-                                i(data-feather="clock")
+                        .screen__footer.flex.flex--m-between
                             button.btn.btn__delete(type="button")
                                 i(data-feather="delete")
+                            button.btn.btn__history(type="button")
+                                i(data-feather="clock")
 
                     .keypad
                         .keypad__calculator
