@@ -1,14 +1,60 @@
 feather.replace()
 
+const body = document.body
 const themeToggler = document.querySelector("#theme-toggler")
+const selects = document.querySelectorAll(".select")
+const selectOptions = document.querySelectorAll(".select__option")
+
+const removeSelectedOption = (parent) => {
+	for (let option of parent.children) option.classList.remove("selected")
+}
+
+const selectOption = (event) => {
+	let option = event.target
+	let select = option.closest("div.select")
+	removeSelectedOption(option.parentNode)
+	option.classList.add("selected")
+
+	// update the input
+	select.querySelector("input.select__input").value = option.textContent
+	// update the placeholder
+	select.querySelector("span.select__placeholder").innerText = option.textContent
+}
+
+const closeSelectFromOutside = () => {
+	let isThereClosedOption = false
+	selects.forEach((select) => {
+		if (select.classList.contains("show")) {
+			select.classList.remove("show")
+			isThereClosedOption = true
+		}
+	})
+
+	return isThereClosedOption
+}
+
+selects.forEach((select) => {
+	select.addEventListener("click", (event) => {
+		event.stopPropagation()
+		if (!closeSelectFromOutside()) select.classList.toggle("show")
+	})
+})
+
+selectOptions.forEach((option) => {
+	option.addEventListener("click", selectOption)
+})
+
+// this event is to hide the visible select option
+body.addEventListener("click", closeSelectFromOutside)
+
 
 const changeTheme = (theme) => {
-	if (theme === "dark") document.body.classList.add("dark-theme")
-	else document.body.classList.remove("dark-theme")
+	if (theme === "dark") body.classList.add("dark-theme")
+	else body.classList.remove("dark-theme")
 }
 
 const toggleTheme = () => {
-	if (document.body.classList.contains("dark-theme")) {
+	if (body.classList.contains("dark-theme")) {
 		changeTheme("light")
 		localStorage.setItem("theme", "light")
 	} else {
