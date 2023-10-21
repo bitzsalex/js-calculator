@@ -1,5 +1,6 @@
 :root {
   --color-main: #F28E13;
+  --color-secondary: #BF419E;
   --color-gray: #7A8187;
   --color-while: #f3f3fa;
   --light-primary: #F5F9FC;
@@ -14,6 +15,10 @@
   --dark-gradient2: #222F37;
   --dark-gradient3: #25323B;
   --dark-text: #F2F2F2;
+  --shadow-light: inset 0 0 0.5px 1px rgba(255, 255, 255, 0.075), 0 0 0 1px rgba(0, 0, 0, 0.05),  0 0.3px 0.4px rgba(0, 0, 0, 0.02), 0 0.9px 1.5px rgba(0, 0, 0, 0.045), 0 3.5px 6px rgba(0, 0, 0, 0.09);
+  --shadow-dark: inset 0 0 0.5px 1px rgba(0, 0, 0, 0.075), 0 0 0 1px rgba(255, 255, 255, 0.05),  0 0.3px 0.4px rgba(255, 255, 255, 0.02), 0 0.9px 1.5px rgba(255, 255, 255, 0.045), 0 3.5px 6px rgba(255, 255, 255, 0.09);
+  --border-light: rgba(0, 0, 0, 0.09);
+  --border-dark: rgba(255, 255, 255, 0.09);
 }
 
 html {
@@ -35,6 +40,8 @@ body {
   --gradient2: var(--light-gradient2);
   --gradient3: var(--light-gradient3);
   --text-color: var(--light-text);
+  --shadow: var(--shadow-light);
+  --border: var(--border-light);
   color: var(--text-color);
   background-color: var(--secondary);
 }
@@ -46,6 +53,8 @@ body.dark-theme {
   --gradient2: var(--dark-gradient2);
   --gradient3: var(--dark-gradient3);
   --text-color: var(--dark-text);
+  --shadow: var(--shadow-dark);
+  --border: var(--border-dark);
 }
 
 ul {
@@ -55,6 +64,7 @@ ul {
 textarea,
 input[type="text"] {
   border: none;
+  color: inherit;
   background: transparent;
   outline: none;
   text-align: right;
@@ -85,7 +95,7 @@ main {
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: inset 0 0 0.5px 1px rgba(255, 255, 255, 0.075), 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0.3px 0.4px rgba(0, 0, 0, 0.02), 0 0.9px 1.5px rgba(0, 0, 0, 0.045), 0 3.5px 6px rgba(0, 0, 0, 0.09);
+  box-shadow: var(--shadow);
   position: relative;
 }
 
@@ -96,7 +106,7 @@ main {
 }
 
 .screen {
-  padding: 30px 20px;
+  padding: 30px;
   background-color: var(--secondary);
   background-image: linear-gradient(to top, var(--gradient1), var(--gradient2), var(--gradient3));
 }
@@ -107,9 +117,8 @@ main {
 
 .screen__display {
   width: 100%;
-  height: 240px;
+  height: 260px;
   position: relative;
-  overflow: hidden;
   margin-bottom: 20px;
   position: relative;
 }
@@ -122,13 +131,17 @@ main {
   font-weight: 600;
 }
 
+.screen__label {
+  font-size: 12px;
+  color: var(--color-secondary);
+}
+
 .screen__basic, .screen__unit {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   position: absolute;
-  overflow: hidden;
 }
 
 .screen__basic {
@@ -138,11 +151,11 @@ main {
 .screen__group {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .screen__group__item:not(:last-of-type) {
-  border-bottom: 1px solid var(--color-gray);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 10px;
 }
 
 .screen__group__input {
@@ -153,6 +166,70 @@ main {
 
 .screen__footer {
   flex-direction: row-reverse;
+}
+
+.select {
+  font-size: 14px;
+  height: 30px;
+  width: max-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.select__placeholder {
+  margin-right: 10px;
+  color: var(--color-secondary);
+}
+
+.select__arrow {
+  display: flex;
+  align-items: center;
+}
+
+.select__arrow > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.select__options {
+  top: 0;
+  position: absolute;
+  min-width: 100%;
+  width: max-content;
+  z-index: 9;
+  left: 0;
+  border-radius: 6px;
+  background-color: var(--gradient3);
+  box-shadow: var(--shadow);
+  transform-origin: top left;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform .4s ease-in-out, opacity .2s ease-in-out;
+}
+
+.select__options.show {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform .4s ease-in-out, opacity .4s .2s ease-in-out;
+}
+
+.select__label {
+  display: block;
+  cursor: pointer;
+  text-transform: capitalize;
+  padding: 14px 20px;
+  transition: color .4s ease-in-out;
+}
+
+.select__label:hover {
+  color: var(--color-secondary);
+}
+
+.select__input:checked + .select__label {
+  color: var(--color-secondary);
 }
 
 .type {
@@ -246,7 +323,7 @@ main {
   align-items: center;
 }
 
-.visually-hidden, .type__input, .theme__input {
+.visually-hidden, .select__input, .type__input, .theme__input {
   border: 0;
   padding: 0;
   margin: 0;
