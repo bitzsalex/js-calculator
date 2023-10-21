@@ -1,7 +1,6 @@
 \:root
     --color-main: #F28E13
-    // --color-secondary: #BF419E
-    --color-secondary: #AD53D7
+    --color-secondary: #FF41E0
     --color-gray: #7A8187
     --color-while: #f3f3fa
     --light-primary: #F5F9FC
@@ -17,17 +16,12 @@
     --dark-gradient3: #25323B
     --dark-text: #F2F2F2
 
-    // [ ] change the coloring
-
     --shadow-light: inset 0 0 0.5px 1px rgba(255, 255, 255, 0.075), 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0.3px 0.4px rgba(0, 0, 0, 0.02), 0 0.9px 1.5px rgba(0, 0, 0, 0.045), 0 3.5px 6px rgba(0, 0, 0, 0.09)
     --shadow-dark: inset 0 0 0.5px 1px rgba(0, 0, 0, 0.075), 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0.3px 0.4px rgba(255, 255, 255, 0.02), 0 0.9px 1.5px rgba(255, 255, 255, 0.045), 0 3.5px 6px rgba(255, 255, 255, 0.09)
-    --border-light: rgba(0, 0, 0, 0.09)
-    --border-dark: rgba(255, 255, 255, 0.09)
+    --shading-light: rgba(0, 0, 0, 0.09)
+    --shading-dark: rgba(255, 255, 255, 0.09)
 
 $color-white: #fff
-$shadow-light: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075), 0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02), 0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09)
-$border-light: rgba(0, 0, 0, 0.09)
-$border-dark: rgba(255, 255, 255, 0.09)
 
 html
     box-sizing: border-box
@@ -47,7 +41,7 @@ body
     --gradient3: var(--light-gradient3)
     --text-color: var(--light-text)
     --shadow: var(--shadow-light)
-    --border: var(--border-light)
+    --shading: var(--shading-light)
 
     color: var(--text-color)
     background-color: var(--secondary)
@@ -60,7 +54,7 @@ body
         --gradient3: var(--dark-gradient3)
         --text-color: var(--dark-text)
         --shadow: var(--shadow-dark)
-        --border: var(--border-dark)
+        --shading: var(--shading-dark)
 
         & .theme
             &__icon--sun
@@ -168,7 +162,7 @@ main
         height: 100%
 
         &__item:not(:last-of-type)
-            border-bottom: 1px solid var(--border)
+            border-bottom: 1px solid var(--shading)
             margin-bottom: 10px
 
         &__input
@@ -243,7 +237,7 @@ main
             transform: rotate(-45deg)
 
         &.selected::after
-            border-color: green
+            border-color: #00C36B
 
         &:hover
             color: var(--color-secondary)
@@ -290,8 +284,8 @@ main
         line-height: 1
 
         &:hover
-            background-color: var(--border)
-            border-color: var(--border)
+            background-color: var(--shading)
+            border-color: var(--shading)
 
     &__icon
         grid-column: 1 / 1
