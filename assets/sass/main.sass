@@ -219,8 +219,8 @@ main
     &__group
 
     &__label
-        width: 34px
-        height: 34px
+        width: 30px
+        height: 30px
         display: flex
         justify-content: center
         align-items: center
@@ -231,8 +231,8 @@ main
         transition: all .4s ease-in-out
 
         & svg
-            width: 20px
-            height: 20px
+            width: 17px
+            height: 17px
             color: currentColor
 
     &__input
@@ -246,14 +246,14 @@ main
 .theme
     &__label
         @extend .type__label
-        border: none !important
+        border-color: transparent
         display: grid !important
-        border-radius: 50%
         place-items: center
         line-height: 1
 
         &:hover
-            background-color: var(--primary)
+            background-color: var(--border)
+            border-color: var(--border)
 
     &__icon
         grid-column: 1 / 1
