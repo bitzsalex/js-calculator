@@ -83,8 +83,18 @@ const removeCalculatorType = () => {
 }
 
 const changeCalculatorType = (type) => {
-	removeCalculatorType()
-	if (type) calculator.classList.add(type)
+	calculator.classList.add("zoom-fade-out")
+
+	setTimeout(() => {
+		removeCalculatorType()
+		if (type) calculator.classList.add(type)
+
+		calculator.classList.remove("zoom-fade-out")
+		calculator.classList.add("zoom-fade-in")
+		setTimeout(() => {
+			calculator.classList.remove("zoom-fade-in")
+		}, 400)
+	}, 400)
 }
 
 // changing calculator types
