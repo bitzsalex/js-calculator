@@ -34,7 +34,7 @@
           </ul>
         </div>
         <div class="flex flex--column">
-          <div class="screen">
+          <div class="screen screen--unit">
             <div class="screen__header flex flex--m-between">
               <div class="type flex flex--a-center">
                 <div class="type__group flex flex--a-center flex--m-center">
@@ -107,9 +107,10 @@
             <div class="screen__footer flex flex--m-between">
               <button class="btn btn__delete" type="button"><i data-feather="delete"></i></button>
               <button class="btn btn__history" type="button"><i data-feather="clock"></i></button>
+              <button class="btn btn__clear btn__operator" type="button">C</button>
             </div>
           </div>
-          <div class="keypad">
+          <div class="keypad keypad--unit">
             <div class="keypad__calculator">
               <div class="keypad__scientific">
                 <div class="keypad__scientific__first">
@@ -177,23 +178,19 @@
               </div>
             </div>
             <div class="keypad__unit">
-              <div class="keypad__container">
+              <div class="keypad__container keypad__container--unit">
                 <button class="btn" type="button">7</button>
                 <button class="btn" type="button">8</button>
                 <button class="btn" type="button">9</button>
-                <button class="btn btn__delete btn__operator" type="button"><i data-feather="delete"></i></button>
                 <button class="btn" type="button">4</button>
                 <button class="btn" type="button">5</button>
                 <button class="btn" type="button">6</button>
-                <button class="btn btn__operator btn__clear" type="button">C</button>
                 <button class="btn" type="button">1</button>
                 <button class="btn" type="button">2</button>
                 <button class="btn" type="button">3</button>
-                <button class="btn btn__operator" type="button">&#8593;</button>
                 <button class="btn btn__operator btn__disabled" type="button" disabled>&#177;</button>
                 <button class="btn" type="button">0</button>
                 <button class="btn" type="button">.</button>
-                <button class="btn btn__operator" type="button">&#8595;</button>
               </div>
             </div>
           </div>

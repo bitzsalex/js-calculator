@@ -39,7 +39,7 @@ html(lang="en")
                             span.history__result 1,794
 
                 .flex.flex--column
-                    .screen
+                    .screen.screen--unit
                         .screen__header.flex.flex--m-between
                             .type.flex.flex--a-center
                                 .type__group.flex.flex--a-center.flex--m-center
@@ -115,8 +115,9 @@ html(lang="en")
                                 i(data-feather="delete")
                             button.btn.btn__history(type="button")
                                 i(data-feather="clock")
+                            button.btn.btn__clear.btn__operator(type="button") C
 
-                    .keypad
+                    .keypad.keypad--unit
                         .keypad__calculator
                             .keypad__scientific
                                 .keypad__scientific__first
@@ -179,20 +180,16 @@ html(lang="en")
                                     button.btn.btn__equal(type="button") =
 
                         .keypad__unit
-                            .keypad__container
+                            .keypad__container.keypad__container--unit
                                 button.btn(type="button") 7
                                 button.btn(type="button") 8
                                 button.btn(type="button") 9
-                                button.btn.btn__delete.btn__operator(type="button") #[i(data-feather="delete")]
                                 button.btn(type="button") 4
                                 button.btn(type="button") 5
                                 button.btn(type="button") 6
-                                button.btn.btn__operator.btn__clear(type="button") C
                                 button.btn(type="button") 1
                                 button.btn(type="button") 2
                                 button.btn(type="button") 3
-                                button.btn.btn__operator(type="button") &#8593;
                                 button.btn.btn__operator.btn__disabled(type="button", disabled) &#177;
                                 button.btn(type="button") 0
                                 button.btn(type="button") .
-                                button.btn.btn__operator(type="button") &#8595;

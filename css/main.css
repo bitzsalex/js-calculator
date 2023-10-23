@@ -413,7 +413,7 @@ main {
   align-items: center;
 }
 
-.visually-hidden, .select__input, .type__input, .keypad--unit .keypad__calculator, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
+.visually-hidden, .screen--unit .btn__history, .select__input, .type__input, .keypad--unit .keypad__calculator, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
   width: 1px;
   height: 1px;
   overflow: hidden;
