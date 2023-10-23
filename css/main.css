@@ -23,7 +23,7 @@
 
 html {
   box-sizing: border-box;
-  font: normal 400 16px/1.45 "Poppins", sans-serif;
+  font: normal 400 16px/1.45 "Josefin Sans", sans-serif;
 }
 
 *, *::after, *::before {
@@ -44,6 +44,7 @@ body {
   --shading: var(--shading-light);
   color: var(--text-color);
   background-color: var(--secondary);
+  overflow-x: hidden;
 }
 
 body.dark-theme {
@@ -109,14 +110,29 @@ textarea {
   cursor: pointer;
 }
 
+.btn__operator {
+  color: var(--color-main);
+  font-weight: normal !important;
+}
+
+.btn__equal {
+  background-color: var(--color-main);
+  color: var(--primary);
+}
+
+.btn__clear {
+  color: #F3625A;
+}
+
 main {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 30px 0px;
 }
 
 .calculator {
-  width: 100%;
-  max-width: 450px;
+  width: max-content;
+  max-width: 100%;
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
@@ -331,10 +347,53 @@ main {
 }
 
 .keypad {
+  padding: 30px;
+  width: 420px;
   background-color: var(--primary);
 }
 
-.flex {
+.keypad--scientific {
+  width: 690px;
+}
+
+.keypad__calculator {
+  flex: 1 0 auto;
+}
+
+.keypad__simple {
+  width: 360px;
+}
+
+.keypad__container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 360px;
+  text-transform: capitalize;
+}
+
+.keypad__container > button {
+  padding: 0;
+  width: calc(100% / 4);
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.keypad__container--unit > button, .keypad__container--scientific > button {
+  width: calc(100% / 3);
+}
+
+.keypad__scientific {
+  position: relative;
+  flex: 1 0 auto;
+}
+
+.keypad--scientific .keypad__scientific {
+  width: 270px !important;
+}
+
+.flex, .keypad__calculator {
   display: flex;
 }
 
@@ -354,10 +413,7 @@ main {
   align-items: center;
 }
 
-.visually-hidden, .select__input, .type__input {
-  border: 0;
-  padding: 0;
-  margin: 0;
+.visually-hidden, .select__input, .type__input, .keypad--unit .keypad__calculator, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -365,4 +421,14 @@ main {
   white-space: nowrap;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
+}
+
+.visually-visible, .keypad__scientific--second .keypad__scientific__second, .keypad__scientific__first, .keypad--scientific .keypad__scientific, .keypad--unit .keypad__unit {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  clip: unset;
+  clip-path: none;
 }

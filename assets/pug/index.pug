@@ -20,9 +20,9 @@ html(lang="en")
         link(rel="stylesheet", href="/css/main.css")
 
         // include google fonts
-        link(rel="preconnect", href="https://fonts.googleapis.com")
-        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
-        link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@300;400;600&display=swap", rel="stylesheet")
+        link(rel='preconnect', href='https://fonts.googleapis.com')
+        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@300;400;600&display=swap', rel='stylesheet')
 
         // including feather icons
         script(src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js", defer)
@@ -31,7 +31,7 @@ html(lang="en")
         script(src="/js/main.js", defer)
     body.dark-theme
         main.flex.flex--m-center.flex--a-center
-            .calculator.flex
+            .calculator
                 .calculator__history
                     ul.history__list
                         li.history
@@ -118,6 +118,43 @@ html(lang="en")
 
                     .keypad
                         .keypad__calculator
+                            .keypad__scientific
+                                .keypad__scientific__first
+                                    .keypad__container.keypad__container--scientific
+                                        button.btn(type="button") &#x21cb;
+                                        button.btn(type="button") Mod
+                                        button.btn(type="button") x!
+                                        button.btn(type="button") e
+                                        button.btn(type="button") x#[sup 2]
+                                        button.btn(type="button") x#[sup y]
+                                        button.btn(type="button") &#8730;
+                                        button.btn(type="button") #[sup y]&#8730;x
+                                        button.btn(type="button") |x|
+                                        button.btn(type="button") 2#[sup x]
+                                        button.btn(type="button") 10#[sup x]
+                                        button.btn(type="button") 1/x
+                                        button.btn(type="button") &Pi;
+                                        button.btn(type="button") log x
+                                        button.btn(type="button") ln
+
+                                .keypad__scientific__second
+                                    .keypad__container.keypad__container--scientific
+                                        button.btn(type="button") &#x21cb;
+                                        button.btn(type="button") Rad
+                                        button.btn(type="button") hyp
+                                        button.btn(type="button") sin
+                                        button.btn(type="button") cos
+                                        button.btn(type="button") tan
+                                        button.btn(type="button") sin#[sup -1]
+                                        button.btn(type="button") cos#[sup -1]
+                                        button.btn(type="button") tan#[sup -1]
+                                        button.btn(type="button") sec
+                                        button.btn(type="button") csc
+                                        button.btn(type="button") cot
+                                        button.btn(type="button") sec#[sup -1]
+                                        button.btn(type="button") csc#[sup -1]
+                                        button.btn(type="button") cot#[sup -1]
+
                             .keypad__simple
                                 .keypad__container
                                     button.btn.btn__clear.btn__operator(type="button") C
@@ -140,42 +177,6 @@ html(lang="en")
                                     button.btn(type="button") 0
                                     button.btn(type="button") .
                                     button.btn.btn__equal(type="button") =
-                            .keypad__scientific
-                                .keypad__scientific--first
-                                    .keypad__container
-                                        button.btn(type="button") &#x21cb;
-                                        button.btn(type="button") Mod
-                                        button.btn(type="button") x!
-                                        button.btn(type="button") e
-                                        button.btn(type="button") x#[sup 2]
-                                        button.btn(type="button") x#[sup y]
-                                        button.btn(type="button") &#8730;
-                                        button.btn(type="button") #[sup y]&#8730;x
-                                        button.btn(type="button") |x|
-                                        button.btn(type="button") 2#[sup x]
-                                        button.btn(type="button") 10#[sup x]
-                                        button.btn(type="button") 1/x
-                                        button.btn(type="button") &Pi;
-                                        button.btn(type="button") log x
-                                        button.btn(type="button") ln
-
-                                .keypad__scientific--second
-                                    .keypad__container
-                                        button.btn(type="button") &#x21cb;
-                                        button.btn(type="button") Rad
-                                        button.btn(type="button") hyp
-                                        button.btn(type="button") sin
-                                        button.btn(type="button") cos
-                                        button.btn(type="button") tan
-                                        button.btn(type="button") sin#[sup -1]
-                                        button.btn(type="button") cos#[sup -1]
-                                        button.btn(type="button") tan#[sup -1]
-                                        button.btn(type="button") sec
-                                        button.btn(type="button") csc
-                                        button.btn(type="button") cot
-                                        button.btn(type="button") sec#[sup -1]
-                                        button.btn(type="button") csc#[sup -1]
-                                        button.btn(type="button") cot#[sup -1]
 
                         .keypad__unit
                             .keypad__container

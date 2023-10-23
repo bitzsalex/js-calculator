@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="/css/main.css">
     <!-- include google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&amp;family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&amp;family=Open+Sans:wght@300;400;500;700&amp;family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
     <!-- including feather icons-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js" defer></script>
     <!-- including the main js file-->
@@ -27,7 +27,7 @@
   </head>
   <body class="dark-theme">
     <main class="flex flex--m-center flex--a-center">
-      <div class="calculator flex">
+      <div class="calculator">
         <div class="calculator__history">
           <ul class="history__list">
             <li class="history"><span class="history__expression">78x23</span><span class="history__result">1,794</span></li>
@@ -111,6 +111,46 @@
           </div>
           <div class="keypad">
             <div class="keypad__calculator">
+              <div class="keypad__scientific">
+                <div class="keypad__scientific__first">
+                  <div class="keypad__container keypad__container--scientific">
+                    <button class="btn" type="button">&#x21cb;</button>
+                    <button class="btn" type="button">Mod</button>
+                    <button class="btn" type="button">x!</button>
+                    <button class="btn" type="button">e</button>
+                    <button class="btn" type="button">x<sup>2</sup></button>
+                    <button class="btn" type="button">x<sup>y</sup></button>
+                    <button class="btn" type="button">&#8730;</button>
+                    <button class="btn" type="button"><sup>y</sup>&#8730;x</button>
+                    <button class="btn" type="button">|x|</button>
+                    <button class="btn" type="button">2<sup>x</sup></button>
+                    <button class="btn" type="button">10<sup>x</sup></button>
+                    <button class="btn" type="button">1/x</button>
+                    <button class="btn" type="button">&Pi;</button>
+                    <button class="btn" type="button">log x</button>
+                    <button class="btn" type="button">ln</button>
+                  </div>
+                </div>
+                <div class="keypad__scientific__second">
+                  <div class="keypad__container keypad__container--scientific">
+                    <button class="btn" type="button">&#x21cb;</button>
+                    <button class="btn" type="button">Rad</button>
+                    <button class="btn" type="button">hyp</button>
+                    <button class="btn" type="button">sin</button>
+                    <button class="btn" type="button">cos</button>
+                    <button class="btn" type="button">tan</button>
+                    <button class="btn" type="button">sin<sup>-1</sup></button>
+                    <button class="btn" type="button">cos<sup>-1</sup></button>
+                    <button class="btn" type="button">tan<sup>-1</sup></button>
+                    <button class="btn" type="button">sec</button>
+                    <button class="btn" type="button">csc</button>
+                    <button class="btn" type="button">cot</button>
+                    <button class="btn" type="button">sec<sup>-1</sup></button>
+                    <button class="btn" type="button">csc<sup>-1</sup></button>
+                    <button class="btn" type="button">cot<sup>-1</sup></button>
+                  </div>
+                </div>
+              </div>
               <div class="keypad__simple">
                 <div class="keypad__container">
                   <button class="btn btn__clear btn__operator" type="button">C</button>
@@ -133,46 +173,6 @@
                   <button class="btn" type="button">0</button>
                   <button class="btn" type="button">.</button>
                   <button class="btn btn__equal" type="button">=</button>
-                </div>
-              </div>
-              <div class="keypad__scientific">
-                <div class="keypad__scientific--first">
-                  <div class="keypad__container">
-                    <button class="btn" type="button">&#x21cb;</button>
-                    <button class="btn" type="button">Mod</button>
-                    <button class="btn" type="button">x!</button>
-                    <button class="btn" type="button">e</button>
-                    <button class="btn" type="button">x<sup>2</sup></button>
-                    <button class="btn" type="button">x<sup>y</sup></button>
-                    <button class="btn" type="button">&#8730;</button>
-                    <button class="btn" type="button"><sup>y</sup>&#8730;x</button>
-                    <button class="btn" type="button">|x|</button>
-                    <button class="btn" type="button">2<sup>x</sup></button>
-                    <button class="btn" type="button">10<sup>x</sup></button>
-                    <button class="btn" type="button">1/x</button>
-                    <button class="btn" type="button">&Pi;</button>
-                    <button class="btn" type="button">log x</button>
-                    <button class="btn" type="button">ln</button>
-                  </div>
-                </div>
-                <div class="keypad__scientific--second">
-                  <div class="keypad__container">
-                    <button class="btn" type="button">&#x21cb;</button>
-                    <button class="btn" type="button">Rad</button>
-                    <button class="btn" type="button">hyp</button>
-                    <button class="btn" type="button">sin</button>
-                    <button class="btn" type="button">cos</button>
-                    <button class="btn" type="button">tan</button>
-                    <button class="btn" type="button">sin<sup>-1</sup></button>
-                    <button class="btn" type="button">cos<sup>-1</sup></button>
-                    <button class="btn" type="button">tan<sup>-1</sup></button>
-                    <button class="btn" type="button">sec</button>
-                    <button class="btn" type="button">csc</button>
-                    <button class="btn" type="button">cot</button>
-                    <button class="btn" type="button">sec<sup>-1</sup></button>
-                    <button class="btn" type="button">csc<sup>-1</sup></button>
-                    <button class="btn" type="button">cot<sup>-1</sup></button>
-                  </div>
                 </div>
               </div>
             </div>

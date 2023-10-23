@@ -25,7 +25,8 @@ $color-white: #fff
 
 html
     box-sizing: border-box
-    font: normal 400 16px/1.45 "Poppins", sans-serif
+    // font: normal 400 16px/1.45 "Poppins", sans-serif
+    font: normal 400 16px/1.45 "Josefin Sans", sans-serif
 
 *, *::after, *::before
     margin: 0
@@ -45,6 +46,7 @@ body
 
     color: var(--text-color)
     background-color: var(--secondary)
+    overflow-x: hidden
 
     &.dark-theme
         --primary: var(--dark-primary)
@@ -100,13 +102,25 @@ textarea
             color: currentColor
             cursor: pointer
 
+    &__operator
+        color: var(--color-main)
+        font-weight: normal !important
+
+    &__equal
+        background-color: var(--color-main)
+        color: var(--primary)
+
+    &__clear
+        color: #F3625A
+
 main
     width: 100vw
-    height: 100vh
+    min-height: 100vh
+    padding: 30px 0px
 
 .calculator
-    width: 100%
-    max-width: 450px
+    width: max-content
+    max-width: 100%
     margin: 0 auto
     border-radius: 20px
     overflow: hidden
@@ -302,7 +316,65 @@ main
             transform: scale(0)
 
 .keypad
+    padding: 30px
+    width: 420px
     background-color: var(--primary)
+
+    &--scientific
+        width: 690px
+
+    &__calculator
+        flex: 1 0 auto
+        @extend .flex
+
+    &--unit &__calculator
+        @extend .visually-hidden
+
+    &__simple
+        width: 360px
+
+    &__container
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        height: 360px
+        text-transform: capitalize
+
+        & > button
+            padding: 0
+            width: calc(100% / 4)
+            font-size: 22px
+            font-weight: bold
+            border-radius: 10px
+
+        &--unit,
+        &--scientific
+            & > button
+                width: calc(100% / 3)
+
+    // [ ] the following two will be fixed
+    &__scientific
+        position: relative
+        flex: 1 0 auto
+        @extend .visually-hidden
+
+        &--second &__second,
+        &__first
+            @extend .visually-visible
+
+        &--second &__first,
+        &__second
+            @extend .visually-hidden
+
+    &--scientific &__scientific
+        @extend .visually-visible
+        width: 270px !important
+
+    &__unit
+        @extend .visually-hidden
+
+    &--unit &__unit
+        @extend .visually-visible
 
 // utility classes
 .flex
@@ -321,9 +393,6 @@ main
         align-items: center
 
 .visually-hidden
-    border: 0
-    padding: 0
-    margin: 0
     width: 1px
     height: 1px
     overflow: hidden
@@ -331,3 +400,12 @@ main
     white-space: nowrap
     clip: rect(0 0 0 0)
     clip-path: inset(50%)
+
+.visually-visible
+    width: auto
+    height: auto
+    overflow: hidden
+    position: relative
+    white-space: nowrap
+    clip: unset
+    clip-path: none
