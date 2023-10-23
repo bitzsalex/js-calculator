@@ -280,7 +280,6 @@ main
     &__label
         font-size: 12px
         font-weight: bold
-        color: var(--color-secondary)
 
     &__unit, &__basic
         width: 100%
@@ -312,23 +311,30 @@ main
             @extend .flex, .flex--m-center, .flex--a-center
 
 .select
-    font-size: 14px
-    height: 30px
-    width: max-content
+    padding: 10px 20px
     position: relative
-    display: flex
-    align-items: center
     border-radius: 6px
     cursor: pointer
     text-transform: capitalize
+    transition: background .4s ease-in-out
+    @extend .flex, .flex--a-center, .flex--m-between
+    background-color: var(--shading)
+
+    &#{&}--small
+        font-size: 14px
+        height: 30px
+        width: max-content
+        background-color: transparent
+
+        &:hover
+            background-color: var(--shading)
 
     &__placeholder
         margin-right: 10px
         color: var(--color-secondary)
 
     &__arrow
-        display: flex
-        align-items: center
+        @extend .flex, .flex--a-center
 
         & > svg
             width: 20px
@@ -347,22 +353,21 @@ main
         transform-origin: top left
         transform: scale(0)
         opacity: 0
-        overflow: hidden
-        transition: transform .4s ease-in-out, opacity .2s ease-in-out
+        overflow-x: hidden
+        overflow-y: auto
+        transition: transform .4s cubic-bezier(.71,1.08,.71,1.08), opacity .2s cubic-bezier(.71,1.08,.71,1.08)
 
     &.show &__options
         transform: scale(1)
         opacity: 1
-        transition: transform .4s ease-in-out, opacity .4s .2s ease-in-out
+        transition: transform .4s cubic-bezier(.71,1.08,.71,1.08), opacity .4s .2s cubic-bezier(.71,1.08,.71,1.08)
 
     &__option
-        display: block
         cursor: pointer
         padding: 10px 20px
         transition: all .4s ease-in-out
         position: relative
-        display: flex
-        align-items: center
+        @extend .flex, .flex--a-center, .flex--m-between
         gap: 20px
 
         &::after
@@ -382,6 +387,10 @@ main
 
     &__input
         @extend .visually-hidden
+
+    &#{&}--unit
+        height: 42px
+        margin-bottom: 30px
 
 .type
     gap: 10px
@@ -469,6 +478,9 @@ main
         &--scientific
             & > button
                 width: calc(100% / 3)
+
+        &#{&}--unit
+            height: 288px
 
     &__scientific
         flex: 1 0 auto

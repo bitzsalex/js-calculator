@@ -2,6 +2,7 @@ feather.replace()
 
 const SCIENTIFIC_CALC = "calculator--scientific"
 const UNITS_CALC = "calculator--units"
+const MAX_SELECT_ITEM_NUMS = 8
 
 const body = document.body
 const themeToggler = document.querySelector("#theme-toggler")
@@ -50,6 +51,9 @@ const closeSelectFromOutside = () => {
 }
 
 selects.forEach((select) => {
+	let options = select.querySelector("ul.select__options")
+	options.style.maxHeight = (options.firstElementChild.scrollHeight * MAX_SELECT_ITEM_NUMS) + "px"
+
 	select.addEventListener("click", (event) => {
 		event.stopPropagation()
 		if (!closeSelectFromOutside()) select.classList.toggle("show")

@@ -79,7 +79,7 @@ html(lang="en")
                             .screen__unit
                                 .screen__group
                                     .screen__group__item
-                                        .select
+                                        .select.select--small
                                             span.select__placeholder Choose one
                                             input.select__input(type="text", name="", readonly, value="")
                                             span.select__arrow #[i(data-feather="chevron-down")]
@@ -94,7 +94,7 @@ html(lang="en")
                                             label.screen__label(for="group1") m#[sup 2]
 
                                     .screen__group__item
-                                        .select
+                                        .select.select--small
                                             span.select__placeholder Choose one
                                             input.select__input(type="text", name="", readonly, value="")
                                             span.select__arrow #[i(data-feather="chevron-down")]
@@ -109,7 +109,7 @@ html(lang="en")
                                             label.screen__label(for="group2") m#[sup 2]
 
                                     .screen__group__item
-                                        .select
+                                        .select.select--small
                                             span.select__placeholder Choose one
                                             input.select__input(type="text", name="", readonly, value="")
                                             span.select__arrow #[i(data-feather="chevron-down")]
@@ -193,6 +193,31 @@ html(lang="en")
                                     button.btn.btn__equal(type="button") =
 
                         .keypad__unit
+                            .select.select--unit
+                                span.select__placeholder Choose one
+                                input.select__input(type="text", name="", readonly, value="")
+                                span.select__arrow #[i(data-feather="chevron-down")]
+
+                                ul.select__options
+                                    li.select__option Area
+                                    li.select__option Volume
+                                    li.select__option numbers
+                                    li.select__option data
+                                    li.select__option temperature
+                                    li.select__option speed
+                                    li.select__option Area
+                                    li.select__option Volume
+                                    li.select__option numbers
+                                    li.select__option data
+                                    li.select__option temperature
+                                    li.select__option speed
+                                    li.select__option Area
+                                    li.select__option Volume
+                                    li.select__option numbers
+                                    li.select__option data
+                                    li.select__option temperature
+                                    li.select__option speed
+
                             .keypad__container.keypad__container--unit
                                 button.btn.btn__keypad(type="button") 7
                                 button.btn.btn__keypad(type="button") 8
