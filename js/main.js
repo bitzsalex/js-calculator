@@ -90,7 +90,7 @@ const removeCalculatorType = () => {
 	else if (calculator.classList.contains(UNITS_CALC)) calculator.classList.remove(UNITS_CALC)
 }
 
-const changeCalculatorType = (type="") => {
+const changeCalculatorType = (type = "") => {
 	calculator.classList.add("zoom-fade-out")
 
 	setTimeout(() => {
@@ -108,7 +108,11 @@ const changeCalculatorType = (type="") => {
 
 const setCalculatorType = () => {
 	let type = localStorage.getItem("calculator_type") ?? ""
+	calculator.classList.add("visually-hidden")
 	changeCalculatorType(type)
+	setTimeout(() => {
+		calculator.classList.remove("visually-hidden")
+	}, 400)
 }
 
 // changing calculator types
