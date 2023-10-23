@@ -90,12 +90,13 @@ const removeCalculatorType = () => {
 	else if (calculator.classList.contains(UNITS_CALC)) calculator.classList.remove(UNITS_CALC)
 }
 
-const changeCalculatorType = (type) => {
+const changeCalculatorType = (type="") => {
 	calculator.classList.add("zoom-fade-out")
 
 	setTimeout(() => {
 		removeCalculatorType()
 		if (type) calculator.classList.add(type)
+		localStorage.setItem("calculator_type", type)
 
 		calculator.classList.remove("zoom-fade-out")
 		calculator.classList.add("zoom-fade-in")
@@ -103,6 +104,11 @@ const changeCalculatorType = (type) => {
 			calculator.classList.remove("zoom-fade-in")
 		}, 400)
 	}, 400)
+}
+
+const setCalculatorType = () => {
+	let type = localStorage.getItem("calculator_type") ?? ""
+	changeCalculatorType(type)
 }
 
 // changing calculator types
@@ -166,3 +172,4 @@ pageButtons.forEach((button) => {
 if (themeToggler) themeToggler.addEventListener("click", toggleTheme)
 
 setTheme()
+setCalculatorType()
