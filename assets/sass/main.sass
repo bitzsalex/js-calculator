@@ -90,27 +90,42 @@ textarea
     padding: 0 10px
     transition: all .4s ease-in-out
 
-    &:hover
-        color: var(--color-gray)
+    &__keypad
+        &:hover
+            background-color: var(--shading)
 
     &__history
-        color: var(--color-gray)
-        cursor: not-allowed
-
         &.exist
             color: currentColor
             cursor: pointer
+
+    &__disabled
+        opacity: .4
+        cursor: not-allowed
+
+        &:hover
+          background: none !important
 
     &__operator
         color: var(--color-main)
         font-weight: normal !important
 
-    &__equal
+        &:hover
+            background-color: rgba(#F28E13, .14)
+
+    &__equal, &__equal:hover
         background-color: var(--color-main)
         color: var(--primary)
 
     &__clear
         color: #F3625A
+
+        &--screen
+            padding: 0 20px
+            border-radius: 6px
+
+        &:hover
+            background-color: rgba(#F3625A, .14)
 
 main
     width: 100vw
@@ -229,6 +244,10 @@ main
 
     &__footer
         flex-direction: row-reverse
+
+        .btn
+            padding: 10px 20px
+            @extend .flex, .flex--m-center, .flex--a-center
 
 .select
     font-size: 14px

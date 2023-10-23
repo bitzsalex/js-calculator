@@ -96,13 +96,8 @@ textarea {
   transition: all .4s ease-in-out;
 }
 
-.btn:hover {
-  color: var(--color-gray);
-}
-
-.btn__history {
-  color: var(--color-gray);
-  cursor: not-allowed;
+.btn__keypad:hover {
+  background-color: var(--shading);
 }
 
 .btn__history.exist {
@@ -110,18 +105,40 @@ textarea {
   cursor: pointer;
 }
 
+.btn__disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.btn__disabled:hover {
+  background: none !important;
+}
+
 .btn__operator {
   color: var(--color-main);
   font-weight: normal !important;
 }
 
-.btn__equal {
+.btn__operator:hover {
+  background-color: rgba(242, 142, 19, 0.14);
+}
+
+.btn__equal, .btn__equal:hover {
   background-color: var(--color-main);
   color: var(--primary);
 }
 
 .btn__clear {
   color: #F3625A;
+}
+
+.btn__clear--screen {
+  padding: 0 20px;
+  border-radius: 6px;
+}
+
+.btn__clear:hover {
+  background-color: rgba(243, 98, 90, 0.14);
 }
 
 main {
@@ -237,6 +254,10 @@ main {
 
 .screen__footer {
   flex-direction: row-reverse;
+}
+
+.screen__footer .btn {
+  padding: 10px 20px;
 }
 
 .select {
@@ -414,7 +435,7 @@ main {
   flex: 1 0 auto;
 }
 
-.flex, .screen__display, .screen__basic, .keypad__calculator {
+.flex, .screen__display, .screen__basic, .screen__footer .btn, .keypad__calculator {
   display: flex;
 }
 
@@ -422,7 +443,7 @@ main {
   flex-direction: column;
 }
 
-.flex--m-center {
+.flex--m-center, .screen__footer .btn {
   justify-content: center;
 }
 
@@ -434,7 +455,7 @@ main {
   justify-content: flex-end;
 }
 
-.flex--a-center {
+.flex--a-center, .screen__footer .btn {
   align-items: center;
 }
 
