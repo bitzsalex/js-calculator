@@ -1,10 +1,17 @@
 feather.replace()
 
+const SCIENTIFIC_CALC = "calculator--scientific"
+const UNITS_CALC = "calculator--units"
+
 const body = document.body
 const themeToggler = document.querySelector("#theme-toggler")
 const selects = document.querySelectorAll(".select")
 const selectOptions = document.querySelectorAll(".select__option")
 const growingField = document.querySelector("#growing-input")
+const calculator = document.querySelector("#calculator")
+const simpleCalculator = document.querySelector("#simple")
+const scientificCalculator = document.querySelector("#scientific")
+const unitsCalculator = document.querySelector("#units")
 
 const removeSelectedOption = (parent) => {
 	for (let option of parent.children) option.classList.remove("selected")
@@ -70,13 +77,31 @@ const setTheme = () => {
 	else changeTheme(usersTheme)
 }
 
+const removeCalculatorType = () => {
+	if (calculator.classList.contains(SCIENTIFIC_CALC)) calculator.classList.remove(SCIENTIFIC_CALC)
+	else if (calculator.classList.contains(UNITS_CALC)) calculator.classList.remove(UNITS_CALC)
+}
+
+const changeCalculatorType = (type) => {
+	removeCalculatorType()
+	if (type) calculator.classList.add(type)
+}
+
+// changing calculator types
+simpleCalculator.addEventListener("input", () => {
+	changeCalculatorType()
+})
+scientificCalculator.addEventListener("input", () => {
+	changeCalculatorType(SCIENTIFIC_CALC)
+})
+unitsCalculator.addEventListener("input", () => {
+	changeCalculatorType(UNITS_CALC)
+})
+
 growingField.addEventListener("input", () => {
 	let parent = growingField.parentNode
 	growingField.style.height = "auto"
-	growingField.style.height = (
-		growingField.scrollHeight <= parent.scrollHeight ?
-			growingField.scrollHeight : parent.scrollHeight
-	) + "px"
+	growingField.style.height = (growingField.scrollHeight <= parent.scrollHeight ? growingField.scrollHeight : parent.scrollHeight) + "px"
 })
 
 if (themeToggler) themeToggler.addEventListener("click", toggleTheme)

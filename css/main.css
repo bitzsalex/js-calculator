@@ -23,7 +23,7 @@
 
 html {
   box-sizing: border-box;
-  font: normal 400 16px/1.45 "Josefin Sans", sans-serif;
+  font: normal 400 16px/1.45 "Urbanist", sans-serif;
 }
 
 *, *::after, *::before {
@@ -144,6 +144,15 @@ main {
   width: 690px;
 }
 
+.calculator--scientific .keypad__scientific {
+  width: 270px !important;
+}
+
+.calculator .screen__basic,
+.calculator--units .screen__unit {
+  width: 100% !important;
+}
+
 .calculator__history {
   width: 100%;
   position: absolute;
@@ -178,7 +187,7 @@ main {
 
 .screen__input--result {
   font-size: 36px;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .screen__field {
@@ -196,6 +205,7 @@ main {
 
 .screen__label {
   font-size: 12px;
+  font-weight: bold;
   color: var(--color-secondary);
 }
 
@@ -207,11 +217,6 @@ main {
 .screen__basic {
   align-self: stretch;
   gap: 6px;
-}
-
-.screen__basic,
-.screen--unit .screen__unit {
-  width: 100% !important;
 }
 
 .screen__group {
@@ -409,10 +414,6 @@ main {
   flex: 1 0 auto;
 }
 
-.keypad--scientific .keypad__scientific {
-  width: 270px !important;
-}
-
 .flex, .screen__display, .screen__basic, .keypad__calculator {
   display: flex;
 }
@@ -441,8 +442,8 @@ main {
   align-items: flex-end;
 }
 
-.visually-hidden, .screen__unit,
-.screen--unit .screen__basic, .screen .btn__clear, .screen--unit .btn__history, .select__input, .type__input, .keypad--unit .keypad__calculator, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
+.visually-hidden, .calculator .screen .btn__clear, .calculator--units .keypad__calculator, .calculator--units .screen .btn__history, .calculator .screen__unit,
+.calculator--units .screen .screen__basic, .select__input, .type__input, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -452,11 +453,12 @@ main {
   clip-path: inset(50%);
 }
 
-.visually-visible, .screen__basic,
-.screen--unit .screen__unit, .keypad__scientific--second .keypad__scientific__second, .keypad__scientific__first, .keypad--scientific .keypad__scientific, .keypad--unit .keypad__unit {
+.visually-visible, .calculator--scientific .keypad__scientific, .calculator--units .keypad__unit,
+.calculator--units .screen .btn__clear, .calculator .screen__basic,
+.calculator--units .screen__unit, .keypad__scientific--second .keypad__scientific__second, .keypad__scientific__first {
   width: auto;
   height: auto;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   white-space: nowrap;
   clip: unset;

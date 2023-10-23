@@ -22,7 +22,7 @@ html(lang="en")
         // include google fonts
         link(rel='preconnect', href='https://fonts.googleapis.com')
         link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
-        link(href='https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@300;400;600&display=swap', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700;900&display=swap', rel='stylesheet')
 
         // including feather icons
         script(src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js", defer)
@@ -31,7 +31,7 @@ html(lang="en")
         script(src="/js/main.js", defer)
     body.dark-theme
         main.flex.flex--m-center.flex--a-center
-            .calculator.calculator--unit
+            .calculator#calculator
                 .calculator__history
                     ul.history__list
                         li.history

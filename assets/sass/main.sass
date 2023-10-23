@@ -25,8 +25,7 @@ $color-white: #fff
 
 html
     box-sizing: border-box
-    // font: normal 400 16px/1.45 "Poppins", sans-serif
-    font: normal 400 16px/1.45 "Josefin Sans", sans-serif
+    font: normal 400 16px/1.45 "Urbanist", sans-serif
 
 *, *::after, *::before
     margin: 0
@@ -127,8 +126,35 @@ main
     box-shadow: var(--shadow)
     position: relative
 
+    .screen .btn__clear
+        @extend .visually-hidden
+
     &--scientific
         width: 690px
+
+        .keypad__scientific
+            @extend .visually-visible
+            width: 270px !important
+
+    &--units
+        .keypad__unit,
+        .screen .btn__clear
+            @extend .visually-visible
+
+        .keypad__calculator
+            @extend .visually-hidden
+
+        .screen .btn__history
+            @extend .visually-hidden
+
+    .screen__unit,
+    &--units .screen .screen__basic
+        @extend .visually-hidden
+
+    .screen__basic,
+    &--units .screen__unit
+        @extend .visually-visible
+        width: 100% !important
 
     // [ ] This has to be fixed after the screen and the body
     &__history
@@ -161,7 +187,7 @@ main
 
         &--result
             font-size: 36px
-            font-weight: bold
+            font-weight: 900
 
     &__field
         flex: 1 0 auto
@@ -176,6 +202,7 @@ main
 
     &__label
         font-size: 12px
+        font-weight: bold
         color: var(--color-secondary)
 
     &__unit, &__basic
@@ -186,15 +213,6 @@ main
         @extend .flex, .flex--column, .flex--m-end
         align-self: stretch
         gap: 6px
-
-    &__unit,
-    &--unit &__basic
-        @extend .visually-hidden
-
-    &__basic,
-    &--unit &__unit
-        @extend .visually-visible
-        width: 100% !important
 
     &__group
         width: 100%
@@ -211,12 +229,6 @@ main
 
     &__footer
         flex-direction: row-reverse
-
-    & .btn__clear
-        @extend .visually-hidden
-
-    &--unit .btn__history
-        @extend .visually-hidden
 
 .select
     font-size: 14px
@@ -355,9 +367,6 @@ main
         flex: 1 0 auto
         @extend .flex
 
-    &--unit &__calculator
-        @extend .visually-hidden
-
     &__simple
         width: 360px
 
@@ -392,15 +401,8 @@ main
         &__second
             @extend .visually-hidden
 
-    &--scientific &__scientific
-        @extend .visually-visible
-        width: 270px !important
-
     &__unit
         @extend .visually-hidden
-
-    &--unit &__unit
-        @extend .visually-visible
 
 // utility classes
 .flex
@@ -436,7 +438,7 @@ main
 .visually-visible
     width: auto
     height: auto
-    overflow: hidden
+    overflow: visible
     position: relative
     white-space: nowrap
     clip: unset
