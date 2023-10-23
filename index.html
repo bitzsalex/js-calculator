@@ -28,12 +28,9 @@
   <body class="dark-theme">
     <main class="flex flex--m-center flex--a-center">
       <div class="calculator" id="calculator">
-        <div class="calculator__history">
+        <div class="calculator__history calculator__history--show" id="history">
           <div class="history">
             <ul class="history__list">
-              <li class="history__item"><span class="history__expression">123 <span class="operator">/</span> 78 <span class="operator">*</span> 23 <span class="operator">+</span> log(26) <span class="operator">*</span> 100</span><span class="history__result">1,794</span></li>
-              <li class="history__item"><span class="history__expression">123 <span class="operator">/</span> 78 <span class="operator">*</span> 23 <span class="operator">+</span> log(26) <span class="operator">*</span> 100</span><span class="history__result">1,794</span></li>
-              <li class="history__item"><span class="history__expression">123 <span class="operator">/</span> 78 <span class="operator">*</span> 23 <span class="operator">+</span> log(26) <span class="operator">*</span> 100</span><span class="history__result">1,794</span></li>
               <li class="history__item"><span class="history__expression">123 <span class="operator">/</span> 78 <span class="operator">*</span> 23 <span class="operator">+</span> log(26) <span class="operator">*</span> 100</span><span class="history__result">1,794</span></li>
               <li class="history__item"><span class="history__expression">123 <span class="operator">/</span> 78 <span class="operator">*</span> 23 <span class="operator">+</span> log(26) <span class="operator">*</span> 100</span><span class="history__result">1,794</span></li>
               <li class="history__item"><span class="history__expression">123 <span class="operator">/</span> 78 <span class="operator">*</span> 23 <span class="operator">+</span> log(26) <span class="operator">*</span> 100</span><span class="history__result">1,794</span></li>
@@ -116,7 +113,7 @@
             </div>
             <div class="screen__footer flex flex--m-between">
               <button class="btn btn__delete" type="button"><i data-feather="delete"></i></button>
-              <button class="btn btn__history btn__disabled" type="button"><i data-feather="clock"></i></button>
+              <button class="btn btn__history btn__disabled" type="button" id="show-history" disabled><i data-feather="clock"></i></button>
               <button class="btn btn__clear btn__clear--screen btn__operator" type="button">C</button>
             </div>
           </div>

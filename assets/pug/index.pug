@@ -32,18 +32,9 @@ html(lang="en")
     body.dark-theme
         main.flex.flex--m-center.flex--a-center
             .calculator#calculator
-                .calculator__history
+                .calculator__history.calculator__history--show#history
                     .history
                         ul.history__list
-                            li.history__item
-                                span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
-                                span.history__result 1,794
-                            li.history__item
-                                span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
-                                span.history__result 1,794
-                            li.history__item
-                                span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
-                                span.history__result 1,794
                             li.history__item
                                 span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
                                 span.history__result 1,794
@@ -135,7 +126,7 @@ html(lang="en")
                         .screen__footer.flex.flex--m-between
                             button.btn.btn__delete(type="button")
                                 i(data-feather="delete")
-                            button.btn.btn__history.btn__disabled(type="button")
+                            button.btn.btn__history.btn__disabled(type="button", id="show-history", disabled)
                                 i(data-feather="clock")
                             button.btn.btn__clear.btn__clear--screen.btn__operator(type="button") C
 

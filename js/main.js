@@ -14,6 +14,12 @@ const scientificCalculator = document.querySelector("#scientific")
 const unitsCalculator = document.querySelector("#units")
 const pageButtons = document.querySelectorAll(".btn__page")
 const scientificKeypad = document.querySelector("#scientific_keypad")
+const history = document.querySelector("#history")
+const showHistoryButton = document.querySelector("#show-history")
+const inputTextField = document.querySelector(".screen__input--input")
+const resultTextField = document.querySelector(".screen__input--result")
+
+let historyItems
 
 const removeSelectedOption = (parent) => {
 	for (let option of parent.children) option.classList.remove("selected")
@@ -116,9 +122,39 @@ growingField.addEventListener("input", () => {
 	growingField.style.height = (growingField.scrollHeight <= parent.scrollHeight ? growingField.scrollHeight : parent.scrollHeight) + "px"
 })
 
+showHistoryButton.addEventListener("click", () => {
+	if (!showHistoryButton.hasAttribute("disabled") && !showHistoryButton.classList.contains("btn__disabled")) {
+		history.classList.add("calculator__history--show", "zoom-fade-in")
+		setTimeout(() => {
+			history.classList.remove("zoom-fade-in")
+		}, 400)
+	}
+})
+
+const getHistoryItems = () => {
+	historyItems = document.querySelectorAll("ul.history__list li.history__item")
+}
+
+getHistoryItems()
+
+history.addEventListener("click", (event) => {
+	let historyList = history.querySelector("ul.history__list")
+	if (event.target !== historyList) history.classList.remove("calculator__history--show")
+})
+
+historyItems.forEach((historyItem) => {
+	historyItem.addEventListener("click", (event) => {
+		event.stopPropagation()
+		let expression = historyItem.querySelector("span.history__expression")
+		let result = historyItem.querySelector("span.history__result")
+		// [ ] parse the expression and store it on the current equation
+		inputTextField.value = expression.innerText
+		resultTextField.value = result.innerText
+	})
+})
 
 // changing page for scientific calculator
-pageButtons.forEach(button => {
+pageButtons.forEach((button) => {
 	button.addEventListener("click", () => {
 		scientificKeypad.classList.toggle("keypad__scientific--second")
 	})

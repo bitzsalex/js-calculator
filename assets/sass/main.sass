@@ -175,11 +175,16 @@ main
         width: 100% !important
 
     &__history
-        width: 100%
-        height: 100%
-        z-index: 9999
-        position: absolute
-        background-color: var(--shading)
+        @extend .visually-hidden
+
+        &#{&}--show
+            width: 100%
+            height: 100%
+            z-index: 9999
+            position: absolute
+            clip: unset
+            clip-path: none
+            background-color: var(--shading)
 
 .history
     width: 100%
@@ -189,22 +194,37 @@ main
 
     &__list
         height: 500px
-        padding: 20px 30px
         text-align: right
         overflow: auto
         background-color: var(--primary)
 
     &__item
-        padding: 10px 0px
+        padding: 14px 30px
         cursor: pointer
+        position: relative
         transform: background .4s ease-in-out
         @extend .flex, .flex--column
 
-        &:not(:last-child)
+        &::after
+            display: inline
+            width: calc(100% - 60px)
+            margin: 0 auto
+            position: absolute
+            bottom: 0
+            left: 50%
+            transform-origin: center
+            transform: translateX(-50%)
             border-bottom: 1px solid var(--shading)
+            transition: all .4s ease-in-out
+
+        &:not(:last-child)::after
+            content: ''
 
         &:hover
             background-color: var(--shading)
+
+            &::after
+                width: 100%
 
     &__result
         font-weight: bold

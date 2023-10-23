@@ -174,11 +174,13 @@ main {
   width: 100% !important;
 }
 
-.calculator__history {
+.calculator__history.calculator__history--show {
   width: 100%;
   height: 100%;
   z-index: 9999;
   position: absolute;
+  clip: unset;
+  clip-path: none;
   background-color: var(--shading);
 }
 
@@ -190,24 +192,41 @@ main {
 
 .history__list {
   height: 500px;
-  padding: 20px 30px;
   text-align: right;
   overflow: auto;
   background-color: var(--primary);
 }
 
 .history__item {
-  padding: 10px 0px;
+  padding: 14px 30px;
   cursor: pointer;
+  position: relative;
   transform: background .4s ease-in-out;
 }
 
-.history__item:not(:last-child) {
+.history__item::after {
+  display: inline;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform-origin: center;
+  transform: translateX(-50%);
   border-bottom: 1px solid var(--shading);
+  transition: all .4s ease-in-out;
+}
+
+.history__item:not(:last-child)::after {
+  content: '';
 }
 
 .history__item:hover {
   background-color: var(--shading);
+}
+
+.history__item:hover::after {
+  width: 100%;
 }
 
 .history__result {
@@ -513,7 +532,7 @@ main {
 }
 
 .visually-hidden, .calculator .screen .btn__clear, .calculator--units .keypad__calculator, .calculator--units .screen .btn__history, .calculator .screen__unit,
-.calculator--units .screen .screen__basic, .select__input, .type__input, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
+.calculator--units .screen .screen__basic, .calculator__history, .select__input, .type__input, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
   width: 1px;
   height: 1px;
   overflow: hidden;
