@@ -27,14 +27,14 @@
   </head>
   <body class="dark-theme">
     <main class="flex flex--m-center flex--a-center">
-      <div class="calculator">
+      <div class="calculator calculator--unit">
         <div class="calculator__history">
           <ul class="history__list">
             <li class="history"><span class="history__expression">78x23</span><span class="history__result">1,794</span></li>
           </ul>
         </div>
         <div class="flex flex--column">
-          <div class="screen screen--unit">
+          <div class="screen">
             <div class="screen__header flex flex--m-between">
               <div class="type flex flex--a-center">
                 <div class="type__group flex flex--a-center flex--m-center">
@@ -53,9 +53,11 @@
               <button class="btn theme__btn" id="theme-toggler" type="button"><span class="theme__icon theme__icon--sun"><i data-feather="sun"></i></span><span class="theme__icon theme__icon--moon"><i data-feather="moon"></i></span></button>
             </div>
             <div class="screen__display">
-              <div class="screen__basic flex flex--column">
-                <textarea class="screen__input screen__input--input" name="input" id="input" cols="30" rows="10"></textarea>
-                <input class="screen__input screen__input--result" type="text" name="result" id="result">
+              <div class="screen__basic">
+                <label class="screen__field">
+                  <textarea class="screen__input screen__input--input" name="input" id="growing-input" rows="1">something is in here</textarea>
+                </label>
+                <input class="screen__input screen__input--result" type="text" name="result" id="result" readonly value="3647.89">
               </div>
               <div class="screen__unit">
                 <div class="screen__group">
@@ -110,7 +112,7 @@
               <button class="btn btn__clear btn__operator" type="button">C</button>
             </div>
           </div>
-          <div class="keypad keypad--unit">
+          <div class="keypad">
             <div class="keypad__calculator">
               <div class="keypad__scientific">
                 <div class="keypad__scientific__first">

@@ -131,13 +131,17 @@ main {
 }
 
 .calculator {
-  width: max-content;
+  width: 420px;
   max-width: 100%;
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow);
   position: relative;
+}
+
+.calculator--scientific {
+  width: 690px;
 }
 
 .calculator__history {
@@ -159,9 +163,7 @@ main {
 .screen__display {
   width: 100%;
   height: 260px;
-  position: relative;
   margin-bottom: 20px;
-  position: relative;
 }
 
 .screen__input {
@@ -170,6 +172,26 @@ main {
   display: block;
   font-size: 18px;
   font-weight: 600;
+  max-width: 100%;
+  color: var(--color-gray);
+}
+
+.screen__input--result {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.screen__field {
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.screen__field > .screen__input {
+  bottom: 0;
+  height: auto;
+  position: absolute;
+  max-height: 100% !important;
+  transform-origin: center bottom;
 }
 
 .screen__label {
@@ -177,16 +199,19 @@ main {
   color: var(--color-secondary);
 }
 
-.screen__basic, .screen__unit {
-  top: 0;
-  left: 0;
+.screen__unit, .screen__basic {
   width: 100%;
-  height: 100%;
-  position: absolute;
+  flex: 1 0 auto;
 }
 
 .screen__basic {
-  opacity: 0;
+  align-self: stretch;
+  gap: 6px;
+}
+
+.screen__basic,
+.screen--unit .screen__unit {
+  width: 100% !important;
 }
 
 .screen__group {
@@ -348,12 +373,8 @@ main {
 
 .keypad {
   padding: 30px;
-  width: 420px;
+  width: 100%;
   background-color: var(--primary);
-}
-
-.keypad--scientific {
-  width: 690px;
 }
 
 .keypad__calculator {
@@ -385,7 +406,6 @@ main {
 }
 
 .keypad__scientific {
-  position: relative;
   flex: 1 0 auto;
 }
 
@@ -393,11 +413,11 @@ main {
   width: 270px !important;
 }
 
-.flex, .keypad__calculator {
+.flex, .screen__display, .screen__basic, .keypad__calculator {
   display: flex;
 }
 
-.flex--column {
+.flex--column, .screen__basic {
   flex-direction: column;
 }
 
@@ -409,11 +429,20 @@ main {
   justify-content: space-between;
 }
 
+.flex--m-end, .screen__basic {
+  justify-content: flex-end;
+}
+
 .flex--a-center {
   align-items: center;
 }
 
-.visually-hidden, .screen--unit .btn__history, .select__input, .type__input, .keypad--unit .keypad__calculator, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
+.flex--a-end, .screen__display {
+  align-items: flex-end;
+}
+
+.visually-hidden, .screen__unit,
+.screen--unit .screen__basic, .screen .btn__clear, .screen--unit .btn__history, .select__input, .type__input, .keypad--unit .keypad__calculator, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -423,7 +452,8 @@ main {
   clip-path: inset(50%);
 }
 
-.visually-visible, .keypad__scientific--second .keypad__scientific__second, .keypad__scientific__first, .keypad--scientific .keypad__scientific, .keypad--unit .keypad__unit {
+.visually-visible, .screen__basic,
+.screen--unit .screen__unit, .keypad__scientific--second .keypad__scientific__second, .keypad__scientific__first, .keypad--scientific .keypad__scientific, .keypad--unit .keypad__unit {
   width: auto;
   height: auto;
   overflow: hidden;

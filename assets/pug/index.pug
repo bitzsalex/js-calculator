@@ -31,7 +31,7 @@ html(lang="en")
         script(src="/js/main.js", defer)
     body.dark-theme
         main.flex.flex--m-center.flex--a-center
-            .calculator
+            .calculator.calculator--unit
                 .calculator__history
                     ul.history__list
                         li.history
@@ -39,7 +39,7 @@ html(lang="en")
                             span.history__result 1,794
 
                 .flex.flex--column
-                    .screen.screen--unit
+                    .screen
                         .screen__header.flex.flex--m-between
                             .type.flex.flex--a-center
                                 .type__group.flex.flex--a-center.flex--m-center
@@ -60,9 +60,12 @@ html(lang="en")
                                 span.theme__icon.theme__icon--moon #[i(data-feather="moon")]
 
                         .screen__display
-                            .screen__basic.flex.flex--column
-                                textarea.screen__input.screen__input--input(name="input", id="input", cols="30", rows="10")
-                                input.screen__input.screen__input--result(type="text", name="result", id="result")
+                            .screen__basic
+                                label.screen__field
+                                    textarea.screen__input.screen__input--input(name="input", id="growing-input", rows="1") something is in here
+
+                                input.screen__input.screen__input--result(type="text", name="result", id="result", readonly, value="3647.89")
+
                             .screen__unit
                                 .screen__group
                                     .screen__group__item
@@ -117,7 +120,7 @@ html(lang="en")
                                 i(data-feather="clock")
                             button.btn.btn__clear.btn__operator(type="button") C
 
-                    .keypad.keypad--unit
+                    .keypad
                         .keypad__calculator
                             .keypad__scientific
                                 .keypad__scientific__first

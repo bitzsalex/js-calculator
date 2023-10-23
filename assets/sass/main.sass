@@ -119,13 +119,16 @@ main
     padding: 30px 0px
 
 .calculator
-    width: max-content
+    width: 420px
     max-width: 100%
     margin: 0 auto
     border-radius: 20px
     overflow: hidden
     box-shadow: var(--shadow)
     position: relative
+
+    &--scientific
+        width: 690px
 
     // [ ] This has to be fixed after the screen and the body
     &__history
@@ -144,9 +147,8 @@ main
     &__display
         width: 100%
         height: 260px
-        position: relative
         margin-bottom: 20px
-        position: relative
+        @extend .flex, .flex--a-end
 
     &__input
         width: 100%
@@ -154,22 +156,45 @@ main
         display: block
         font-size: 18px
         font-weight: 600
+        max-width: 100%
+        color: var(--color-gray)
+
+        &--result
+            font-size: 36px
+            font-weight: bold
+
+    &__field
+        flex: 1 0 auto
+        position: relative
+
+    &__field > &__input
+        bottom: 0
+        height: auto
+        position: absolute
+        max-height: 100% !important
+        transform-origin: center bottom
 
     &__label
         font-size: 12px
         color: var(--color-secondary)
 
-    &__basic,
-    &__unit
-        top: 0
-        left: 0
+    &__unit, &__basic
         width: 100%
-        height: 100%
-        position: absolute
+        flex: 1 0 auto
 
     &__basic
-        // [ ] Fixed later
-        opacity: 0
+        @extend .flex, .flex--column, .flex--m-end
+        align-self: stretch
+        gap: 6px
+
+    &__unit,
+    &--unit &__basic
+        @extend .visually-hidden
+
+    &__basic,
+    &--unit &__unit
+        @extend .visually-visible
+        width: 100% !important
 
     &__group
         width: 100%
@@ -186,6 +211,9 @@ main
 
     &__footer
         flex-direction: row-reverse
+
+    & .btn__clear
+        @extend .visually-hidden
 
     &--unit .btn__history
         @extend .visually-hidden
@@ -320,11 +348,8 @@ main
 
 .keypad
     padding: 30px
-    width: 420px
+    width: 100%
     background-color: var(--primary)
-
-    &--scientific
-        width: 690px
 
     &__calculator
         flex: 1 0 auto
@@ -355,9 +380,7 @@ main
             & > button
                 width: calc(100% / 3)
 
-    // [ ] the following two will be fixed
     &__scientific
-        position: relative
         flex: 1 0 auto
         @extend .visually-hidden
 
@@ -392,8 +415,14 @@ main
     &--m-between
         justify-content: space-between
 
+    &--m-end
+        justify-content: flex-end
+
     &--a-center
         align-items: center
+
+    &--a-end
+        align-items: flex-end
 
 .visually-hidden
     width: 1px
