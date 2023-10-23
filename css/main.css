@@ -85,6 +85,10 @@ textarea {
   resize: none;
 }
 
+sup {
+  font-size: 13px;
+}
+
 .btn {
   -webkit-appearance: none;
   border: none;

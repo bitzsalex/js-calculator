@@ -12,6 +12,8 @@ const calculator = document.querySelector("#calculator")
 const simpleCalculator = document.querySelector("#simple")
 const scientificCalculator = document.querySelector("#scientific")
 const unitsCalculator = document.querySelector("#units")
+const pageButtons = document.querySelectorAll(".btn__page")
+const scientificKeypad = document.querySelector("#scientific_keypad")
 
 const removeSelectedOption = (parent) => {
 	for (let option of parent.children) option.classList.remove("selected")
@@ -112,6 +114,14 @@ growingField.addEventListener("input", () => {
 	let parent = growingField.parentNode
 	growingField.style.height = "auto"
 	growingField.style.height = (growingField.scrollHeight <= parent.scrollHeight ? growingField.scrollHeight : parent.scrollHeight) + "px"
+})
+
+
+// changing page for scientific calculator
+pageButtons.forEach(button => {
+	button.addEventListener("click", () => {
+		scientificKeypad.classList.toggle("keypad__scientific--second")
+	})
 })
 
 if (themeToggler) themeToggler.addEventListener("click", toggleTheme)
