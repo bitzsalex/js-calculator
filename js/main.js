@@ -116,11 +116,13 @@ unitsCalculator.addEventListener("input", () => {
 	changeCalculatorType(UNITS_CALC)
 })
 
-growingField.addEventListener("input", () => {
+const changeGrowFieldHeight = () => {
 	let parent = growingField.parentNode
 	growingField.style.height = "auto"
 	growingField.style.height = (growingField.scrollHeight <= parent.scrollHeight ? growingField.scrollHeight : parent.scrollHeight) + "px"
-})
+}
+
+growingField.addEventListener("input", changeGrowFieldHeight)
 
 showHistoryButton.addEventListener("click", () => {
 	if (!showHistoryButton.hasAttribute("disabled") && !showHistoryButton.classList.contains("btn__disabled")) {
@@ -150,6 +152,7 @@ historyItems.forEach((historyItem) => {
 		// [ ] parse the expression and store it on the current equation
 		inputTextField.value = expression.innerText
 		resultTextField.value = result.innerText
+		changeGrowFieldHeight()
 	})
 })
 
