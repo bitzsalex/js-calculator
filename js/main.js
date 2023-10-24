@@ -115,6 +115,13 @@ const changeCalculatorType = (type = "") => {
 const setCalculatorType = () => {
 	let type = localStorage.getItem("calculator_type") ?? ""
 	calculator.classList.add("visually-hidden")
+	if (type === UNITS_CALC)
+		unitsCalculator.checked = true
+	else if (type === SCIENTIFIC_CALC)
+		scientificCalculator.checked = true
+	else
+		simpleCalculator.checked = true
+
 	changeCalculatorType(type)
 	setTimeout(() => {
 		calculator.classList.remove("visually-hidden")
