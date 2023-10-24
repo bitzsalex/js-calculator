@@ -21,8 +21,10 @@ const inputTextField = document.querySelector(".screen__input--input")
 const resultTextField = document.querySelector(".screen__input--result")
 const historyContent = document.querySelector(".history__content")
 const clearHistoryButton = document.querySelector("#clear_history")
+const unitInputs = document.querySelectorAll(".unit__input")
 
 let historyItems
+let selectedUnitInputCurrentValue = ""
 
 const removeSelectedOption = (parent) => {
 	for (let option of parent.children) option.classList.remove("selected")
@@ -196,6 +198,23 @@ clearHistoryButton.addEventListener("click", () => {
 pageButtons.forEach((button) => {
 	button.addEventListener("click", () => {
 		scientificKeypad.classList.toggle("keypad__scientific--second")
+	})
+})
+
+const readOnlyFloat = value => {
+	if (isNaN(value)) {
+		value = value.replace(/[^\d.]/g, "")
+		if (value.split(".").length > 2) value = value.replace(/\.+$/g, "")
+	}
+
+	return value
+}
+
+unitInputs.forEach(unitInput => {
+	unitInput.addEventListener("input", event => {
+		event.stopPropagation()
+		unitInput.value = readOnlyFloat(unitInput.value)
+		// call the operation
 	})
 })
 
