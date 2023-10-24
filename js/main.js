@@ -117,12 +117,9 @@ const changeCalculatorType = (type = "") => {
 const setCalculatorType = () => {
 	let type = localStorage.getItem("calculator_type") ?? ""
 	calculator.classList.add("visually-hidden")
-	if (type === UNITS_CALC)
-		unitsCalculator.checked = true
-	else if (type === SCIENTIFIC_CALC)
-		scientificCalculator.checked = true
-	else
-		simpleCalculator.checked = true
+	if (type === UNITS_CALC) unitsCalculator.checked = true
+	else if (type === SCIENTIFIC_CALC) scientificCalculator.checked = true
+	else simpleCalculator.checked = true
 
 	changeCalculatorType(type)
 	setTimeout(() => {
@@ -188,8 +185,16 @@ historyItems.forEach((historyItem) => {
 })
 
 clearHistoryButton.addEventListener("click", () => {
+	let list = historyContent.querySelector("ul.history__list")
+	let listItem = document.createElement("li")
+
+	listItem.innerText = "No History"
+	listItem.classList.add("history__item", "history__item--no-history")
+
+	list.innerHTML = ""
 	localStorage.removeItem("history")
-	historyContent.querySelector("ul.history__list").innerHTML = ""
+
+	list.appendChild(listItem)
 	showHistoryButton.classList.add("btn__disabled")
 	showHistoryButton.setAttribute("disabled", true)
 })
@@ -201,7 +206,7 @@ pageButtons.forEach((button) => {
 	})
 })
 
-const readOnlyFloat = value => {
+const readOnlyFloat = (value) => {
 	if (isNaN(value)) {
 		value = value.replace(/[^\d.]/g, "")
 		if (value.split(".").length > 2) value = value.replace(/\.+$/g, "")
@@ -210,8 +215,8 @@ const readOnlyFloat = value => {
 	return value
 }
 
-unitInputs.forEach(unitInput => {
-	unitInput.addEventListener("input", event => {
+unitInputs.forEach((unitInput) => {
+	unitInput.addEventListener("input", (event) => {
 		event.stopPropagation()
 		unitInput.value = readOnlyFloat(unitInput.value)
 		// call the operation

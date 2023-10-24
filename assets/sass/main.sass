@@ -205,6 +205,17 @@ main
         transform: background .4s ease-in-out
         @extend .flex, .flex--column
 
+        &#{&}--no-history
+            text-align: center
+            padding: 30px
+            cursor: default
+
+            &:hover
+                background: none
+
+            &::after
+                display: none
+
         &::after
             display: inline
             width: calc(100% - 60px)

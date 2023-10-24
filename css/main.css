@@ -204,6 +204,20 @@ main {
   transform: background .4s ease-in-out;
 }
 
+.history__item.history__item--no-history {
+  text-align: center;
+  padding: 30px;
+  cursor: default;
+}
+
+.history__item.history__item--no-history:hover {
+  background: none;
+}
+
+.history__item.history__item--no-history::after {
+  display: none;
+}
+
 .history__item::after {
   display: inline;
   width: calc(100% - 60px);
