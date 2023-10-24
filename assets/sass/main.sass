@@ -339,9 +339,11 @@ main
         &:hover
             background-color: var(--shading)
 
+    &--small &__placeholder
+        color: var(--color-main)
+
     &__placeholder
         margin-right: 10px
-        color: var(--color-secondary)
 
     &__arrow
         @extend .flex, .flex--a-center
@@ -396,7 +398,7 @@ main
             border-color: #00C36B
 
         &:hover
-            color: var(--color-secondary)
+            color: var(--color-main)
 
     &__input
         @extend .visually-hidden
@@ -409,6 +411,7 @@ main
     gap: 10px
 
     &__group
+        @extend .flex, .flex--a-center, .flex--m-center
 
     &__label
         width: 30px

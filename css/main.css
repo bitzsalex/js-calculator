@@ -359,9 +359,12 @@ main {
   background-color: var(--shading);
 }
 
+.select--small .select__placeholder {
+  color: var(--color-main);
+}
+
 .select__placeholder {
   margin-right: 10px;
-  color: var(--color-secondary);
 }
 
 .select__arrow > svg {
@@ -420,7 +423,7 @@ main {
 }
 
 .select__option:hover {
-  color: var(--color-secondary);
+  color: var(--color-main);
 }
 
 .select.select--unit {
@@ -528,7 +531,7 @@ main {
   flex: 1 0 auto;
 }
 
-.flex, .history, .history__item, .history__result, .history__footer, .screen__display, .screen__basic, .screen__footer .btn, .select, .select__arrow, .select__option, .keypad__calculator {
+.flex, .history, .history__item, .history__result, .history__footer, .screen__display, .screen__basic, .screen__footer .btn, .select, .select__arrow, .select__option, .type__group, .keypad__calculator {
   display: flex;
 }
 
@@ -536,7 +539,7 @@ main {
   flex-direction: column;
 }
 
-.flex--m-center, .screen__footer .btn {
+.flex--m-center, .screen__footer .btn, .type__group {
   justify-content: center;
 }
 
@@ -548,7 +551,7 @@ main {
   justify-content: flex-end;
 }
 
-.flex--a-center, .history__result, .screen__footer .btn, .select, .select__arrow, .select__option {
+.flex--a-center, .history__result, .screen__footer .btn, .select, .select__arrow, .select__option, .type__group {
   align-items: center;
 }
 
