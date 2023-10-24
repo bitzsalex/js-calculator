@@ -32,21 +32,30 @@ html(lang="en")
     body.dark-theme
         main.flex.flex--m-center.flex--a-center
             .calculator#calculator
-                .calculator__history#history
+                .calculator__history.calculator__history--show#history
                     .history
-                        ul.history__list
-                            li.history__item
-                                span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
-                                span.history__result 1,794
-                            li.history__item
-                                span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
-                                span.history__result 1,794
-                            li.history__item
-                                span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
-                                span.history__result 1,794
-                            li.history__item
-                                span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
-                                span.history__result 1,794
+                        .history__content
+                            ul.history__list
+                                li.history__item
+                                    span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
+                                    span.history__result 1,794
+                                li.history__item
+                                    span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
+                                    span.history__result 1,794
+                                li.history__item
+                                    span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
+                                    span.history__result 1,794
+                                li.history__item
+                                    span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
+                                    span.history__result 1,794
+                                li.history__item
+                                    span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
+                                    span.history__result 1,794
+                                li.history__item
+                                    span.history__expression 123 #[span.operator /] 78 #[span.operator *] 23 #[span.operator +] log(26) #[span.operator *] 100
+                                    span.history__result 1,794
+                            .history__footer
+                                button.btn.btn__clear(type="button", id="clear_history") clear history
 
                 .flex.flex--column
                     .screen

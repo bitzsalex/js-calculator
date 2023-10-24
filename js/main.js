@@ -19,6 +19,8 @@ const history = document.querySelector("#history")
 const showHistoryButton = document.querySelector("#show-history")
 const inputTextField = document.querySelector(".screen__input--input")
 const resultTextField = document.querySelector(".screen__input--result")
+const historyContent = document.querySelector(".history__content")
+const clearHistoryButton = document.querySelector("#clear_history")
 
 let historyItems
 
@@ -52,7 +54,7 @@ const closeSelectFromOutside = () => {
 
 selects.forEach((select) => {
 	let options = select.querySelector("ul.select__options")
-	options.style.maxHeight = (options.firstElementChild.scrollHeight * MAX_SELECT_ITEM_NUMS) + "px"
+	options.style.maxHeight = options.firstElementChild.scrollHeight * MAX_SELECT_ITEM_NUMS + "px"
 
 	select.addEventListener("click", (event) => {
 		event.stopPropagation()
@@ -153,14 +155,20 @@ const getHistoryItems = () => {
 
 getHistoryItems()
 
-history.addEventListener("click", (event) => {
-	let historyList = history.querySelector("ul.history__list")
-	if (event.target !== historyList) history.classList.remove("calculator__history--show")
+localStorage
+
+// this insure history closing event won't be fired
+// when clicked inside history__content element
+historyContent.addEventListener("click", (event) => {
+	event.stopPropagation()
+})
+// this will close the history page
+history.addEventListener("click", () => {
+	history.classList.remove("calculator__history--show")
 })
 
 historyItems.forEach((historyItem) => {
-	historyItem.addEventListener("click", (event) => {
-		event.stopPropagation()
+	historyItem.addEventListener("click", () => {
 		let expression = historyItem.querySelector("span.history__expression")
 		let result = historyItem.querySelector("span.history__result")
 		// [ ] parse the expression and store it on the current equation
@@ -168,6 +176,13 @@ historyItems.forEach((historyItem) => {
 		resultTextField.value = result.innerText
 		changeGrowFieldHeight()
 	})
+})
+
+clearHistoryButton.addEventListener("click", () => {
+	localStorage.removeItem("history")
+	historyContent.querySelector("ul.history__list").innerHTML = ""
+	showHistoryButton.classList.add("btn__disabled")
+	showHistoryButton.setAttribute("disabled", true)
 })
 
 // changing page for scientific calculator

@@ -193,7 +193,7 @@ main
     @extend .flex, .flex--column, .flex--m-end
 
     &__list
-        height: 500px
+        height: 440px
         text-align: right
         overflow: auto
         background-color: var(--primary)
@@ -234,6 +234,16 @@ main
         &::before
             content: '='
             display: inline-block
+
+    &__footer
+        @extend .flex, .flex--m-end
+        padding: 10px 30px
+        background: var(--primary)
+
+        .btn
+            padding: 10px 20px
+            text-transform: capitalize
+            border-radius: 10px
 
 .operator
     font-weight: bold
@@ -378,6 +388,9 @@ main
             border-bottom: 2px solid transparent
             border-left: 2px solid transparent
             transform: rotate(-45deg)
+
+        &.selected
+            color: #00C36B !important
 
         &.selected::after
             border-color: #00C36B
