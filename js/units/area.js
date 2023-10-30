@@ -90,7 +90,9 @@ const squareYDToKM = (value, reverse = false) => {}
 const squareYDToMi = (value, reverse = false) => {}
 
 // Acre conversion functions
-const acToHa = (value, reverse = false) => {}
+const acToHa = (value, reverse = false) => {
+	return calculateValue(value, !reverse, 0.4046856422)
+}
 
 const acToM = (value, reverse = false) => {}
 
