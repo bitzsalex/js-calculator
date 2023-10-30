@@ -62,7 +62,9 @@ const squareINToKM = (value, reverse = false) => {}
 const squareINToMi = (value, reverse = false) => {}
 
 // Square Foot conversion functions
-const squareFTToYd = (value, reverse = false) => {}
+const squareFTToYd = (value, reverse = false) => {
+	return calculateValue(value, !reverse, 0.1111111111)
+}
 
 const squareFTToAc = (value, reverse = false) => {}
 
