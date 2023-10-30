@@ -1,6 +1,10 @@
+const calculateValue = (value, reverse, conversionRate) => {
+	return parseFloat((reverse ? value * conversionRate : value / conversionRate).toFixed(10))
+}
+
 // Square Millimeter conversion functions
 const squareMMToCM = (value, reverse = false) => {
-	return reverse ? value * 100 : value / 100
+	return calculateValue(value, reverse, 100)
 }
 
 const squareMMToIn = (value, reverse = false) => {}
@@ -97,7 +101,9 @@ const squareMToKM = (value, reverse = false) => {}
 const squareMToMi = (value, reverse = false) => {}
 
 // Square Kilometer conversion function
-const squareKMToMi = (value, reverse = false) => {}
+const squareKMToMi = (value, reverse = false) => {
+	return calculateValue(value, reverse, 2.58998811)
+}
 
 function Area() {
 	this["square millimeter"] = {
