@@ -45,7 +45,9 @@ const squareCMToKM = (value, reverse = false) => {}
 const squareCMToMi = (value, reverse = false) => {}
 
 // Square Inch conversion functions
-const squareINToFt = (value, reverse = false) => {}
+const squareINToFt = (value, reverse = false) => {
+	return calculateValue(value, !reverse, 0.0069444444)
+}
 
 const squareINToYd = (value, reverse = false) => {}
 
@@ -157,7 +159,7 @@ function Area() {
 		toSquareMile: squareINToMi,
 	}
 
-	this["square foot"] = {
+	this["square feet"] = {
 		symbol: "ft<sup>2</sup>",
 		toSquareMillimeter(value) {
 			return squareMMToFt(value, true)
