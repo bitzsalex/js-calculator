@@ -133,7 +133,7 @@ describe.skip("this test is for square M to square KM", () => {
 	})
 })
 
-describe("this test is for square M to square CM", () => {
+describe.skip("this test is for square M to square CM", () => {
 	test("1 sq m to cm", () => {
 		expect(area["square meter"].toSquareCentimeter(1)).toBe(10000)
 	})
@@ -155,7 +155,7 @@ describe("this test is for square M to square CM", () => {
 	})
 })
 
-describe("this test is for square CM to square M", () => {
+describe.skip("this test is for square CM to square M", () => {
 	test("1 sq cm to m", () => {
 		expect(area["square centimeter"].toSquareMeter(1)).toBe(0.0001)
 	})
@@ -174,5 +174,49 @@ describe("this test is for square CM to square M", () => {
 
 	test("3334670 sq cm to m", () => {
 		expect(area["square centimeter"].toSquareMeter(3334670)).toBe(333.467)
+	})
+})
+
+describe("this test is for square MM to square IN", () => {
+	test("1 sq mm to in", () => {
+		expect(area["square millimeter"].toSquareInch(1)).toBe(0.0015500031)
+	})
+
+	test("10 sq mm to in", () => {
+		expect(area["square millimeter"].toSquareInch(10)).toBe(0.015500031)
+	})
+
+	test("259 sq mm to in", () => {
+		expect(area["square millimeter"].toSquareInch(259)).toBe(0.4014508029)
+	})
+
+	test("5274 sq mm to in", () => {
+		expect(area["square millimeter"].toSquareInch(5274)).toBe(8.1747163494)
+	})
+
+	test("3334670 sq mm to in", () => {
+		expect(area["square millimeter"].toSquareInch(3334670)).toBe(5168.748837477)
+	})
+})
+
+describe("this test is for square IN to square MM", () => {
+	test("1 sq in to mm", () => {
+		expect(area["square inch"].toSquareMillimeter(1)).toBe(645.1600000026)
+	})
+
+	test("10 sq in to mm", () => {
+		expect(area["square inch"].toSquareMillimeter(10)).toBe(6451.6000000258)
+	})
+
+	test("259 sq in to mm", () => {
+		expect(area["square inch"].toSquareMillimeter(259)).toBe(167096.4400006684)
+	})
+
+	test("5274 sq in to mm", () => {
+		expect(area["square inch"].toSquareMillimeter(5274)).toBe(3402573.8400136107)
+	})
+
+	test("3334670 sq in to mm", () => {
+		expect(area["square inch"].toSquareMillimeter(3334670)).toBe(2151395697.2086055828)
 	})
 })

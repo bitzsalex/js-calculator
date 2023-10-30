@@ -7,7 +7,9 @@ const squareMMToCM = (value, reverse = false) => {
 	return calculateValue(value, reverse, 100)
 }
 
-const squareMMToIn = (value, reverse = false) => {}
+const squareMMToIn = (value, reverse = false) => {
+	return calculateValue(value, !reverse, 0.0015500031)
+}
 
 const squareMMToFt = (value, reverse = false) => {}
 
