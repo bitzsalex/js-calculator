@@ -28,11 +28,11 @@ html(lang="en")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js", defer)
 
         // including the main js file
-        script(src="/js/main.js", defer)
+        script(src="/js/main.js", type="module", defer)
     body.dark-theme
         main.flex.flex--m-center.flex--a-center
             .calculator#calculator
-                .calculator__history.calculator__history--show#history
+                .calculator__history#history
                     .history
                         .history__content
                             ul.history__list

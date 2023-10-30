@@ -1,3 +1,5 @@
+import Area from "./units/area.js"
+
 feather.replace()
 
 const SCIENTIFIC_CALC = "calculator--scientific"
@@ -227,3 +229,7 @@ if (themeToggler) themeToggler.addEventListener("click", toggleTheme)
 
 setTheme()
 setCalculatorType()
+
+
+let areaObj = new Area()
+console.log(areaObj)
