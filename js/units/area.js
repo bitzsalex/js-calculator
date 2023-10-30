@@ -77,7 +77,9 @@ const squareFTToKM = (value, reverse = false) => {}
 const squareFTToMi = (value, reverse = false) => {}
 
 // Square Yard conversion functions
-const squareYDToAc = (value, reverse = false) => {}
+const squareYDToAc = (value, reverse = false) => {
+	return calculateValue(value, !reverse, 0.0002066116)
+}
 
 const squareYDToHa = (value, reverse = false) => {}
 
