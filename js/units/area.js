@@ -44,7 +44,7 @@ const squareMMToHa = (value, reverse = false) => {
 }
 
 const squareMMToM = (value, reverse = false) => {
-	return squareCMToM(squareMMToCM(value, reverse), reverse)
+	return calculateValue(value, reverse, 1000000)
 }
 
 const squareMMToKM = (value, reverse = false) => {
@@ -64,7 +64,9 @@ const squareCMToFt = (value, reverse = false) => {
 	return squareINToFt(squareCMToIn(value, reverse), reverse)
 }
 
-const squareCMToYd = (value, reverse = false) => {}
+const squareCMToYd = (value, reverse = false) => {
+	return squareMMToYd(squareMMToCM(value, !reverse), reverse)
+}
 
 const squareCMToAc = (value, reverse = false) => {}
 
@@ -75,7 +77,7 @@ const squareCMToM = (value, reverse = false) => {
 }
 
 const squareCMToKM = (value, reverse = false) => {
-	return squareMToKM(squareCMToM(value, reverse), reverse)
+	return calculateValue(value, reverse, 10000000000)
 }
 
 const squareCMToMi = (value, reverse = false) => {
