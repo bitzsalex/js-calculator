@@ -168,7 +168,9 @@ const acToHa = (value, reverse = false) => {
 	return calculateValue(value, !reverse, 0.4046856422)
 }
 
-const acToM = (value, reverse = false) => {}
+const acToM = (value, reverse = false) => {
+	return squareINToM(squareINToAc(value, !reverse), reverse)
+}
 
 const acToKM = (value, reverse = false) => {}
 
