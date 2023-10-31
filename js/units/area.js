@@ -189,7 +189,9 @@ const haToKM = (value, reverse = false) => {
 	return squareMToKM(haToM(value, reverse), reverse)
 }
 
-const haToMi = (value, reverse = false) => {}
+const haToMi = (value, reverse = false) => {
+	return squareKMToMi(haToKM(value, reverse), reverse)
+}
 
 // Square Meter conversion functions
 const squareMToKM = (value, reverse = false) => {
