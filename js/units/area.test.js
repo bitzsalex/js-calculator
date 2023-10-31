@@ -72,4 +72,6 @@ const testCases = (from, to, values) => {
 // testCases("square feet", "square centimeter", [929.0304, 9290.304, 240618.8736, 4899706.3296, 3098009803.968])
 // testCases("square centimeter", "square feet", [0.001076, 0.01076, 0.275556, 5.676886, 3589.408915])
 // testCases("square meter", "square feet", [10.76391, 107.6391, 2787.852798, 56768.863538, 35894089.149289])
-testCases("square feet", "square meter", [0.092903, 0.92903, 24.061887, 489.970633, 309800.980397])
+// testCases("square feet", "square meter", [0.092903, 0.92903, 24.061887, 489.970633, 309800.980397])
+// testCases("square kilometer", "square feet", [10763910.41671, 107639104.1671, 2787852797.9278, 56768863537.727, 35894089149289])
+testCases("square feet", "square kilometer", [9.2903e-8, 9.2903e-7, 2.4062e-5, 0.00049, 0.309801])

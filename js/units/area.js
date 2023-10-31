@@ -112,7 +112,9 @@ const squareFTToM = (value, reverse = false) => {
 	return squareINToM(squareINToFt(value, !reverse), reverse)
 }
 
-const squareFTToKM = (value, reverse = false) => {}
+const squareFTToKM = (value, reverse = false) => {
+	return squareMToKM(squareFTToM(value, reverse), reverse)
+}
 
 const squareFTToMi = (value, reverse = false) => {}
 
