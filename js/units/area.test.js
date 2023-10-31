@@ -56,3 +56,5 @@ const testCases = (from, to, values) => {
 // testCases("square centimeter", "square mile", [0.0000000000, 0.0000000004, 0.0000000100, 0.0000002036, 0.0012881078])
 // testCases("square meter", "square millimeter", [1000000, 10000000, 259000000, 5274000000, 3334670000000])
 // testCases("square millimeter", "square meter", [0.000001, 0.00001, 0.000259, 0.005274, 3.33467])
+// testCases("square kilometer", "square millimeter", [1000000000000, 10000000000000, 259000000000000, 5274000000000000, 3334670000000000000])
+// testCases("square millimeter", "square kilometer", [0.000000000001, 0.00000000001, 0.000000000259, 0.000000005274, 0.00000333467])

@@ -14,7 +14,8 @@
 
 const calculateValue = (value, reverse, conversionRate) => {
 	let result = reverse ? value * conversionRate : value / conversionRate
-	return parseFloat(result.toFixed(10))
+	// TODO: toFixed will also be changed
+	return parseFloat(result.toFixed(15))
 }
 
 // Square Millimeter conversion functions
@@ -38,7 +39,9 @@ const squareMMToM = (value, reverse = false) => {
 	return squareCMToM(squareMMToCM(value, reverse), reverse)
 }
 
-const squareMMToKM = (value, reverse = false) => {}
+const squareMMToKM = (value, reverse = false) => {
+	return squareMToKM(squareMMToM(value, reverse), reverse)
+}
 
 const squareMMToMi = (value, reverse = false) => {}
 
