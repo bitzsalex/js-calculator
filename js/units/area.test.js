@@ -83,3 +83,5 @@ const testCases = (from, to, values) => {
 // testCases("acre", "square feet", [43560, 435600, 11282040, 229735440, 145258225200])
 // testCases("hectare", "square feet", [107639.104167, 1076391.04167, 27878527.979278, 567688635.37727, 358940891492.89])
 // testCases("square feet", "hectare", [9.2903E-6, 9.2903E-5, 0.002406, 0.048997, 30.980098])
+// testCases("square yard", "square millimeter", [836127.36, 8361273.6, 216556986.24, 4409735696.64, 2788208823571.2])
+// testCases("square millimeter", "square yard", [1.196e-6, 1.196e-5, 0.00031, 0.006308, 3.988232])

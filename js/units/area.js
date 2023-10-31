@@ -31,7 +31,9 @@ const squareMMToFt = (value, reverse = false) => {
 	return squareINToFt(squareMMToIn(value, reverse), reverse)
 }
 
-const squareMMToYd = (value, reverse = false) => {}
+const squareMMToYd = (value, reverse = false) => {
+	return squareFTToYd(squareMMToFt(value, reverse), reverse)
+}
 
 const squareMMToAc = (value, reverse = false) => {}
 
