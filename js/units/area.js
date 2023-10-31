@@ -83,7 +83,9 @@ const squareINToAc = (value, reverse = false) => {}
 
 const squareINToHa = (value, reverse = false) => {}
 
-const squareINToM = (value, reverse = false) => {}
+const squareINToM = (value, reverse = false) => {
+	return squareCMToM(squareCMToIn(value, !reverse), reverse)
+}
 
 const squareINToKM = (value, reverse = false) => {}
 
