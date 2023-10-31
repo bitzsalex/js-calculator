@@ -48,7 +48,9 @@ const squareMMToMi = (value, reverse = false) => {
 }
 
 // Square Centimeter conversion functions
-const squareCMToIn = (value, reverse = false) => {}
+const squareCMToIn = (value, reverse = false) => {
+	return squareMMToIn(squareMMToCM(value, !reverse), reverse)
+}
 
 const squareCMToFt = (value, reverse = false) => {}
 
