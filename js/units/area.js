@@ -39,7 +39,9 @@ const squareMMToAc = (value, reverse = false) => {
 	return squareYDToAc(squareMMToYd(value, reverse), reverse)
 }
 
-const squareMMToHa = (value, reverse = false) => {}
+const squareMMToHa = (value, reverse = false) => {
+	return calculateValue(value, reverse, 1e10)
+}
 
 const squareMMToM = (value, reverse = false) => {
 	return squareCMToM(squareMMToCM(value, reverse), reverse)
