@@ -172,7 +172,9 @@ const acToM = (value, reverse = false) => {
 	return squareINToM(squareINToAc(value, !reverse), reverse)
 }
 
-const acToKM = (value, reverse = false) => {}
+const acToKM = (value, reverse = false) => {
+	return squareMToKM(acToM(value, reverse), reverse)
+}
 
 const acToMi = (value, reverse = false) => {}
 
