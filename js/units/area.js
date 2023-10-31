@@ -1,5 +1,20 @@
+// TODO: This has to be moved to the final step, at the time to display result
+// const truncateDecimal = (strNum) => {
+// 	let dot = strNum.indexOf(".")
+
+// 	if (dot !== -1)
+// 		// loop through each decimal point
+// 		for (let itr = dot + 1; itr < strNum.length - 2; itr++) {
+// 			// check if there are three consecutive zeros
+// 			if (strNum[itr] === "0" && strNum[itr + 1] === "0" && strNum[itr + 2] === "0") return strNum.slice(0, itr)
+// 		}
+
+// 	return strNum
+// }
+
 const calculateValue = (value, reverse, conversionRate) => {
-	return parseFloat((reverse ? value * conversionRate : value / conversionRate).toFixed(10))
+	let result = reverse ? value * conversionRate : value / conversionRate
+	return parseFloat(result.toFixed(10))
 }
 
 // Square Millimeter conversion functions
@@ -112,7 +127,9 @@ const squareMToKM = (value, reverse = false) => {
 	return calculateValue(value, reverse, 1000000)
 }
 
-const squareMToMi = (value, reverse = false) => {}
+const squareMToMi = (value, reverse = false) => {
+	return squareKMToMi(squareMToKM(value, reverse), reverse)
+}
 
 // Square Kilometer conversion function
 const squareKMToMi = (value, reverse = false) => {
