@@ -59,7 +59,9 @@ const squareCMToKM = (value, reverse = false) => {
 	return squareMToKM(squareCMToM(value, reverse), reverse)
 }
 
-const squareCMToMi = (value, reverse = false) => {}
+const squareCMToMi = (value, reverse = false) => {
+	return squareKMToMi(squareCMToKM(value, reverse), reverse)
+}
 
 // Square Inch conversion functions
 const squareINToFt = (value, reverse = false) => {
