@@ -27,7 +27,9 @@ const squareMMToIn = (value, reverse = false) => {
 	return calculateValue(value, !reverse, 0.0015500031)
 }
 
-const squareMMToFt = (value, reverse = false) => {}
+const squareMMToFt = (value, reverse = false) => {
+	return squareINToFt(squareMMToIn(value, reverse), reverse)
+}
 
 const squareMMToYd = (value, reverse = false) => {}
 
