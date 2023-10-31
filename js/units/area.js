@@ -43,7 +43,9 @@ const squareMMToKM = (value, reverse = false) => {
 	return squareMToKM(squareMMToM(value, reverse), reverse)
 }
 
-const squareMMToMi = (value, reverse = false) => {}
+const squareMMToMi = (value, reverse = false) => {
+	return squareKMToMi(squareMMToKM(value, reverse), reverse)
+}
 
 // Square Centimeter conversion functions
 const squareCMToIn = (value, reverse = false) => {}
