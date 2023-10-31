@@ -181,7 +181,9 @@ const acToMi = (value, reverse = false) => {
 }
 
 // Hectare conversion functions
-const haToM = (value, reverse = false) => {}
+const haToM = (value, reverse = false) => {
+	return calculateValue(value, !reverse, 10000)
+}
 
 const haToKM = (value, reverse = false) => {}
 
