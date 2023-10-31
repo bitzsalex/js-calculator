@@ -55,7 +55,9 @@ const squareCMToM = (value, reverse = false) => {
 	return calculateValue(value, reverse, 10000)
 }
 
-const squareCMToKM = (value, reverse = false) => {}
+const squareCMToKM = (value, reverse = false) => {
+	return squareMToKM(squareCMToM(value, reverse), reverse)
+}
 
 const squareCMToMi = (value, reverse = false) => {}
 
