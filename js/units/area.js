@@ -125,7 +125,9 @@ const squareYDToAc = (value, reverse = false) => {
 	return calculateValue(value, !reverse, 0.0002066116)
 }
 
-const squareYDToHa = (value, reverse = false) => {}
+const squareYDToHa = (value, reverse = false) => {
+	return acToHa(squareYDToAc(value, reverse), reverse)
+}
 
 const squareYDToM = (value, reverse = false) => {}
 
