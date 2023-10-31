@@ -108,7 +108,9 @@ const squareFTToAc = (value, reverse = false) => {}
 
 const squareFTToHa = (value, reverse = false) => {}
 
-const squareFTToM = (value, reverse = false) => {}
+const squareFTToM = (value, reverse = false) => {
+	return squareINToM(squareINToFt(value, !reverse), reverse)
+}
 
 const squareFTToKM = (value, reverse = false) => {}
 
@@ -235,7 +237,7 @@ function Area() {
 		toSquareInch(value) {
 			return squareINToYd(value, true)
 		},
-		toSquareFoot(value) {
+		toSquareFeet(value) {
 			return squareFTToYd(value, true)
 		},
 		toAcre: squareYDToAc,
@@ -256,7 +258,7 @@ function Area() {
 		toSquareInch(value) {
 			return squareINToAc(value, true)
 		},
-		toSquareFoot(value) {
+		toSquareFeet(value) {
 			return squareFTToAc(value, true)
 		},
 		toSquareYard(value) {
@@ -279,7 +281,7 @@ function Area() {
 		toSquareInch(value) {
 			return squareINToHa(value, true)
 		},
-		toSquareFoot(value) {
+		toSquareFeet(value) {
 			return squareFTToHa(value, true)
 		},
 		toSquareYard(value) {
@@ -304,7 +306,7 @@ function Area() {
 		toSquareInch(value) {
 			return squareINToM(value, true)
 		},
-		toSquareFoot(value) {
+		toSquareFeet(value) {
 			return squareFTToM(value, true)
 		},
 		toSquareYard(value) {
@@ -331,7 +333,7 @@ function Area() {
 		toSquareInch(value) {
 			return squareINToKM(value, true)
 		},
-		toSquareFoot(value) {
+		toSquareFeet(value) {
 			return squareFTToKM(value, true)
 		},
 		toSquareYard(value) {
@@ -360,7 +362,7 @@ function Area() {
 		toSquareInch(value) {
 			return squareINToMi(value, true)
 		},
-		toSquareFoot(value) {
+		toSquareFeet(value) {
 			return squareFTToMi(value, true)
 		},
 		toSquareYard(value) {
