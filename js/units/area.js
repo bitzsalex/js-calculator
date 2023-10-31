@@ -176,7 +176,9 @@ const acToKM = (value, reverse = false) => {
 	return squareMToKM(acToM(value, reverse), reverse)
 }
 
-const acToMi = (value, reverse = false) => {}
+const acToMi = (value, reverse = false) => {
+	return squareKMToMi(acToKM(value, reverse), reverse)
+}
 
 // Hectare conversion functions
 const haToM = (value, reverse = false) => {}
