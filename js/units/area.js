@@ -116,7 +116,9 @@ const squareFTToKM = (value, reverse = false) => {
 	return squareMToKM(squareFTToM(value, reverse), reverse)
 }
 
-const squareFTToMi = (value, reverse = false) => {}
+const squareFTToMi = (value, reverse = false) => {
+	return squareKMToMi(squareFTToKM(value, reverse), reverse)
+}
 
 // Square Yard conversion functions
 const squareYDToAc = (value, reverse = false) => {
