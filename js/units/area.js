@@ -104,9 +104,13 @@ const squareFTToYd = (value, reverse = false) => {
 	return calculateValue(value, !reverse, 0.1111111111)
 }
 
-const squareFTToAc = (value, reverse = false) => {}
+const squareFTToAc = (value, reverse = false) => {
+	return squareYDToAc(squareFTToYd(value, reverse), reverse)
+}
 
-const squareFTToHa = (value, reverse = false) => {}
+const squareFTToHa = (value, reverse = false) => {
+	return acToHa(squareFTToAc(value, reverse), reverse)
+}
 
 const squareFTToM = (value, reverse = false) => {
 	return squareINToM(squareINToFt(value, !reverse), reverse)
