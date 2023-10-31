@@ -155,7 +155,9 @@ const squareYDToM = (value, reverse = false) => {
 	return squareINToM(squareINToYd(value, !reverse), reverse)
 }
 
-const squareYDToKM = (value, reverse = false) => {}
+const squareYDToKM = (value, reverse = false) => {
+	return squareMToKM(squareYDToM(value, reverse), reverse)
+}
 
 const squareYDToMi = (value, reverse = false) => {}
 
