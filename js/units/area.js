@@ -185,7 +185,9 @@ const haToM = (value, reverse = false) => {
 	return calculateValue(value, !reverse, 10000)
 }
 
-const haToKM = (value, reverse = false) => {}
+const haToKM = (value, reverse = false) => {
+	return squareMToKM(haToM(value, reverse), reverse)
+}
 
 const haToMi = (value, reverse = false) => {}
 

@@ -113,4 +113,6 @@ const testCases = (from, to, values) => {
 // testCases("acre", "square mile", [0.001563, 0.01563, 0.404688, 8.240625, 5210.421876])
 // testCases("square mile", "acre", [640, 6400, 165759.999978, 3375359.999562, 2134188799.7231])
 // testCases("hectare", "square meter", [10000, 100000, 2590000, 52740000, 33346700000])
-testCases("square meter", "hectare", [0.0001, 0.001, 0.0259, 0.5274, 333.467])
+// testCases("square meter", "hectare", [0.0001, 0.001, 0.0259, 0.5274, 333.467])
+testCases("hectare", "square kilometer", [0.01, 0.1, 2.59, 52.74, 33346.7])
+// testCases("square kilometer", "hectare", [100, 1000, 25900, 527400, 333467000])
