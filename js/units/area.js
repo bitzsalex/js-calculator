@@ -97,7 +97,9 @@ const squareINToYd = (value, reverse = false) => {
 	return calculateValue(value, reverse, 1296)
 }
 
-const squareINToAc = (value, reverse = false) => {}
+const squareINToAc = (value, reverse = false) => {
+	return squareYDToAc(squareINToYd(value, reverse), reverse)
+}
 
 const squareINToHa = (value, reverse = false) => {}
 
