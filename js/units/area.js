@@ -72,7 +72,9 @@ const squareCMToAc = (value, reverse = false) => {
 	return squareYDToAc(squareCMToYd(value, reverse), reverse)
 }
 
-const squareCMToHa = (value, reverse = false) => {}
+const squareCMToHa = (value, reverse = false) => {
+	return calculateValue(value, reverse, 100000000)
+}
 
 const squareCMToM = (value, reverse = false) => {
 	return calculateValue(value, reverse, 10000)
