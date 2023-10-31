@@ -93,7 +93,9 @@ const squareINToFt = (value, reverse = false) => {
 	return calculateValue(value, !reverse, 0.0069444444)
 }
 
-const squareINToYd = (value, reverse = false) => {}
+const squareINToYd = (value, reverse = false) => {
+	return calculateValue(value, reverse, 1296)
+}
 
 const squareINToAc = (value, reverse = false) => {}
 
