@@ -431,5 +431,5 @@ function Area() {
 	this.defaults = ["square millimeter", "square meter", "square mile"]
 }
 
-// export default Area
-module.exports = Area
+export default Area
+// module.exports = Area
