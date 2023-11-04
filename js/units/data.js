@@ -28,7 +28,9 @@ const bitToPB = (value, reverse = false) => {
 }
 
 // Byte conversion functions
-const bToKB = (value, reverse = false) => {}
+const bToKB = (value, reverse = false) => {
+	return bitToKB(bitToB(value, !reverse), reverse)
+}
 
 const bToMB = (value, reverse = false) => {}
 
