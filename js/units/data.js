@@ -2,7 +2,10 @@
 const helper = require("../helper")
 
 // Bit conversion functions
-const bitToB = (value, reverse = false) => {}
+const bitToB = (value, reverse = false) => {
+	console.log("Its here", value, reverse)
+	return helper.calculateValue(value, reverse, 8)
+}
 
 const bitToKB = (value, reverse = false) => {}
 
