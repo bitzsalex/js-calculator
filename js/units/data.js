@@ -73,9 +73,13 @@ const mbToGB = (value, reverse = false) => {
 	return multipleOf1024(value, reverse)
 }
 
-const mbToTB = (value, reverse = false) => {}
+const mbToTB = (value, reverse = false) => {
+	return gbToTB(mbToGB(value, reverse), reverse)
+}
 
-const mbToPB = (value, reverse = false) => {}
+const mbToPB = (value, reverse = false) => {
+	return tbToPB(mbToTB(value, reverse), reverse)
+}
 
 // Gigabyte conversion functions
 const gbToTB = (value, reverse = false) => {
