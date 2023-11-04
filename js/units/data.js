@@ -1,6 +1,10 @@
 // import calculateValue from "../helper"
 const helper = require("../helper")
 
+const multipleOf1024 = (value, reverse) => {
+	return helper.calculateValue(value, reverse, 1024)
+}
+
 // Bit conversion functions
 const bitToB = (value, reverse = false) => {
 	console.log("Its here", value, reverse)
@@ -8,23 +12,23 @@ const bitToB = (value, reverse = false) => {
 }
 
 const bitToKB = (value, reverse = false) => {
-	return helper.calculateValue(bitToB(value, reverse), reverse, 1024)
+	return multipleOf1024(bitToB(value, reverse), reverse)
 }
 
 const bitToMB = (value, reverse = false) => {
-	return helper.calculateValue(bitToKB(value, reverse), reverse, 1024)
+	return multipleOf1024(bitToKB(value, reverse), reverse)
 }
 
 const bitToGB = (value, reverse = false) => {
-	return helper.calculateValue(bitToMB(value, reverse), reverse, 1024)
+	return multipleOf1024(bitToMB(value, reverse), reverse)
 }
 
 const bitToTB = (value, reverse = false) => {
-	return helper.calculateValue(bitToGB(value, reverse), reverse, 1024)
+	return multipleOf1024(bitToGB(value, reverse), reverse)
 }
 
 const bitToPB = (value, reverse = false) => {
-	return helper.calculateValue(bitToTB(value, reverse), reverse, 1024)
+	return multipleOf1024(bitToTB(value, reverse), reverse)
 }
 
 // Byte conversion functions
@@ -42,7 +46,7 @@ const bToPB = (value, reverse = false) => {}
 
 // Kilobyte conversion functions
 const kbToMB = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 1024)
+	return multipleOf1024(value, reverse)
 }
 
 const kbToGB = (value, reverse = false) => {}
