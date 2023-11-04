@@ -6,7 +6,7 @@ const truncateLastConsecutiveZeros = (strNum) => {
 		// loop through each decimal point in reverse order
 		for (let itr = strNum.length - 2; itr > dot + 2; itr--) {
 			let count = 0
-			while(strNum[itr] == 0) {
+			while (strNum[itr] == 0) {
 				count++
 				itr--
 			}
@@ -19,7 +19,8 @@ const truncateLastConsecutiveZeros = (strNum) => {
 const calculateValue = (value, reverse, conversionRate) => {
 	let result = reverse ? value * conversionRate : value / conversionRate
 	// TODO: toFixed will also be changed
-	return parseFloat(result.toFixed(15))
+	// return parseFloat(result.toFixed(15))
+	return parseFloat(result)
 }
 
 const capitalize = (phrase) => {
@@ -29,4 +30,4 @@ const capitalize = (phrase) => {
 }
 
 // export { truncateLastConsecutiveZeros, calculateValue, capitalize }
-module.exports = {calculateValue, capitalize}
+module.exports = { calculateValue, capitalize }
