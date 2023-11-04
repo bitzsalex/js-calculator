@@ -23,7 +23,9 @@ const bitToTB = (value, reverse = false) => {
 	return helper.calculateValue(bitToGB(value, reverse), reverse, 1024)
 }
 
-const bitToPB = (value, reverse = false) => {}
+const bitToPB = (value, reverse = false) => {
+	return helper.calculateValue(bitToTB(value, reverse), reverse, 1024)
+}
 
 // Byte conversion functions
 const bToKB = (value, reverse = false) => {}
