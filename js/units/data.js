@@ -41,7 +41,9 @@ const bToTB = (value, reverse = false) => {}
 const bToPB = (value, reverse = false) => {}
 
 // Kilobyte conversion functions
-const kbToMB = (value, reverse = false) => {}
+const kbToMB = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 1024)
+}
 
 const kbToGB = (value, reverse = false) => {}
 
