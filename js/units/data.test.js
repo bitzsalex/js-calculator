@@ -1,10 +1,10 @@
+const helper = require("../helper")
 const Data = require("./data")
-const capitalize = require("./area.test")
 
 const data = new Data()
 
 const testCases = (from, to, values) => {
-	let to_caps = capitalize(to)
+	let to_caps = helper.capitalize(to)
 
 	describe(`These tests are to test the conversion from ${from} to ${to}`, () => {
 		test(`1 ${from} must be ${values[0]}`, () => {
@@ -28,6 +28,3 @@ const testCases = (from, to, values) => {
 		})
 	})
 }
-
-
-testCases("bit", "byte", [1, 2, 4, 5, 7])

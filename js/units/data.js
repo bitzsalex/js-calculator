@@ -1,3 +1,6 @@
+// import calculateValue from "../helper"
+const helper = require("../helper")
+
 // Bit conversion functions
 const bitToB = (value, reverse = false) => {}
 

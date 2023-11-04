@@ -1,22 +1,4 @@
-// TODO: This has to be moved to the final step, at the time to display result
-// const truncateDecimal = (strNum) => {
-// 	let dot = strNum.indexOf(".")
-
-// 	if (dot !== -1)
-// 		// loop through each decimal point
-// 		for (let itr = dot + 1; itr < strNum.length - 2; itr++) {
-// 			// check if there are three consecutive zeros
-// 			if (strNum[itr] === "0" && strNum[itr + 1] === "0" && strNum[itr + 2] === "0") return strNum.slice(0, itr)
-// 		}
-
-// 	return strNum
-// }
-
-const calculateValue = (value, reverse, conversionRate) => {
-	let result = reverse ? value * conversionRate : value / conversionRate
-	// TODO: toFixed will also be changed
-	return parseFloat(result.toFixed(15))
-}
+import calculateValue from "../helper"
 
 // Square Millimeter conversion functions
 const squareMMToCM = (value, reverse = false) => {

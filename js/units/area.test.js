@@ -1,13 +1,5 @@
-// const Area = require("./area")
-// const area = new Area()
-
-const capitalize = (phrase) => {
-	return phrase.split(" ").reduce((caps, word) => {
-		return caps + word.charAt(0).toUpperCase() + word.slice(1)
-	}, "")
-}
-
-module.exports = capitalize
+const Area = require("./area")
+const area = new Area()
 
 const testCases = (from, to, values) => {
 	to_cvtd = capitalize(to)
