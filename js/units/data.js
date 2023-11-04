@@ -7,7 +7,6 @@ const multipleOf1024 = (value, reverse) => {
 
 // Bit conversion functions
 const bitToB = (value, reverse = false) => {
-	console.log("Its here", value, reverse)
 	return helper.calculateValue(value, reverse, 8)
 }
 
@@ -36,13 +35,21 @@ const bToKB = (value, reverse = false) => {
 	return bitToKB(bitToB(value, !reverse), reverse)
 }
 
-const bToMB = (value, reverse = false) => {}
+const bToMB = (value, reverse = false) => {
+	return kbToMB(bToKB(value, reverse), reverse)
+}
 
-const bToGB = (value, reverse = false) => {}
+const bToGB = (value, reverse = false) => {
+	return mbToGB(bToMB(value, reverse), reverse)
+}
 
-const bToTB = (value, reverse = false) => {}
+const bToTB = (value, reverse = false) => {
+	return gbToTB(bToGB(value, reverse), reverse)
+}
 
-const bToPB = (value, reverse = false) => {}
+const bToPB = (value, reverse = false) => {
+	return tbToPB(bToTB(value, reverse), reverse)
+}
 
 // Kilobyte conversion functions
 const kbToMB = (value, reverse = false) => {
