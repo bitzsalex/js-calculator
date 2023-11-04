@@ -7,7 +7,9 @@ const bitToB = (value, reverse = false) => {
 	return helper.calculateValue(value, reverse, 8)
 }
 
-const bitToKB = (value, reverse = false) => {}
+const bitToKB = (value, reverse = false) => {
+	return helper.calculateValue(bitToB(value, reverse), reverse, 1024)
+}
 
 const bitToMB = (value, reverse = false) => {}
 
