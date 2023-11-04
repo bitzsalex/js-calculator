@@ -72,7 +72,9 @@ const gbToTB = (value, reverse = false) => {
 const gbToPB = (value, reverse = false) => {}
 
 // Terabyte conversion functions
-const tbToPB = (value, reverse = false) => {}
+const tbToPB = (value, reverse = false) => {
+	return multipleOf1024(value, reverse)
+}
 
 function Data() {
 	this.bit = {
