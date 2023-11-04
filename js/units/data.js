@@ -56,11 +56,17 @@ const kbToMB = (value, reverse = false) => {
 	return multipleOf1024(value, reverse)
 }
 
-const kbToGB = (value, reverse = false) => {}
+const kbToGB = (value, reverse = false) => {
+	return mbToGB(kbToMB(value, reverse), reverse)
+}
 
-const kbToTB = (value, reverse = false) => {}
+const kbToTB = (value, reverse = false) => {
+	return gbToTB(kbToGB(value, reverse), reverse)
+}
 
-const kbToPB = (value, reverse = false) => {}
+const kbToPB = (value, reverse = false) => {
+	return tbToPB(kbToTB(value, reverse), reverse)
+}
 
 // Megabyte conversion functions
 const mbToGB = (value, reverse = false) => {
