@@ -36,7 +36,8 @@ const rToN = (value, reverse = false) => {}
 
 function Temperature() {
 	this.celsius = {
-		symbol: "<sup>o</sup>C",
+		symbol: "C",
+		supPre: "o",
 		toDelisle: cToDe,
 		toFahrenheit: cToF,
 		toKelvin: cToK,
@@ -45,7 +46,8 @@ function Temperature() {
 	}
 
 	this.delisle = {
-		symbol: "<sup>o</sup>De",
+		symbol: "De",
+		supPre: "o",
 		toCelsius(value) { return cToDe(value, true) },
 		toFahrenheit: deToF,
 		toKelvin: deToK,
@@ -54,7 +56,8 @@ function Temperature() {
 	}
 
 	this.fahrenheit = {
-		symbol: "<sup>o</sup>F",
+		symbol: "F",
+		supPre: "o",
 		toCelsius(value) { return cToF(value, true) },
 		toDelisle(value) { return deToF(value, true) },
 		toKelvin: fToK,
@@ -72,7 +75,8 @@ function Temperature() {
 	}
 
 	this.rankine = {
-		symbol: "<sup>o</sup>R",
+		symbol: "R",
+		supPre: "o",
 		toCelsius(value) { return cToR(value, true) },
 		toDelisle(value) { return deToR(value, true) },
 		toFahrenheit(value) { return fToR(value, true) },
@@ -81,13 +85,16 @@ function Temperature() {
 	}
 
 	this.newton = {
-		symbol: "<sup>o</sup>N",
+		symbol: "N",
+		supPre: "o",
 		toCelsius(value) { return cToN(value, true) },
 		toDelisle(value) { return deToN(value, true) },
 		toFahrenheit(value) { return fToN(value, true) },
 		toKelvin(value) { return kToN(value, true) },
 		toRankine(value) { return rToN(value, true) },
 	}
+
+	this.defaults = ["celsius", "fahrenheit", "kelvin"]
 }
 
 // export default Temperature

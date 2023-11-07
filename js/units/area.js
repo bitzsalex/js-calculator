@@ -191,7 +191,8 @@ const squareKMToMi = (value, reverse = false) => {
 
 function Area() {
 	this["square millimeter"] = {
-		symbol: "mm<sup>2</sup>",
+		symbol: "mm",
+		supPost: 2,
 		toSquareCentimeter: squareMMToCM,
 		toSquareInch: squareMMToIn,
 		toSquareFeet: squareMMToFt,
@@ -204,7 +205,8 @@ function Area() {
 	}
 
 	this["square centimeter"] = {
-		symbol: "cm<sup>2</sup>",
+		symbol: "cm",
+		supPost: 2,
 		toSquareMillimeter(value) {
 			return squareMMToCM(value, true)
 		},
@@ -219,7 +221,8 @@ function Area() {
 	}
 
 	this["square inch"] = {
-		symbol: "in<sup>2</sup>",
+		symbol: "in",
+		supPost: 2,
 		toSquareMillimeter(value) {
 			return squareMMToIn(value, true)
 		},
@@ -236,7 +239,8 @@ function Area() {
 	}
 
 	this["square feet"] = {
-		symbol: "ft<sup>2</sup>",
+		symbol: "ft",
+		supPost: 2,
 		toSquareMillimeter(value) {
 			return squareMMToFt(value, true)
 		},
@@ -255,7 +259,8 @@ function Area() {
 	}
 
 	this["square yard"] = {
-		symbol: "yd<sup>2</sup>",
+		symbol: "yd",
+		supPost: 2,
 		toSquareMillimeter(value) {
 			return squareMMToYd(value, true)
 		},
@@ -324,7 +329,8 @@ function Area() {
 	}
 
 	this["square meter"] = {
-		symbol: "m<sup>2</sup>",
+		symbol: "m",
+		supPost: 2,
 		toSquareMillimeter(value) {
 			return squareMMToM(value, true)
 		},
@@ -351,7 +357,8 @@ function Area() {
 	}
 
 	this["square kilometer"] = {
-		symbol: "km<sup>2</sup>",
+		symbol: "km",
+		supPost: 2,
 		toSquareMillimeter(value) {
 			return squareMMToKM(value, true)
 		},
@@ -380,7 +387,8 @@ function Area() {
 	}
 
 	this["square mile"] = {
-		symbol: "mi<sup>2</sup>",
+		symbol: "mi",
+		supPost: 2,
 		toSquareMillimeter(value) {
 			return squareMMToMi(value, true)
 		},

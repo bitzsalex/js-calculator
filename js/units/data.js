@@ -206,6 +206,8 @@ function Data() {
 			return tbToPB(value, true)
 		},
 	}
+
+	this.defaults = ["byte", "megabyte", "gigabyte"]
 }
 
 export default Data
