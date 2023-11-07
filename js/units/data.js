@@ -1,5 +1,4 @@
-// import calculateValue from "../helper"
-const helper = require("../helper")
+import calculateValue from "../helper"
 
 const multipleOf1024 = (value, reverse) => {
 	return helper.calculateValue(value, reverse, 1024)
@@ -209,5 +208,4 @@ function Data() {
 	}
 }
 
-// export default Data
-module.exports = Data
+export default Data

@@ -414,4 +414,3 @@ function Area() {
 }
 
 export default Area
-// module.exports = Area
