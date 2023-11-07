@@ -1,9 +1,18 @@
+// import { calculateValue } from "../helper"
+const helper = require("../helper")
+
 // Nanosecond conversion functions
-const nsToMCs = (value, reverse = false) => {}
+const nsToMCs = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 1000)
+}
 
-const nsToMs = (value, reverse = false) => {}
+const nsToMs = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 1000000)
+}
 
-const nsToS = (value, reverse = false) => {}
+const nsToS = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 1000000000)
+}
 
 const nsToM = (value, reverse = false) => {}
 
@@ -22,9 +31,9 @@ const nsToDc = (value, reverse = false) => {}
 const nsToC = (value, reverse = false) => {}
 
 // Microsecond conversion functions
-const mcsToMs = (value, reverse = false) => {}
+const mcsToMs = nsToMCs
 
-const mcsToS = (value, reverse = false) => {}
+const mcsToS = nsToMs
 
 const mcsToM = (value, reverse = false) => {}
 
@@ -43,7 +52,7 @@ const mcsToDc = (value, reverse = false) => {}
 const mcsToC = (value, reverse = false) => {}
 
 // Millisecond conversion functions
-const msToS = (value, reverse = false) => {}
+const msToS = nsToMCs
 
 const msToM = (value, reverse = false) => {}
 
@@ -62,7 +71,9 @@ const msToDc = (value, reverse = false) => {}
 const msToC = (value, reverse = false) => {}
 
 // Second conversion function
-const sToM = (value, reverse = false) => {}
+const sToM = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 60)
+}
 
 const sToHr = (value, reverse = false) => {}
 
@@ -79,7 +90,7 @@ const sToDc = (value, reverse = false) => {}
 const sToC = (value, reverse = false) => {}
 
 // Minute conversion function
-const mToHr = (value, reverse = false) => {}
+const mToHr = sToM
 
 const mToD = (value, reverse = false) => {}
 
@@ -94,7 +105,9 @@ const mToDc = (value, reverse = false) => {}
 const mToC = (value, reverse = false) => {}
 
 // Hour conversion functions
-const hrToD = (value, reverse = false) => {}
+const hrToD = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 24)
+}
 
 const hrToWk = (value, reverse = false) => {}
 
@@ -107,7 +120,9 @@ const hrToDc = (value, reverse = false) => {}
 const hrToC = (value, reverse = false) => {}
 
 // Day conversion functions
-const dToWk = (value, reverse = false) => {}
+const dToWk = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 7)
+}
 
 const dToMn = (value, reverse = false) => {}
 
@@ -118,7 +133,9 @@ const dToDc = (value, reverse = false) => {}
 const dToC = (value, reverse = false) => {}
 
 // Week conversion functions
-const wkToMn = (value, reverse = false) => {}
+const wkToMn = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 4.345238095238095238095238095)
+}
 
 const wkToYr = (value, reverse = false) => {}
 
@@ -127,19 +144,23 @@ const wkToDc = (value, reverse = false) => {}
 const wkToC = (value, reverse = false) => {}
 
 // Month conversion functions
-const mnToYr = (value, reverse = false) => {}
+const mnToYr = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 12)
+}
 
 const mnToDc = (value, reverse = false) => {}
 
 const mnToC = (value, reverse = false) => {}
 
 // Year conversion functions
-const yrToDc = (value, reverse = false) => {}
+const yrToDc = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 10)
+}
 
 const yrToC = (value, reverse = false) => {}
 
 // Decade conversion function
-const dcToC = (value, reverse = false) => {}
+const dcToC = yrToDc
 
 function Time() {
 	this.century = {
