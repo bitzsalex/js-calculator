@@ -92,17 +92,29 @@ const sToC = (value, reverse = false) => {}
 // Minute conversion function
 const mToHr = sToM
 
-const mToD = (value, reverse = false) => {}
+const mToD = (value, reverse = false) => {
+	return hrToD(mToHr(value, reverse), reverse)
+}
 
-const mToWk = (value, reverse = false) => {}
+const mToWk = (value, reverse = false) => {
+	return dToWk(mToD(value, reverse), reverse)
+}
 
-const mToMn = (value, reverse = false) => {}
+const mToMn = (value, reverse = false) => {
+	return wkToMn(mToWk(value, reverse), reverse)
+}
 
-const mToYr = (value, reverse = false) => {}
+const mToYr = (value, reverse = false) => {
+	return mnToYr(mToMn(value, reverse), reverse)
+}
 
-const mToDc = (value, reverse = false) => {}
+const mToDc = (value, reverse = false) => {
+	return yrToDc(mToYr(value, reverse), reverse)
+}
 
-const mToC = (value, reverse = false) => {}
+const mToC = (value, reverse = false) => {
+	return dcToC(mToDc(value, reverse), reverse)
+}
 
 // Hour conversion functions
 const hrToD = (value, reverse = false) => {
