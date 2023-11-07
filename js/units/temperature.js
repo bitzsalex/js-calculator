@@ -16,7 +16,7 @@ const cToR = (value, reverse = false) => {
 }
 
 const cToN = (value, reverse = false) => {
-	return reverse ? value * 3.0303030303 : value / 3.0303030303
+	return reverse ? (value * 100) / 33 : (value * 33) / 100
 }
 
 // delisle conversion functions
@@ -51,7 +51,9 @@ const kToN = (value, reverse = false) => {
 }
 
 // rankine conversion functions
-const rToN = (value, reverse = false) => {}
+const rToN = (value, reverse = false) => {
+	return reverse ? ((value - 491.67) * 11) / 60 : (value * 60) / 11 + 491.67
+}
 
 function Temperature() {
 	this.celsius = {

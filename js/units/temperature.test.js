@@ -37,8 +37,8 @@ const testCases = (from, to, values) => {
 // testCases("kelvin", "celsius", [-272.15, -249.15, 568.85, 42690.85, 6453580.85])
 // testCases("celsius", "rankine", [493.47, 534.87, 2007.27, 77826.87, 11617428.87])
 // testCases("rankine", "celsius", [-272.594, -259.817, 194.628, 23595.739, 3585201.294])
-// testCases("celsius", "newton", [0.33, 7.92, 277.86, 14178, 2129800])
-// testCases("newton", "celsius", [3.0303030303, 72.727273, 2551.5, 130190, 19557000])
+testCases("celsius", "newton", [0.33, 7.92, 277.86, 14178, 2129800])
+testCases("newton", "celsius", [3.0303030303, 72.727273, 2551.5, 130190, 19557000])
 
 // testCases("fahrenheit", "kelvin", [255.928, 268.706, 723.15, 24124.261, 3585729.817])
 // testCases("kelvin", "fahrenheit", [-457.87, -416.47, 1055.93, 76875.53, 11616477.53])
@@ -51,3 +51,6 @@ const testCases = (from, to, values) => {
 // testCases("newton", "kelvin", [276.18, 345.88, 2824.7, 130470, 19557000])
 // testCases("kelvin", "rankine", [1.8000, 43.200, 1515.6, 77335, 11617000])
 // testCases("rankine", "kelvin", [0.55556, 13.333, 467.78, 23869, 3585500])
+
+// testCases("rankine", "newton", [497.12, 622.58, 5084.4, 234840, 35203000])
+// testCases("newton", "rankine", [-89.956, -85.740, 64.227, 7786.6, 1183100])
