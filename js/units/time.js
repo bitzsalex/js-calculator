@@ -157,7 +157,9 @@ const yrToDc = (value, reverse = false) => {
 	return helper.calculateValue(value, reverse, 10)
 }
 
-const yrToC = (value, reverse = false) => {}
+const yrToC = (value, reverse = false) => {
+	return dcToC(yrToDc(value, reverse), reverse)
+}
 
 // Decade conversion function
 const dcToC = yrToDc

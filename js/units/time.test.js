@@ -55,5 +55,8 @@ const testCases = (from, to, values) => {
 // testCases("year", "month", [12, 444, 5784, 755256, 20979516])
 // testCases("year", "decade", [0.1, 3.7, 48.2, 6293.8, 174829.6])
 // testCases("decade", "year", [10, 370, 4820, 629380, 17482960])
-testCases("decade", "century", [0.1, 3.7, 48.2, 6293.8, 174829.6])
-testCases("century", "decade", [10, 370, 4820, 629380, 17482960])
+// testCases("decade", "century", [0.1, 3.7, 48.2, 6293.8, 174829.6])
+// testCases("century", "decade", [10, 370, 4820, 629380, 17482960])
+
+testCases("year", "century", [0.01, 0.37, 4.82, 629.38, 17482.96])
+testCases("century", "year", [100, 3700, 48200, 6293800, 174829600])
