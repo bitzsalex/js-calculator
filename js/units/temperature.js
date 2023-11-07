@@ -30,15 +30,15 @@ const deToN = (value, reverse = false) => {}
 
 // fahrenheit conversion functions
 const fToK = (value, reverse = false) => {
-	return reverse ? (value - 273.15) * 9 / 5 + 32 : (value - 32) * 5 / 9 + 273.15
+	return reverse ? cToF(cToK(value, true)) : cToK(cToF(value, true))
 }
 
 const fToR = (value, reverse = false) => {
-	return reverse ? value - 459.67 : value + 459.67
+	return reverse ? cToF(cToR(value, true)) : cToR(cToF(value, true))
 }
 
 const fToN = (value, reverse = false) => {
-	return reverse ? (value * 5.45454555) + 32 : (value - 32) / 5.45454555
+	return reverse ? cToF(cToN(value, true)) : cToN(cToF(value, true))
 }
 
 // kelvin conversion functions

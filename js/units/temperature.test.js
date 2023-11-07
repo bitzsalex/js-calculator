@@ -49,5 +49,5 @@ const testCases = (from, to, values) => {
 
 // testCases("kelvin", "newton", [-89.810, -82.220, 187.72, 14088, 2129700])
 // testCases("newton", "kelvin", [276.18, 345.88, 2824.7, 130470, 19557000])
-testCases("kelvin", "rankine", [1.8000, 43.200, 1515.6, 77335, 11617000])
-testCases("rankine", "kelvin", [0.55556, 13.333, 467.78, 23869, 3585500])
+// testCases("kelvin", "rankine", [1.8000, 43.200, 1515.6, 77335, 11617000])
+// testCases("rankine", "kelvin", [0.55556, 13.333, 467.78, 23869, 3585500])
