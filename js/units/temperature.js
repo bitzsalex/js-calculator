@@ -156,5 +156,4 @@ function Temperature() {
 	this.defaults = ["celsius", "fahrenheit", "kelvin"]
 }
 
-// export default Temperature
-module.exports = Temperature
+export default Temperature
