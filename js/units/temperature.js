@@ -42,9 +42,13 @@ const fToN = (value, reverse = false) => {
 }
 
 // kelvin conversion functions
-const kToR = (value, reverse = false) => {}
+const kToR = (value, reverse = false) => {
+	return reverse ? cToK(cToR(value, true)) : cToR(cToK(value, true))
+}
 
-const kToN = (value, reverse = false) => {}
+const kToN = (value, reverse = false) => {
+	return reverse ? cToK(cToN(value, true)) : cToN(cToK(value, true))
+}
 
 // rankine conversion functions
 const rToN = (value, reverse = false) => {}

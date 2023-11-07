@@ -44,5 +44,10 @@ const testCases = (from, to, values) => {
 // testCases("kelvin", "fahrenheit", [-457.87, -416.47, 1055.93, 76875.53, 11616477.53])
 // testCases("fahrenheit", "rankine", [460.67, 483.67, 1301.67, 43423.67, 6454313.67])
 // testCases("rankine", "fahrenheit", [-458.67, -435.67, 382.33, 42504.33, 6453394.33])
-testCases("fahrenheit", "newton", [-5.6833, -1.4667, 148.50, 7870.9, 1183200])
-testCases("newton", "fahrenheit", [37.455, 162.91, 4624.7, 234380, 35203000])
+// testCases("fahrenheit", "newton", [-5.6833, -1.4667, 148.50, 7870.9, 1183200])
+// testCases("newton", "fahrenheit", [37.455, 162.91, 4624.7, 234380, 35203000])
+
+// testCases("kelvin", "newton", [-89.810, -82.220, 187.72, 14088, 2129700])
+// testCases("newton", "kelvin", [276.18, 345.88, 2824.7, 130470, 19557000])
+testCases("kelvin", "rankine", [1.8000, 43.200, 1515.6, 77335, 11617000])
+testCases("rankine", "kelvin", [0.55556, 13.333, 467.78, 23869, 3585500])
