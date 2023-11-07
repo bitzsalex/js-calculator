@@ -137,11 +137,17 @@ const wkToMn = (value, reverse = false) => {
 	return helper.calculateValue(value, reverse, 4.345238095238095238095238095)
 }
 
-const wkToYr = (value, reverse = false) => {}
+const wkToYr = (value, reverse = false) => {
+	return mnToYr(wkToMn(value, reverse), reverse)
+}
 
-const wkToDc = (value, reverse = false) => {}
+const wkToDc = (value, reverse = false) => {
+	return yrToDc(wkToYr(value, reverse), reverse)
+}
 
-const wkToC = (value, reverse = false) => {}
+const wkToC = (value, reverse = false) => {
+	return dcToC(wkToDc(value, reverse), reverse)
+}
 
 // Month conversion functions
 const mnToYr = (value, reverse = false) => {
