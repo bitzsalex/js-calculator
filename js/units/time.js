@@ -124,13 +124,21 @@ const dToWk = (value, reverse = false) => {
 	return helper.calculateValue(value, reverse, 7)
 }
 
-const dToMn = (value, reverse = false) => {}
+const dToMn = (value, reverse = false) => {
+	return wkToMn(dToWk(value, reverse), reverse)
+}
 
-const dToYr = (value, reverse = false) => {}
+const dToYr = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 365)
+}
 
-const dToDc = (value, reverse = false) => {}
+const dToDc = (value, reverse = false) => {
+	return yrToDc(dToYr(value, reverse), reverse)
+}
 
-const dToC = (value, reverse = false) => {}
+const dToC = (value, reverse = false) => {
+	return dcToC(dToDc(value, reverse), reverse)
+}
 
 // Week conversion functions
 const wkToMn = (value, reverse = false) => {
