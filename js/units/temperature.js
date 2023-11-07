@@ -1,13 +1,23 @@
 // celsius conversion functions
-const cToDe = (value, reverse = false) => {}
+const cToDe = (value, reverse = false) => {
+	return reverse ? (value + 100) / 1.5 : (value * 1.5) - 100
+}
 
-const cToF = (value, reverse = false) => {}
+const cToF = (value, reverse = false) => {
+	return reverse ? (value - 32) * 5 / 9 : (value * 9 / 5) + 32
+}
 
-const cToK = (value, reverse = false) => {}
+const cToK = (value, reverse = false) => {
+	return reverse ? (value - 273.15) : (value + 273.15)
+}
 
-const cToR = (value, reverse = false) => {}
+const cToR = (value, reverse = false) => {
+	return reverse ? (value - 491.67) * 5 / 9 : (value * 9 / 5) + 491.67
+}
 
-const cToN = (value, reverse = false) => {}
+const cToN = (value, reverse = false) => {
+	return reverse ? value * 3.0303030303 : value / 3.0303030303
+}
 
 // delisle conversion functions
 const deToF = (value, reverse = false) => {}

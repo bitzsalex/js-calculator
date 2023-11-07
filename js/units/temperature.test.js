@@ -29,4 +29,13 @@ const testCases = (from, to, values) => {
 	})
 }
 
-testCases("celsius", "kelvin", [1, 2, 3, 4, 5])
+testCases("celsius", "delisle", [-98.500, -64.000, 1163.0, 64346, 9680700])
+testCases("delisle", "celsius", [67.333, 82.667, 628.00, 28709, 4302600])
+testCases("celsius", "fahrenheit", [33.8, 75.2, 1547.6, 77367.2, 11616969.2])
+testCases("fahrenheit", "celsius", [-17.22222222222222, -4.444444444444445, 450, 23851.11111111111, 3585456.6666666665])
+testCases("celsius", "kelvin", [274.15, 297.15, 1115.15, 43237.15, 6454127.15])
+testCases("kelvin", "celsius", [-272.15, -249.15, 568.85, 42690.85, 6453580.85])
+testCases("celsius", "rankine", [493.47, 534.87, 2007.27, 77826.87, 11617428.87])
+testCases("rankine", "celsius", [-272.594, -259.817, 194.628, 23595.739, 3585201.294])
+testCases("celsius", "newton", [0.33, 7.92, 277.86, 14178, 2129800])
+testCases("newton", "celsius", [3.0303030303, 72.727273, 2551.5, 130190, 19557000])
