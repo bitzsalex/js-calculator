@@ -148,9 +148,13 @@ const mnToYr = (value, reverse = false) => {
 	return helper.calculateValue(value, reverse, 12)
 }
 
-const mnToDc = (value, reverse = false) => {}
+const mnToDc = (value, reverse = false) => {
+	return yrToDc(mnToYr(value, reverse), reverse)
+}
 
-const mnToC = (value, reverse = false) => {}
+const mnToC = (value, reverse = false) => {
+	return dcToC(mnToDc(value, reverse), reverse)
+}
 
 // Year conversion functions
 const yrToDc = (value, reverse = false) => {
