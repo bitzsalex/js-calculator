@@ -20,13 +20,21 @@ const cToN = (value, reverse = false) => {
 }
 
 // delisle conversion functions
-const deToF = (value, reverse = false) => {}
+const deToF = (value, reverse = false) => {
+	return reverse ? ((212 - value) * 5) / 6 : 212 - (value * 6) / 5
+}
 
-const deToK = (value, reverse = false) => {}
+const deToK = (value, reverse = false) => {
+	return reverse ? ((373.15 - value) * 3) / 2 : 373.15 - (value * 2) / 3
+}
 
-const deToR = (value, reverse = false) => {}
+const deToR = (value, reverse = false) => {
+	return reverse ? ((671.67 - value) * 5) / 6 : 671.67 - (value * 6) / 5
+}
 
-const deToN = (value, reverse = false) => {}
+const deToN = (value, reverse = false) => {
+	return reverse ? ((33 - value) * 50) / 11 : 33 - (value * 11) / 50
+}
 
 // fahrenheit conversion functions
 const fToK = (value, reverse = false) => {
