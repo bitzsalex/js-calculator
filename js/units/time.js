@@ -109,15 +109,25 @@ const hrToD = (value, reverse = false) => {
 	return helper.calculateValue(value, reverse, 24)
 }
 
-const hrToWk = (value, reverse = false) => {}
+const hrToWk = (value, reverse = false) => {
+	return dToWk(hrToD(value, reverse), reverse)
+}
 
-const hrToMn = (value, reverse = false) => {}
+const hrToMn = (value, reverse = false) => {
+	return wkToMn(hrToWk(value, reverse), reverse)
+}
 
-const hrToYr = (value, reverse = false) => {}
+const hrToYr = (value, reverse = false) => {
+	return mnToYr(hrToMn(value, reverse), reverse)
+}
 
-const hrToDc = (value, reverse = false) => {}
+const hrToDc = (value, reverse = false) => {
+	return yrToDc(hrToYr(value, reverse), reverse)
+}
 
-const hrToC = (value, reverse = false) => {}
+const hrToC = (value, reverse = false) => {
+	return dcToC(hrToDc(value, reverse), reverse)
+}
 
 // Day conversion functions
 const dToWk = (value, reverse = false) => {
