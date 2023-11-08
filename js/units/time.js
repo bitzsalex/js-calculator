@@ -14,21 +14,37 @@ const nsToS = (value, reverse = false) => {
 	return helper.calculateValue(value, reverse, 1000000000)
 }
 
-const nsToM = (value, reverse = false) => {}
+const nsToM = (value, reverse = false) => {
+	return sToM(nsToS(value, reverse), reverse)
+}
 
-const nsToHr = (value, reverse = false) => {}
+const nsToHr = (value, reverse = false) => {
+	return mToHr(nsToM(value, reverse), reverse)
+}
 
-const nsToD = (value, reverse = false) => {}
+const nsToD = (value, reverse = false) => {
+	return hrToD(nsToHr(value, reverse), reverse)
+}
 
-const nsToWk = (value, reverse = false) => {}
+const nsToWk = (value, reverse = false) => {
+	return dToWk(nsToD(value, reverse), reverse)
+}
 
-const nsToMn = (value, reverse = false) => {}
+const nsToMn = (value, reverse = false) => {
+	return wkToMn(nsToWk(value, reverse), reverse)
+}
 
-const nsToYr = (value, reverse = false) => {}
+const nsToYr = (value, reverse = false) => {
+	return mnToYr(nsToMn(value, reverse), reverse)
+}
 
-const nsToDc = (value, reverse = false) => {}
+const nsToDc = (value, reverse = false) => {
+	return yrToDc(nsToYr(value, reverse), reverse)
+}
 
-const nsToC = (value, reverse = false) => {}
+const nsToC = (value, reverse = false) => {
+	return dcToC(nsToDc(value, reverse), reverse)
+}
 
 // Microsecond conversion functions
 const mcsToMs = nsToMCs
