@@ -75,19 +75,33 @@ const sToM = (value, reverse = false) => {
 	return helper.calculateValue(value, reverse, 60)
 }
 
-const sToHr = (value, reverse = false) => {}
+const sToHr = (value, reverse = false) => {
+	return mToHr(sToM(value, reverse), reverse)
+}
 
-const sToD = (value, reverse = false) => {}
+const sToD = (value, reverse = false) => {
+	return hrToD(sToHr(value, reverse), reverse)
+}
 
-const sToWk = (value, reverse = false) => {}
+const sToWk = (value, reverse = false) => {
+	return dToWk(sToD(value, reverse), reverse)
+}
 
-const sToMn = (value, reverse = false) => {}
+const sToMn = (value, reverse = false) => {
+	return wkToMn(sToWk(value, reverse), reverse)
+}
 
-const sToYr = (value, reverse = false) => {}
+const sToYr = (value, reverse = false) => {
+	return mnToYr(sToMn(value, reverse), reverse)
+}
 
-const sToDc = (value, reverse = false) => {}
+const sToDc = (value, reverse = false) => {
+	return yrToDc(sToYr(value, reverse), reverse)
+}
 
-const sToC = (value, reverse = false) => {}
+const sToC = (value, reverse = false) => {
+	return dcToC(sToDc(value, reverse), reverse)
+}
 
 // Minute conversion function
 const mToHr = sToM
