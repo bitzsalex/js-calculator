@@ -54,21 +54,37 @@ const mcsToC = (value, reverse = false) => {}
 // Millisecond conversion functions
 const msToS = nsToMCs
 
-const msToM = (value, reverse = false) => {}
+const msToM = (value, reverse = false) => {
+	return sToM(msToS(value, reverse), reverse)
+}
 
-const msToHr = (value, reverse = false) => {}
+const msToHr = (value, reverse = false) => {
+	return mToHr(msToM(value, reverse), reverse)
+}
 
-const msToD = (value, reverse = false) => {}
+const msToD = (value, reverse = false) => {
+	return hrToD(msToHr(value, reverse), reverse)
+}
 
-const msToWk = (value, reverse = false) => {}
+const msToWk = (value, reverse = false) => {
+	return dToWk(msToD(value, reverse), reverse)
+}
 
-const msToMn = (value, reverse = false) => {}
+const msToMn = (value, reverse = false) => {
+	return wkToMn(msToWk(value, reverse), reverse)
+}
 
-const msToYr = (value, reverse = false) => {}
+const msToYr = (value, reverse = false) => {
+	return mnToYr(msToMn(value, reverse), reverse)
+}
 
-const msToDc = (value, reverse = false) => {}
+const msToDc = (value, reverse = false) => {
+	return yrToDc(msToYr(value, reverse), reverse)
+}
 
-const msToC = (value, reverse = false) => {}
+const msToC = (value, reverse = false) => {
+	return dcToC(msToDc(value, reverse), reverse)
+}
 
 // Second conversion function
 const sToM = (value, reverse = false) => {
