@@ -79,7 +79,9 @@ const kmToMI = (value, reverse = false) => {}
 const kmToNM = (value, reverse = false) => {}
 
 // mile conversion function
-const miToNM = (value, reverse = false) => {}
+const miToNM = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 1.1507794480235425)
+}
 
 function Length() {
 	this.millimeter = {
@@ -91,7 +93,7 @@ function Length() {
 		toMeter: mmToM,
 		toKilometer: mmToKM,
 		toMile: mmToMI,
-		toNauticalMiles: mmToNM,
+		toNauticalMile: mmToNM,
 	}
 
 	this.centimeter = {
@@ -105,7 +107,7 @@ function Length() {
 		toMeter: cmToM,
 		toKilometer: cmToKM,
 		toMile: cmToMI,
-		toNauticalMiles: cmToNM,
+		toNauticalMile: cmToNM,
 	}
 
 	this.inch = {
@@ -121,7 +123,7 @@ function Length() {
 		toMeter: inToM,
 		toKilometer: inToKM,
 		toMile: inToMI,
-		toNauticalMiles: inToNM,
+		toNauticalMile: inToNM,
 	}
 
 	this.feet = {
@@ -139,7 +141,7 @@ function Length() {
 		toMeter: ftToM,
 		toKilometer: ftToKM,
 		toMile: ftToMI,
-		toNauticalMiles: ftToNM,
+		toNauticalMile: ftToNM,
 	}
 
 	this.yard = {
@@ -159,7 +161,7 @@ function Length() {
 		toMeter: ydToM,
 		toKilometer: ydToKM,
 		toMile: ydToMI,
-		toNauticalMiles: ydToNM,
+		toNauticalMile: ydToNM,
 	}
 
 	this.meter = {
@@ -181,7 +183,7 @@ function Length() {
 		},
 		toKilometer: mToKM,
 		toMile: mToMI,
-		toNauticalMiles: mToNM,
+		toNauticalMile: mToNM,
 	}
 
 	this.kilometer = {
@@ -205,7 +207,7 @@ function Length() {
 			return mToKM(value, true)
 		},
 		toMile: kmToMI,
-		toNauticalMiles: kmToNM,
+		toNauticalMile: kmToNM,
 	}
 
 	this.mile = {
@@ -231,10 +233,10 @@ function Length() {
 		toKilometer(value) {
 			return kmToMI(value, true)
 		},
-		toNauticalMiles: miToNM,
+		toNauticalMile: miToNM,
 	}
 
-	this["nautical miles"] = {
+	this["nautical mile"] = {
 		symbol: "nm",
 		toMillimeter(value) {
 			return mmToNM(value, true)
