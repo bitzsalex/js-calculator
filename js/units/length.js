@@ -58,13 +58,21 @@ const ftToMI = (value, reverse = false) => {}
 const ftToNM = (value, reverse = false) => {}
 
 // yard conversion functions
-const ydToM = (value, reverse = false) => {}
+const ydToM = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 1.0936132983377078)
+}
 
-const ydToKM = (value, reverse = false) => {}
+const ydToKM = (value, reverse = false) => {
+	return mToKM(ydToM(value, reverse), reverse)
+}
 
-const ydToMI = (value, reverse = false) => {}
+const ydToMI = (value, reverse = false) => {
+	return kmToMI(ydToKM(value, reverse), reverse)
+}
 
-const ydToNM = (value, reverse = false) => {}
+const ydToNM = (value, reverse = false) => {
+	return miToNM(ydToMI(value, reverse), reverse)
+}
 
 // meter conversion functions
 const mToKM = (value, reverse = false) => {
