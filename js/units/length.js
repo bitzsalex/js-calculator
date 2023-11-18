@@ -47,15 +47,25 @@ const inToMI = (value, reverse = false) => {}
 const inToNM = (value, reverse = false) => {}
 
 // foot conversion functions
-const ftToYD = (value, reverse = false) => {}
+const ftToYD = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 3)
+}
 
-const ftToM = (value, reverse = false) => {}
+const ftToM = (value, reverse = false) => {
+	return ydToM(ftToYD(value, reverse), reverse)
+}
 
-const ftToKM = (value, reverse = false) => {}
+const ftToKM = (value, reverse = false) => {
+	return mToKM(ftToM(value, reverse), reverse)
+}
 
-const ftToMI = (value, reverse = false) => {}
+const ftToMI = (value, reverse = false) => {
+	return kmToMI(ftToKM(value, reverse), reverse)
+}
 
-const ftToNM = (value, reverse = false) => {}
+const ftToNM = (value, reverse = false) => {
+	return miToNM(ftToMI(value, reverse), reverse)
+}
 
 // yard conversion functions
 const ydToM = (value, reverse = false) => {
