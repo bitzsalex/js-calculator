@@ -74,9 +74,13 @@ const mToMI = (value, reverse = false) => {}
 const mToNM = (value, reverse = false) => {}
 
 // kilometer conversion functions
-const kmToMI = (value, reverse = false) => {}
+const kmToMI = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 1.609344)
+}
 
-const kmToNM = (value, reverse = false) => {}
+const kmToNM = (value, reverse = false) => {
+	return miToNM(kmToMI(value, reverse), reverse)
+}
 
 // mile conversion function
 const miToNM = (value, reverse = false) => {
