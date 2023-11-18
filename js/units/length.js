@@ -67,11 +67,17 @@ const ydToMI = (value, reverse = false) => {}
 const ydToNM = (value, reverse = false) => {}
 
 // meter conversion functions
-const mToKM = (value, reverse = false) => {}
+const mToKM = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 1000)
+}
 
-const mToMI = (value, reverse = false) => {}
+const mToMI = (value, reverse = false) => {
+	return kmToMI(mToKM(value, reverse), reverse)
+}
 
-const mToNM = (value, reverse = false) => {}
+const mToNM = (value, reverse = false) => {
+	return kmToNM(mToKM(value, reverse), reverse)
+}
 
 // kilometer conversion functions
 const kmToMI = (value, reverse = false) => {
