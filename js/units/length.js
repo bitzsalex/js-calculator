@@ -19,19 +19,33 @@ const mmToMI = (value, reverse = false) => {}
 const mmToNM = (value, reverse = false) => {}
 
 // centimeter conversion functions
-const cmToIN = (value, reverse = false) => {}
+const cmToIN = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 2.54)
+}
 
-const cmToFT = (value, reverse = false) => {}
+const cmToFT = (value, reverse = false) => {
+	return inToFT(cmToIN(value, reverse), reverse)
+}
 
-const cmToYD = (value, reverse = false) => {}
+const cmToYD = (value, reverse = false) => {
+	return ftToYD(cmToFT(value, reverse), reverse)
+}
 
-const cmToM = (value, reverse = false) => {}
+const cmToM = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 100)
+}
 
-const cmToKM = (value, reverse = false) => {}
+const cmToKM = (value, reverse = false) => {
+	return mToKM(cmToM(value, reverse), reverse)
+}
 
-const cmToMI = (value, reverse = false) => {}
+const cmToMI = (value, reverse = false) => {
+	return kmToMI(cmToKM(value, reverse), reverse)
+}
 
-const cmToNM = (value, reverse = false) => {}
+const cmToNM = (value, reverse = false) => {
+	return miToNM(cmToMI(value, reverse), reverse)
+}
 
 // inch conversion functions
 const inToFT = (value, reverse = false) => {
