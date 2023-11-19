@@ -2,21 +2,37 @@
 const helper = require("../helper.js")
 
 // millimeter conversion functions
-const mmToCM = (value, reverse = false) => {}
+const mmToCM = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 10)
+}
 
-const mmToIN = (value, reverse = false) => {}
+const mmToIN = (value, reverse = false) => {
+	return cmToIN(mmToCM(value, reverse), reverse)
+}
 
-const mmToFT = (value, reverse = false) => {}
+const mmToFT = (value, reverse = false) => {
+	return inToFT(mmToIN(value, reverse), reverse)
+}
 
-const mmToYD = (value, reverse = false) => {}
+const mmToYD = (value, reverse = false) => {
+	return ftToYD(mmToFT(value, reverse), reverse)
+}
 
-const mmToM = (value, reverse = false) => {}
+const mmToM = (value, reverse = false) => {
+	return cmToM(mmToCM(value, reverse), reverse)
+}
 
-const mmToKM = (value, reverse = false) => {}
+const mmToKM = (value, reverse = false) => {
+	return mToKM(mmToM(value, reverse), reverse)
+}
 
-const mmToMI = (value, reverse = false) => {}
+const mmToMI = (value, reverse = false) => {
+	return kmToMI(mmToKM(value, reverse), reverse)
+}
 
-const mmToNM = (value, reverse = false) => {}
+const mmToNM = (value, reverse = false) => {
+	return miToNM(mmToMI(value, reverse), reverse)
+}
 
 // centimeter conversion functions
 const cmToIN = (value, reverse = false) => {

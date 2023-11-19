@@ -64,3 +64,12 @@ const runTests = (from, to, conversionRate) => {
 // runTests("centimeter", "kilometer", 100000)
 // runTests("centimeter", "mile", 160934.4)
 // runTests("centimeter", "nautical mile", 185200)
+
+// runTests("millimeter", "centimeter", 10)
+// runTests("millimeter", "inch", 25.4)
+// runTests("millimeter", "feet", 304.8)
+// runTests("millimeter", "yard", 914.4)
+// runTests("millimeter", "meter", 1000)
+// runTests("millimeter", "kilometer", 1000000)
+// runTests("millimeter", "mile", 1609344)
+// runTests("millimeter", "nautical mile", 1852000)
