@@ -75,7 +75,9 @@ const lbToKG = (value, reverse = false) => {}
 const lbToT = (value, reverse = false) => {}
 
 // kilogram conversion functions
-const kgToT = (value, reverse = false) => {}
+const kgToT = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 907.18474)
+}
 
 function Weight() {
 	this.milligram = {
@@ -229,7 +231,7 @@ function Weight() {
 		toOunce(value) { return ozToT(value, true) },
 		toHectogram(value) { return hgToT(value, true) },
 		toPound(value) { return lbToT(value, true) },
-		toTon(value) { return kgToT(value, true) },
+		toKilogram(value) { return kgToT(value, true) },
 	}
 
 
