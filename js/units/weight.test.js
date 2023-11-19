@@ -30,4 +30,7 @@ const runTests = (from, to, conversionRate) => {
 	testCases(to, from, testArray, reverse)
 }
 
-runTests("kilogram", "ton", 907.18474)
+// runTests("kilogram", "ton", 907.18474)
+
+runTests("pound", "kilogram", 2.2046226218487757)
+runTests("pound", "ton", 2000)

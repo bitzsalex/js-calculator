@@ -71,8 +71,13 @@ const hgToKG = (value, reverse = false) => {}
 const hgToT = (value, reverse = false) => {}
 
 // pound conversion functions
-const lbToKG = (value, reverse = false) => {}
-const lbToT = (value, reverse = false) => {}
+const lbToKG = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 2.2046226218487757)
+}
+
+const lbToT = (value, reverse = false) => {
+	return kgToT(lbToKG(value, reverse), reverse)
+}
 
 // kilogram conversion functions
 const kgToT = (value, reverse = false) => {
