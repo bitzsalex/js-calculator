@@ -34,17 +34,29 @@ const cmToMI = (value, reverse = false) => {}
 const cmToNM = (value, reverse = false) => {}
 
 // inch conversion functions
-const inToFT = (value, reverse = false) => {}
+const inToFT = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 12)
+}
 
-const inToYD = (value, reverse = false) => {}
+const inToYD = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 36)
+}
 
-const inToM = (value, reverse = false) => {}
+const inToM = (value, reverse = false) => {
+	return ydToM(inToYD(value, reverse), reverse)
+}
 
-const inToKM = (value, reverse = false) => {}
+const inToKM = (value, reverse = false) => {
+	return mToKM(inToM(value, reverse), reverse)
+}
 
-const inToMI = (value, reverse = false) => {}
+const inToMI = (value, reverse = false) => {
+	return kmToMI(inToKM(value, reverse), reverse)
+}
 
-const inToNM = (value, reverse = false) => {}
+const inToNM = (value, reverse = false) => {
+	return miToNM(inToMI(value, reverse), reverse)
+}
 
 // foot conversion functions
 const ftToYD = (value, reverse = false) => {
