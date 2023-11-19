@@ -1,9 +1,8 @@
-// import { calculateValue } from "../helper.js"
-const helper = require("../helper.js")
+import { calculateValue } from "../helper.js"
 
 // millimeter conversion functions
 const mmToCM = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 10)
+	return calculateValue(value, reverse, 10)
 }
 
 const mmToIN = (value, reverse = false) => {
@@ -36,7 +35,7 @@ const mmToNM = (value, reverse = false) => {
 
 // centimeter conversion functions
 const cmToIN = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 2.54)
+	return calculateValue(value, reverse, 2.54)
 }
 
 const cmToFT = (value, reverse = false) => {
@@ -48,7 +47,7 @@ const cmToYD = (value, reverse = false) => {
 }
 
 const cmToM = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 100)
+	return calculateValue(value, reverse, 100)
 }
 
 const cmToKM = (value, reverse = false) => {
@@ -65,11 +64,11 @@ const cmToNM = (value, reverse = false) => {
 
 // inch conversion functions
 const inToFT = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 12)
+	return calculateValue(value, reverse, 12)
 }
 
 const inToYD = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 36)
+	return calculateValue(value, reverse, 36)
 }
 
 const inToM = (value, reverse = false) => {
@@ -90,7 +89,7 @@ const inToNM = (value, reverse = false) => {
 
 // foot conversion functions
 const ftToYD = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 3)
+	return calculateValue(value, reverse, 3)
 }
 
 const ftToM = (value, reverse = false) => {
@@ -111,7 +110,7 @@ const ftToNM = (value, reverse = false) => {
 
 // yard conversion functions
 const ydToM = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 1.0936132983377078)
+	return calculateValue(value, reverse, 1.0936132983377078)
 }
 
 const ydToKM = (value, reverse = false) => {
@@ -128,7 +127,7 @@ const ydToNM = (value, reverse = false) => {
 
 // meter conversion functions
 const mToKM = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 1000)
+	return calculateValue(value, reverse, 1000)
 }
 
 const mToMI = (value, reverse = false) => {
@@ -141,7 +140,7 @@ const mToNM = (value, reverse = false) => {
 
 // kilometer conversion functions
 const kmToMI = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 1.609344)
+	return calculateValue(value, reverse, 1.609344)
 }
 
 const kmToNM = (value, reverse = false) => {
@@ -150,7 +149,7 @@ const kmToNM = (value, reverse = false) => {
 
 // mile conversion function
 const miToNM = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 1.1507794480235425)
+	return calculateValue(value, reverse, 1.1507794480235425)
 }
 
 function Length() {
@@ -337,5 +336,4 @@ function Length() {
 	this.defaults = ["centimeter", "kilometer", "mile"]
 }
 
-// export default Length
-module.exports = Length
+export default Length
