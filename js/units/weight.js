@@ -15,15 +15,41 @@ const mgToKG = (value, reverse = false) => {}
 const mgToT = (value, reverse = false) => {}
 
 // centigram conversion functions
-const cgToDG = (value, reverse = false) => {}
-const cgToCT = (value, reverse = false) => {}
-const cgToG = (value, reverse = false) => {}
-const cgToDAG = (value, reverse = false) => {}
-const cgToOZ = (value, reverse = false) => {}
-const cgToHG = (value, reverse = false) => {}
-const cgToLB = (value, reverse = false) => {}
-const cgToKG = (value, reverse = false) => {}
-const cgToT = (value, reverse = false) => {}
+const cgToDG = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 10)
+}
+
+const cgToCT = (value, reverse = false) => {
+	return dgToCT(cgToDG(value, reverse), reverse)
+}
+
+const cgToG = (value, reverse = false) => {
+	return ctToG(cgToCT(value, reverse), reverse)
+}
+
+const cgToDAG = (value, reverse = false) => {
+	return gToDAG(cgToG(value, reverse), reverse)
+}
+
+const cgToOZ = (value, reverse = false) => {
+	return dagToOZ(cgToDAG(value, reverse), reverse)
+}
+
+const cgToHG = (value, reverse = false) => {
+	return ozToHG(cgToOZ(value, reverse), reverse)
+}
+
+const cgToLB = (value, reverse = false) => {
+	return hgToLB(cgToHG(value, reverse), reverse)
+}
+
+const cgToKG = (value, reverse = false) => {
+	return lbToKG(cgToLB(value, reverse), reverse)
+}
+
+const cgToT = (value, reverse = false) => {
+	return kgToT(cgToKG(value, reverse), reverse)
+}
 
 // decigram conversion functions
 const dgToCT = (value, reverse = false) => {
