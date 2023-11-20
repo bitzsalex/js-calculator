@@ -3,16 +3,45 @@ const helper = require("../helper")
 
 
 // milligram conversion functions
-const mgToCG = (value, reverse = false) => {}
-const mgToDG = (value, reverse = false) => {}
-const mgToCT = (value, reverse = false) => {}
-const mgToG = (value, reverse = false) => {}
-const mgToDAG = (value, reverse = false) => {}
-const mgToOZ = (value, reverse = false) => {}
-const mgToHG = (value, reverse = false) => {}
-const mgToLB = (value, reverse = false) => {}
-const mgToKG = (value, reverse = false) => {}
-const mgToT = (value, reverse = false) => {}
+const mgToCG = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 10)
+}
+
+const mgToDG = (value, reverse = false) => {
+	return cgToDG(mgToCG(value, reverse), reverse)
+}
+
+const mgToCT = (value, reverse = false) => {
+	return dgToCT(mgToDG(value, reverse), reverse)
+}
+
+const mgToG = (value, reverse = false) => {
+	return ctToG(mgToCT(value, reverse), reverse)
+}
+
+const mgToDAG = (value, reverse = false) => {
+	return gToDAG(mgToG(value, reverse), reverse)
+}
+
+const mgToOZ = (value, reverse = false) => {
+	return dagToOZ(mgToDAG(value, reverse), reverse)
+}
+
+const mgToHG = (value, reverse = false) => {
+	return ozToHG(mgToOZ(value, reverse), reverse)
+}
+
+const mgToLB = (value, reverse = false) => {
+	return hgToLB(mgToHG(value, reverse), reverse)
+}
+
+const mgToKG = (value, reverse = false) => {
+	return lbToKG(mgToLB(value, reverse), reverse)
+}
+
+const mgToT = (value, reverse = false) => {
+	return kgToT(mgToKG(value, reverse), reverse)
+}
 
 // centigram conversion functions
 const cgToDG = (value, reverse = false) => {
