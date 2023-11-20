@@ -53,11 +53,25 @@ const gToKG = (value, reverse = false) => {}
 const gToT = (value, reverse = false) => {}
 
 // decagram conversion functions
-const dagToOZ = (value, reverse = false) => {}
-const dagToHG = (value, reverse = false) => {}
-const dagToLB = (value, reverse = false) => {}
-const dagToKG = (value, reverse = false) => {}
-const dagToT = (value, reverse = false) => {}
+const dagToOZ = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 2.8349523125)
+}
+
+const dagToHG = (value, reverse = false) => {
+	return ozToHG(dagToOZ(value, reverse), reverse)
+}
+
+const dagToLB = (value, reverse = false) => {
+	return hgToLB(dagToHG(value, reverse), reverse)
+}
+
+const dagToKG = (value, reverse = false) => {
+	return lbToKG(dagToLB(value, reverse), reverse)
+}
+
+const dagToT = (value, reverse = false) => {
+	return kgToT(dagToKG(value, reverse), reverse)
+}
 
 // ounce conversion functions
 const ozToHG = (value, reverse = false) => {

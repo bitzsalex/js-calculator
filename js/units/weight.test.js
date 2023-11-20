@@ -39,7 +39,13 @@ const runTests = (from, to, conversionRate) => {
 // runTests("hectogram", "kilogram", 10)
 // runTests("hectogram", "ton", 9071.8474)
 
-runTests("ounce", "hectogram", 3.5273961949580412)
-runTests("ounce", "pound", 16)
-runTests("ounce", "kilogram", 35.27396194958041)
-runTests("ounce", "ton", 32000)
+// runTests("ounce", "hectogram", 3.5273961949580412)
+// runTests("ounce", "pound", 16)
+// runTests("ounce", "kilogram", 35.27396194958041)
+// runTests("ounce", "ton", 32000)
+
+runTests("decagram", "ounce", 2.8349523125)
+runTests("decagram", "hectogram", 10)
+runTests("decagram", "pound", 45.359237)
+runTests("decagram", "kilogram", 100)
+runTests("decagram", "ton", 90718.474)
