@@ -1,10 +1,8 @@
-// import { calculateValue } from "../helper"
-const helper = require("../helper")
-
+import { calculateValue } from "../helper"
 
 // milligram conversion functions
 const mgToCG = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 10)
+	return calculateValue(value, reverse, 10)
 }
 
 const mgToDG = (value, reverse = false) => {
@@ -45,7 +43,7 @@ const mgToT = (value, reverse = false) => {
 
 // centigram conversion functions
 const cgToDG = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 10)
+	return calculateValue(value, reverse, 10)
 }
 
 const cgToCT = (value, reverse = false) => {
@@ -82,7 +80,7 @@ const cgToT = (value, reverse = false) => {
 
 // decigram conversion functions
 const dgToCT = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 2)
+	return calculateValue(value, reverse, 2)
 }
 
 const dgToG = (value, reverse = false) => {
@@ -115,7 +113,7 @@ const dgToT = (value, reverse = false) => {
 
 // carat conversion functions
 const ctToG = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 5)
+	return calculateValue(value, reverse, 5)
 }
 
 const ctToDAG = (value, reverse = false) => {
@@ -144,7 +142,7 @@ const ctToT = (value, reverse = false) => {
 
 // gram conversion functions
 const gToDAG = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 10)
+	return calculateValue(value, reverse, 10)
 }
 
 const gToOZ = (value, reverse = false) => {
@@ -169,7 +167,7 @@ const gToT = (value, reverse = false) => {
 
 // decagram conversion functions
 const dagToOZ = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 2.8349523125)
+	return calculateValue(value, reverse, 2.8349523125)
 }
 
 const dagToHG = (value, reverse = false) => {
@@ -190,7 +188,7 @@ const dagToT = (value, reverse = false) => {
 
 // ounce conversion functions
 const ozToHG = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 3.5273961949580412)
+	return calculateValue(value, reverse, 3.5273961949580412)
 }
 
 const ozToLB = (value, reverse = false) => {
@@ -207,7 +205,7 @@ const ozToT = (value, reverse = false) => {
 
 // hectogram conversion functions
 const hgToLB = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 4.535923700000001)
+	return calculateValue(value, reverse, 4.535923700000001)
 }
 
 const hgToKG = (value, reverse = false) => {
@@ -220,7 +218,7 @@ const hgToT = (value, reverse = false) => {
 
 // pound conversion functions
 const lbToKG = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 2.2046226218487757)
+	return calculateValue(value, reverse, 2.2046226218487757)
 }
 
 const lbToT = (value, reverse = false) => {
@@ -229,7 +227,7 @@ const lbToT = (value, reverse = false) => {
 
 // kilogram conversion functions
 const kgToT = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 907.18474)
+	return calculateValue(value, reverse, 907.18474)
 }
 
 function Weight() {
@@ -249,7 +247,9 @@ function Weight() {
 
 	this.centigram = {
 		symbol: "cg",
-		toMilligram(value) { return mgToCG(value, true) },
+		toMilligram(value) {
+			return mgToCG(value, true)
+		},
 		toDecigram: cgToDG,
 		toCarat: cgToCT,
 		toGram: cgToG,
@@ -263,8 +263,12 @@ function Weight() {
 
 	this.decigram = {
 		symbol: "dg",
-		toMilligram(value) { return mgToDG(value, true) },
-		toCentigram(value) { return cgToDG(value, true) },
+		toMilligram(value) {
+			return mgToDG(value, true)
+		},
+		toCentigram(value) {
+			return cgToDG(value, true)
+		},
 		toCarat: dgToCT,
 		toGram: dgToG,
 		toDecagram: dgToDAG,
@@ -277,9 +281,15 @@ function Weight() {
 
 	this.carat = {
 		symbol: "ct",
-		toMilligram(value) { return mgToCT(value, true) },
-		toCentigram(value) { return cgToCT(value, true) },
-		toDecigram(value) { return dgToCT(value, true) },
+		toMilligram(value) {
+			return mgToCT(value, true)
+		},
+		toCentigram(value) {
+			return cgToCT(value, true)
+		},
+		toDecigram(value) {
+			return dgToCT(value, true)
+		},
 		toGram: ctToG,
 		toDecagram: ctToDAG,
 		toOunce: ctToOZ,
@@ -291,10 +301,18 @@ function Weight() {
 
 	this.gram = {
 		symbol: "g",
-		toMilligram(value) { return mgToG(value, true) },
-		toCentigram(value) { return cgToG(value, true) },
-		toDecigram(value) { return dgToG(value, true) },
-		toCarat(value) { return ctToG(value, true) },
+		toMilligram(value) {
+			return mgToG(value, true)
+		},
+		toCentigram(value) {
+			return cgToG(value, true)
+		},
+		toDecigram(value) {
+			return dgToG(value, true)
+		},
+		toCarat(value) {
+			return ctToG(value, true)
+		},
 		toDecagram: gToDAG,
 		toOunce: gToOZ,
 		toHectogram: gToHG,
@@ -305,11 +323,21 @@ function Weight() {
 
 	this.decagram = {
 		symbol: "dag",
-		toMilligram(value) { return mgToDAG(value, true) },
-		toCentigram(value) { return cgToDAG(value, true) },
-		toDecigram(value) { return dgToDAG(value, true) },
-		toCarat(value) { return ctToDAG(value, true) },
-		toGram(value) { return gToDAG(value, true) },
+		toMilligram(value) {
+			return mgToDAG(value, true)
+		},
+		toCentigram(value) {
+			return cgToDAG(value, true)
+		},
+		toDecigram(value) {
+			return dgToDAG(value, true)
+		},
+		toCarat(value) {
+			return ctToDAG(value, true)
+		},
+		toGram(value) {
+			return gToDAG(value, true)
+		},
 		toOunce: dagToOZ,
 		toHectogram: dagToHG,
 		toPound: dagToLB,
@@ -319,12 +347,24 @@ function Weight() {
 
 	this.ounce = {
 		symbol: "oz",
-		toMilligram(value) { return mgToOZ(value, true) },
-		toCentigram(value) { return cgToOZ(value, true) },
-		toDecigram(value) { return dgToOZ(value, true) },
-		toCarat(value) { return ctToOZ(value, true) },
-		toGram(value) { return gToOZ(value, true) },
-		toDecagram(value) { return dagToOZ(value, true) },
+		toMilligram(value) {
+			return mgToOZ(value, true)
+		},
+		toCentigram(value) {
+			return cgToOZ(value, true)
+		},
+		toDecigram(value) {
+			return dgToOZ(value, true)
+		},
+		toCarat(value) {
+			return ctToOZ(value, true)
+		},
+		toGram(value) {
+			return gToOZ(value, true)
+		},
+		toDecagram(value) {
+			return dagToOZ(value, true)
+		},
 		toHectogram: ozToHG,
 		toPound: ozToLB,
 		toKilogram: ozToKG,
@@ -333,13 +373,27 @@ function Weight() {
 
 	this.hectogram = {
 		symbol: "hg",
-		toMilligram(value) { return mgToHG(value, true) },
-		toCentigram(value) { return cgToHG(value, true) },
-		toDecigram(value) { return dgToHG(value, true) },
-		toCarat(value) { return ctToHG(value, true) },
-		toGram(value) { return gToHG(value, true) },
-		toDecagram(value) { return dagToHG(value, true) },
-		toOunce(value) { return ozToHG(value, true) },
+		toMilligram(value) {
+			return mgToHG(value, true)
+		},
+		toCentigram(value) {
+			return cgToHG(value, true)
+		},
+		toDecigram(value) {
+			return dgToHG(value, true)
+		},
+		toCarat(value) {
+			return ctToHG(value, true)
+		},
+		toGram(value) {
+			return gToHG(value, true)
+		},
+		toDecagram(value) {
+			return dagToHG(value, true)
+		},
+		toOunce(value) {
+			return ozToHG(value, true)
+		},
 		toPound: hgToLB,
 		toKilogram: hgToKG,
 		toTon: hgToT,
@@ -347,49 +401,101 @@ function Weight() {
 
 	this.pound = {
 		symbol: "lb",
-		toMilligram(value) { return mgToLB(value, true) },
-		toCentigram(value) { return cgToLB(value, true) },
-		toDecigram(value) { return dgToLB(value, true) },
-		toCarat(value) { return ctToLB(value, true) },
-		toGram(value) { return gToLB(value, true) },
-		toDecagram(value) { return dagToLB(value, true) },
-		toOunce(value) { return ozToLB(value, true) },
-		toHectogram(value) { return hgToLB(value, true) },
+		toMilligram(value) {
+			return mgToLB(value, true)
+		},
+		toCentigram(value) {
+			return cgToLB(value, true)
+		},
+		toDecigram(value) {
+			return dgToLB(value, true)
+		},
+		toCarat(value) {
+			return ctToLB(value, true)
+		},
+		toGram(value) {
+			return gToLB(value, true)
+		},
+		toDecagram(value) {
+			return dagToLB(value, true)
+		},
+		toOunce(value) {
+			return ozToLB(value, true)
+		},
+		toHectogram(value) {
+			return hgToLB(value, true)
+		},
 		toKilogram: lbToKG,
 		toTon: lbToT,
 	}
 
 	this.kilogram = {
 		symbol: "kg",
-		toMilligram(value) { return mgToKG(value, true) },
-		toCentigram(value) { return cgToKG(value, true) },
-		toDecigram(value) { return dgToKG(value, true) },
-		toCarat(value) { return ctToKG(value, true) },
-		toGram(value) { return gToKG(value, true) },
-		toDecagram(value) { return dagToKG(value, true) },
-		toOunce(value) { return ozToKG(value, true) },
-		toHectogram(value) { return hgToKG(value, true) },
-		toPound(value) { return lbToKG(value, true) },
+		toMilligram(value) {
+			return mgToKG(value, true)
+		},
+		toCentigram(value) {
+			return cgToKG(value, true)
+		},
+		toDecigram(value) {
+			return dgToKG(value, true)
+		},
+		toCarat(value) {
+			return ctToKG(value, true)
+		},
+		toGram(value) {
+			return gToKG(value, true)
+		},
+		toDecagram(value) {
+			return dagToKG(value, true)
+		},
+		toOunce(value) {
+			return ozToKG(value, true)
+		},
+		toHectogram(value) {
+			return hgToKG(value, true)
+		},
+		toPound(value) {
+			return lbToKG(value, true)
+		},
 		toTon: kgToT,
 	}
 
 	this.ton = {
 		symbol: "t",
-		toMilligram(value) { return mgToT(value, true) },
-		toCentigram(value) { return cgToT(value, true) },
-		toDecigram(value) { return dgToT(value, true) },
-		toCarat(value) { return ctToT(value, true) },
-		toGram(value) { return gToT(value, true) },
-		toDecagram(value) { return dagToT(value, true) },
-		toOunce(value) { return ozToT(value, true) },
-		toHectogram(value) { return hgToT(value, true) },
-		toPound(value) { return lbToT(value, true) },
-		toKilogram(value) { return kgToT(value, true) },
+		toMilligram(value) {
+			return mgToT(value, true)
+		},
+		toCentigram(value) {
+			return cgToT(value, true)
+		},
+		toDecigram(value) {
+			return dgToT(value, true)
+		},
+		toCarat(value) {
+			return ctToT(value, true)
+		},
+		toGram(value) {
+			return gToT(value, true)
+		},
+		toDecagram(value) {
+			return dagToT(value, true)
+		},
+		toOunce(value) {
+			return ozToT(value, true)
+		},
+		toHectogram(value) {
+			return hgToT(value, true)
+		},
+		toPound(value) {
+			return lbToT(value, true)
+		},
+		toKilogram(value) {
+			return kgToT(value, true)
+		},
 	}
-
 
 	this.defaults = ["milligram", "gram", "ton"]
 }
 
-// export default Weight
-module.exports = Weight
+export default Weight
