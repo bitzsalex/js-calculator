@@ -45,12 +45,29 @@ const ctToKG = (value, reverse = false) => {}
 const ctToT = (value, reverse = false) => {}
 
 // gram conversion functions
-const gToDAG = (value, reverse = false) => {}
-const gToOZ = (value, reverse = false) => {}
-const gToHG = (value, reverse = false) => {}
-const gToLB = (value, reverse = false) => {}
-const gToKG = (value, reverse = false) => {}
-const gToT = (value, reverse = false) => {}
+const gToDAG = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 10)
+}
+
+const gToOZ = (value, reverse = false) => {
+	return dagToOZ(gToDAG(value, reverse), reverse)
+}
+
+const gToHG = (value, reverse = false) => {
+	return ozToHG(gToOZ(value, reverse), reverse)
+}
+
+const gToLB = (value, reverse = false) => {
+	return hgToLB(gToHG(value, reverse), reverse)
+}
+
+const gToKG = (value, reverse = false) => {
+	return lbToKG(gToLB(value, reverse), reverse)
+}
+
+const gToT = (value, reverse = false) => {
+	return kgToT(gToKG(value, reverse), reverse)
+}
 
 // decagram conversion functions
 const dagToOZ = (value, reverse = false) => {
