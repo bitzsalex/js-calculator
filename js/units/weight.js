@@ -60,10 +60,21 @@ const dagToKG = (value, reverse = false) => {}
 const dagToT = (value, reverse = false) => {}
 
 // ounce conversion functions
-const ozToHG = (value, reverse = false) => {}
-const ozToLB = (value, reverse = false) => {}
-const ozToKG = (value, reverse = false) => {}
-const ozToT = (value, reverse = false) => {}
+const ozToHG = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 3.5273961949580412)
+}
+
+const ozToLB = (value, reverse = false) => {
+	return hgToLB(ozToHG(value, reverse), reverse)
+}
+
+const ozToKG = (value, reverse = false) => {
+	return lbToKG(ozToLB(value, reverse), reverse)
+}
+
+const ozToT = (value, reverse = false) => {
+	return kgToT(ozToKG(value, reverse), reverse)
+}
 
 // hectogram conversion functions
 const hgToLB = (value, reverse = false) => {

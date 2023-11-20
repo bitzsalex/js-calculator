@@ -35,6 +35,11 @@ const runTests = (from, to, conversionRate) => {
 // runTests("pound", "kilogram", 2.2046226218487757)
 // runTests("pound", "ton", 2000)
 
-runTests("hectogram", "pound", 4.535923700000001)
-runTests("hectogram", "kilogram", 10)
-runTests("hectogram", "ton", 9071.8474)
+// runTests("hectogram", "pound", 4.535923700000001)
+// runTests("hectogram", "kilogram", 10)
+// runTests("hectogram", "ton", 9071.8474)
+
+runTests("ounce", "hectogram", 3.5273961949580412)
+runTests("ounce", "pound", 16)
+runTests("ounce", "kilogram", 35.27396194958041)
+runTests("ounce", "ton", 32000)
