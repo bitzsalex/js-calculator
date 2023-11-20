@@ -36,13 +36,33 @@ const dgToKG = (value, reverse = false) => {}
 const dgToT = (value, reverse = false) => {}
 
 // carat conversion functions
-const ctToG = (value, reverse = false) => {}
-const ctToDAG = (value, reverse = false) => {}
-const ctToOZ = (value, reverse = false) => {}
-const ctToHG = (value, reverse = false) => {}
-const ctToLB = (value, reverse = false) => {}
-const ctToKG = (value, reverse = false) => {}
-const ctToT = (value, reverse = false) => {}
+const ctToG = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 5)
+}
+
+const ctToDAG = (value, reverse = false) => {
+	return gToDAG(ctToG(value, reverse), reverse)
+}
+
+const ctToOZ = (value, reverse = false) => {
+	return dagToOZ(ctToDAG(value, reverse), reverse)
+}
+
+const ctToHG = (value, reverse = false) => {
+	return ozToHG(ctToOZ(value, reverse), reverse)
+}
+
+const ctToLB = (value, reverse = false) => {
+	return hgToLB(ctToHG(value, reverse), reverse)
+}
+
+const ctToKG = (value, reverse = false) => {
+	return lbToKG(ctToLB(value, reverse), reverse)
+}
+
+const ctToT = (value, reverse = false) => {
+	return kgToT(ctToKG(value, reverse), reverse)
+}
 
 // gram conversion functions
 const gToDAG = (value, reverse = false) => {
