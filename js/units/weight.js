@@ -66,9 +66,17 @@ const ozToKG = (value, reverse = false) => {}
 const ozToT = (value, reverse = false) => {}
 
 // hectogram conversion functions
-const hgToLB = (value, reverse = false) => {}
-const hgToKG = (value, reverse = false) => {}
-const hgToT = (value, reverse = false) => {}
+const hgToLB = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 4.535923700000001)
+}
+
+const hgToKG = (value, reverse = false) => {
+	return lbToKG(hgToLB(value, reverse), reverse)
+}
+
+const hgToT = (value, reverse = false) => {
+	return kgToT(hgToKG(value, reverse), reverse)
+}
 
 // pound conversion functions
 const lbToKG = (value, reverse = false) => {
