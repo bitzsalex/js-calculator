@@ -49,7 +49,7 @@ const runTests = (from, to, conversionRate, conversionReverse = false) => {
 
 // runTests("liter", "gallon", 0.21996924829909, true)
 // runTests("liter", "decaliter", 0.1, true)
-// runTests("liter", "cubic foot", 0.035314666721489, true)
+runTests("liter", "cubic foot", 0.035314666721489, true)
 // runTests("liter", "hectoliter", 0.01, true)
 // runTests("liter", "cubic meter", 0.001, true)
 
@@ -67,4 +67,4 @@ const runTests = (from, to, conversionRate, conversionReverse = false) => {
 // runTests("deciliter", "cubic foot", 0.0035314666721489, true)
 // runTests("deciliter", "hectoliter", 0.001, true)
 // runTests("deciliter", "cubic meter", 0.0001, true)
-runTests("deciliter", "kiloliter", 0.0001, true)
+// runTests("deciliter", "kiloliter", 0.0001, true)
