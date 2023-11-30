@@ -74,7 +74,9 @@ const mipsToMIPH = (value, reverse = false) => {}
 const mipsToKN = (value, reverse = false) => {}
 
 // mile per hour conversion function
-const miphToKN = (value, reverse = false) => {}
+const miphToKN = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.86897624190816)
+}
 
 function Speed() {
 	this["inch per second"] = {
