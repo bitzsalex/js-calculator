@@ -62,13 +62,25 @@ const dlToM3 = (value, reverse = false) => {}
 const dlToKL = (value, reverse = false) => {}
 
 // cubic decimeter conversion functions
-const dm3ToL = (value, reverse = false) => {}
-const dm3ToGAL = (value, reverse = false) => {}
-const dm3ToDAL = (value, reverse = false) => {}
-const dm3ToFT3 = (value, reverse = false) => {}
-const dm3ToHL = (value, reverse = false) => {}
-const dm3ToM3 = (value, reverse = false) => {}
-const dm3ToKL = (value, reverse = false) => {}
+const dm3ToL = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 1)
+}
+const dm3ToGAL = (value, reverse = false) => {
+	return lToGAL(value, reverse)
+}
+const dm3ToDAL = (value, reverse = false) => {
+	return galToDAL(dm3ToGAL(value, reverse), reverse)
+}
+const dm3ToFT3 = (value, reverse = false) => {
+	return dalToFT3(dm3ToDAL(value, reverse), reverse)
+}
+const dm3ToHL = (value, reverse = false) => {
+	return ft3ToHL(dm3ToFT3(value, reverse), reverse)
+}
+const dm3ToM3 = (value, reverse = false) => {
+	return hlToM3(dm3ToHL(value, reverse), reverse)
+}
+const dm3ToKL = dm3ToM3
 
 // liter conversion functions
 const lToGAL = (value, reverse = false) => {
