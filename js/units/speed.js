@@ -2,16 +2,36 @@
 const helper = require("../helper.js")
 
 // inch per second conversion functions
-const inpsToINPH = (value, reverse = false) => {}
-const inpsToFTPS = (value, reverse = false) => {}
-const inpsToFTPH = (value, reverse = false) => {}
-const inpsToMPS = (value, reverse = false) => {}
-const inpsToMPH = (value, reverse = false) => {}
-const inpsToKMPS = (value, reverse = false) => {}
-const inpsToKMPH = (value, reverse = false) => {}
-const inpsToMIPS = (value, reverse = false) => {}
-const inpsToMIPH = (value, reverse = false) => {}
-const inpsToKN = (value, reverse = false) => {}
+const inpsToINPH = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 3600)
+}
+const inpsToFTPS = (value, reverse = false) => {
+	return inphToFTPS(inpsToINPH(value, reverse), reverse)
+}
+const inpsToFTPH = (value, reverse = false) => {
+	return ftpsToFTPH(inpsToFTPS(value, reverse), reverse)
+}
+const inpsToMPS = (value, reverse = false) => {
+	return ftphToMPS(inpsToFTPH(value, reverse), reverse)
+}
+const inpsToMPH = (value, reverse = false) => {
+	return mpsToMPH(inpsToMPS(value, reverse), reverse)
+}
+const inpsToKMPS = (value, reverse = false) => {
+	return mphToKMPS(inpsToMPH(value, reverse), reverse)
+}
+const inpsToKMPH = (value, reverse = false) => {
+	return kmpsToKMPH(inpsToKMPS(value, reverse), reverse)
+}
+const inpsToMIPS = (value, reverse = false) => {
+	return kmphToMIPS(inpsToKMPH(value, reverse), reverse)
+}
+const inpsToMIPH = (value, reverse = false) => {
+	return mipsToMIPH(inpsToMIPS(value, reverse), reverse)
+}
+const inpsToKN = (value, reverse = false) => {
+	return miphToKN(inpsToMIPH(value, reverse), reverse)
+}
 
 // inch per hour conversion functions
 const inphToFTPS = (value, reverse = false) => {
