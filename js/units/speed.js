@@ -65,9 +65,15 @@ const kmpsToMIPH = (value, reverse = false) => {}
 const kmpsToKN = (value, reverse = false) => {}
 
 // kilometer per hour conversion functions
-const kmphToMIPS = (value, reverse = false) => {}
-const kmphToMIPH = (value, reverse = false) => {}
-const kmphToKN = (value, reverse = false) => {}
+const kmphToMIPS = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.00017260310895481)
+}
+const kmphToMIPH = (value, reverse = false) => {
+	return mipsToMIPH(kmphToMIPS(value, reverse), reverse)
+}
+const kmphToKN = (value, reverse = false) => {
+	return miphToKN(kmphToMIPH(value, reverse), reverse)
+}
 
 // mile per second conversion functions
 const mipsToMIPH = (value, reverse = false) => {
