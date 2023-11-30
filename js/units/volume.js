@@ -79,11 +79,19 @@ const lToM3 = (value, reverse = false) => {}
 const lToKL = (value, reverse = false) => {}
 
 // gallon conversion functions
-const galToDAL = (value, reverse = false) => {}
-const galToFT3 = (value, reverse = false) => {}
-const galToHL = (value, reverse = false) => {}
-const galToM3 = (value, reverse = false) => {}
-const galToKL = (value, reverse = false) => {}
+const galToDAL = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.454609)
+}
+const galToFT3 = (value, reverse = false) => {
+	return dalToFT3(galToDAL(value, reverse), reverse)
+}
+const galToHL = (value, reverse = false) => {
+	return ft3ToHL(galToFT3(value, reverse), reverse)
+}
+const galToM3 = (value, reverse = false) => {
+	return hlToM3(galToHL(value, reverse), reverse)
+}
+const galToKL = galToM3
 
 // decaliter conversion functions
 const dalToFT3 = (value, reverse = false) => {
