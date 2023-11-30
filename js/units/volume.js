@@ -1,0 +1,480 @@
+// import { calculateValue } from "../helper"
+const helper = require("../helper")
+
+// cubic centimeter conversion functions
+const cm3ToML = (value, reverse = false) => {}
+const cm3ToCL = (value, reverse = false) => {}
+const cm3ToIN3 = (value, reverse = false) => {}
+const cm3ToDL = (value, reverse = false) => {}
+const cm3ToDM3 = (value, reverse = false) => {}
+const cm3ToL = (value, reverse = false) => {}
+const cm3ToGAL = (value, reverse = false) => {}
+const cm3ToDAL = (value, reverse = false) => {}
+const cm3ToFT3 = (value, reverse = false) => {}
+const cm3ToHL = (value, reverse = false) => {}
+const cm3ToM3 = (value, reverse = false) => {}
+const cm3ToKL = (value, reverse = false) => {}
+
+// milliliter conversion functions
+const mlToCL = (value, reverse = false) => {}
+const mlToIN3 = (value, reverse = false) => {}
+const mlToDL = (value, reverse = false) => {}
+const mlToDM3 = (value, reverse = false) => {}
+const mlToL = (value, reverse = false) => {}
+const mlToGAL = (value, reverse = false) => {}
+const mlToDAL = (value, reverse = false) => {}
+const mlToFT3 = (value, reverse = false) => {}
+const mlToHL = (value, reverse = false) => {}
+const mlToM3 = (value, reverse = false) => {}
+const mlToKL = (value, reverse = false) => {}
+
+// centiliter conversion functions
+const clToIN3 = (value, reverse = false) => {}
+const clToDL = (value, reverse = false) => {}
+const clToDM3 = (value, reverse = false) => {}
+const clToL = (value, reverse = false) => {}
+const clToGAL = (value, reverse = false) => {}
+const clToDAL = (value, reverse = false) => {}
+const clToFT3 = (value, reverse = false) => {}
+const clToHL = (value, reverse = false) => {}
+const clToM3 = (value, reverse = false) => {}
+const clToKL = (value, reverse = false) => {}
+
+// cubic inch conversion functions
+const in3ToDL = (value, reverse = false) => {}
+const in3ToDM3 = (value, reverse = false) => {}
+const in3ToL = (value, reverse = false) => {}
+const in3ToGAL = (value, reverse = false) => {}
+const in3ToDAL = (value, reverse = false) => {}
+const in3ToFT3 = (value, reverse = false) => {}
+const in3ToHL = (value, reverse = false) => {}
+const in3ToM3 = (value, reverse = false) => {}
+const in3ToKL = (value, reverse = false) => {}
+
+// deciliter conversion functions
+const dlToDM3 = (value, reverse = false) => {}
+const dlToL = (value, reverse = false) => {}
+const dlToGAL = (value, reverse = false) => {}
+const dlToDAL = (value, reverse = false) => {}
+const dlToFT3 = (value, reverse = false) => {}
+const dlToHL = (value, reverse = false) => {}
+const dlToM3 = (value, reverse = false) => {}
+const dlToKL = (value, reverse = false) => {}
+
+// cubic decimeter conversion functions
+const dm3ToL = (value, reverse = false) => {}
+const dm3ToGAL = (value, reverse = false) => {}
+const dm3ToDAL = (value, reverse = false) => {}
+const dm3ToFT3 = (value, reverse = false) => {}
+const dm3ToHL = (value, reverse = false) => {}
+const dm3ToM3 = (value, reverse = false) => {}
+const dm3ToKL = (value, reverse = false) => {}
+
+// liter conversion functions
+const lToGAL = (value, reverse = false) => {}
+const lToDAL = (value, reverse = false) => {}
+const lToFT3 = (value, reverse = false) => {}
+const lToHL = (value, reverse = false) => {}
+const lToM3 = (value, reverse = false) => {}
+const lToKL = (value, reverse = false) => {}
+
+// gallon conversion functions
+const galToDAL = (value, reverse = false) => {}
+const galToFT3 = (value, reverse = false) => {}
+const galToHL = (value, reverse = false) => {}
+const galToM3 = (value, reverse = false) => {}
+const galToKL = (value, reverse = false) => {}
+
+// decaliter conversion functions
+const dalToFT3 = (value, reverse = false) => {}
+const dalToHL = (value, reverse = false) => {}
+const dalToM3 = (value, reverse = false) => {}
+const dalToKL = (value, reverse = false) => {}
+
+// cubic feet conversion functions
+const ft3ToHL = (value, reverse = false) => {}
+const ft3ToM3 = (value, reverse = false) => {}
+const ft3ToKL = (value, reverse = false) => {}
+
+// hectoliter conversion functions
+const hlToM3 = (value, reverse = false) => {}
+const hlToKL = (value, reverse = false) => {}
+
+// cubic meter conversion function
+const m3ToKL = (value, reverse = false) => {}
+
+function Volume() {
+	this["cubic centimeter"] = {
+		symbol: "cm",
+		supPost: "3",
+		toMilliliter: cm3ToML,
+		toCentiliter: cm3ToCL,
+		toCubicInch: cm3ToIN3,
+		toDeciliter: cm3ToDL,
+		toCubicDecimeter: cm3ToDM3,
+		toLiter: cm3ToL,
+		toGallon: cm3ToGAL,
+		toDecaliter: cm3ToDAL,
+		toCubicFeet: cm3ToFT3,
+		toHectoliter: cm3ToHL,
+		toCubicMeter: cm3ToM3,
+		toKiloliter: cm3ToKL,
+	}
+
+	this.milliliter = {
+		symbol: "ml",
+		toCubicCentimeter(value) {
+			return cm3ToML(value, true)
+		},
+		toCentiliter: mlToCL,
+		toCubicInch: mlToIN3,
+		toDeciliter: mlToDL,
+		toCubicDecimeter: mlToDM3,
+		toLiter: mlToL,
+		toGallon: mlToGAL,
+		toDecaliter: mlToDAL,
+		toCubicFeet: mlToFT3,
+		toHectoliter: mlToHL,
+		toCubicMeter: mlToM3,
+		toKiloliter: mlToKL,
+	}
+
+	this.centiliter = {
+		symbol: "cl",
+		toCubicCentimeter(value) {
+			return cm3ToCL(value, true)
+		},
+		toMilliliter(value) {
+			return mlToCL(value, true)
+		},
+		toCubicInch: clToIN3,
+		toDeciliter: clToDL,
+		toCubicDecimeter: clToDM3,
+		toLiter: clToL,
+		toGallon: clToGAL,
+		toDecaliter: clToDAL,
+		toCubicFeet: clToFT3,
+		toHectoliter: clToHL,
+		toCubicMeter: clToM3,
+		toKiloliter: clToKL,
+	}
+
+	this["cubic inch"] = {
+		symbol: "in",
+		supPost: 3,
+		toCubicCentimeter(value) {
+			cm3ToIN3(value, true)
+		},
+		toMilliliter(value) {
+			return mlToIN3(value, true)
+		},
+		toCentiliter(value) {
+			return clToIN3(value, true)
+		},
+		toDeciliter: clToDL,
+		toCubicDecimeter: clToDM3,
+		toLiter: clToL,
+		toGallon: clToGAL,
+		toDecaliter: clToDAL,
+		toCubicFeet: clToFT3,
+		toHectoliter: clToHL,
+		toCubicMeter: clToM3,
+		toKiloliter: clToKL,
+	}
+
+	this.deciliter = {
+		symbol: "dL",
+		toCubicCentimeter(value) {
+			cm3ToDL(value, true)
+		},
+		toMilliliter(value) {
+			return mlToDL(value, true)
+		},
+		toCentiliter(value) {
+			return clToDL(value, true)
+		},
+		toCubicInch(value) {
+			return in3ToDL(value, true)
+		},
+		toCubicDecimeter: clToDM3,
+		toLiter: clToL,
+		toGallon: clToGAL,
+		toDecaliter: clToDAL,
+		toCubicFeet: clToFT3,
+		toHectoliter: clToHL,
+		toCubicMeter: clToM3,
+		toKiloliter: clToKL,
+	}
+
+	this["cubic decimeter"] = {
+		symbol: "dm",
+		supPost: 3,
+		toCubicCentimeter(value) {
+			cm3ToDM3(value, true)
+		},
+		toMilliliter(value) {
+			return mlToDM3(value, true)
+		},
+		toCentiliter(value) {
+			return clToDM3(value, true)
+		},
+		toCubicInch(value) {
+			return in3ToDM3(value, true)
+		},
+		toDeciliter(value) {
+			return dlToDM3(value, true)
+		},
+		toLiter: dm3ToL,
+		toGallon: dm3ToGAL,
+		toDecaliter: dm3ToDAL,
+		toCubicFeet: dm3ToFT3,
+		toHectoliter: dm3ToHL,
+		toCubicMeter: dm3ToM3,
+		toKiloliter: dm3ToKL,
+	}
+
+	this.liter = {
+		symbol: "L",
+		toCubicCentimeter(value) {
+			cm3ToL(value, true)
+		},
+		toMilliliter(value) {
+			return mlToL(value, true)
+		},
+		toCentiliter(value) {
+			return clToL(value, true)
+		},
+		toCubicInch(value) {
+			return in3ToL(value, true)
+		},
+		toDeciliter(value) {
+			return dlToL(value, true)
+		},
+		toCubicDecimeter(value) {
+			return dm3ToL(value, true)
+		},
+		toGallon: lToGAL,
+		toDecaliter: lToDAL,
+		toCubicFeet: lToFT3,
+		toHectoliter: lToHL,
+		toCubicMeter: lToM3,
+		toKiloliter: lToKL,
+	}
+
+	this.gallon = {
+		symbol: "gal",
+		toCubicCentimeter(value) {
+			cm3ToGAL(value, true)
+		},
+		toMilliliter(value) {
+			return mlToGAL(value, true)
+		},
+		toCentiliter(value) {
+			return clToGAL(value, true)
+		},
+		toCubicInch(value) {
+			return in3ToGAL(value, true)
+		},
+		toDeciliter(value) {
+			return dlToGAL(value, true)
+		},
+		toCubicDecimeter(value) {
+			return dm3ToGAL(value, true)
+		},
+		toLiter(value) {
+			return lToGAL(value, true)
+		},
+		toDecaliter: galToDAL,
+		toCubicFeet: galToFT3,
+		toHectoliter: galToHL,
+		toCubicMeter: galToM3,
+		toKiloliter: galToKL,
+	}
+
+	this.decaliter = {
+		symbol: "dal",
+		toCubicCentimeter(value) {
+			cm3ToDAL(value, true)
+		},
+		toMilliliter(value) {
+			return mlToDAL(value, true)
+		},
+		toCentiliter(value) {
+			return clToDAL(value, true)
+		},
+		toCubicInch(value) {
+			return in3ToDAL(value, true)
+		},
+		toDeciliter(value) {
+			return dlToDAL(value, true)
+		},
+		toCubicDecimeter(value) {
+			return dm3ToDAL(value, true)
+		},
+		toLiter(value) {
+			return lToDAL(value, true)
+		},
+		toGallon(value) {
+			return galToDAL(value, true)
+		},
+		toCubicFeet: dalToFT3,
+		toHectoliter: dalToHL,
+		toCubicMeter: dalToM3,
+		toKiloliter: dalToKL,
+	}
+
+	this["cubic feet"] = {
+		symbol: "ft",
+		supPost: 3,
+		toCubicCentimeter(value) {
+			cm3ToFT3(value, true)
+		},
+		toMilliliter(value) {
+			return mlToFT3(value, true)
+		},
+		toCentiliter(value) {
+			return clToFT3(value, true)
+		},
+		toCubicInch(value) {
+			return in3ToFT3(value, true)
+		},
+		toDeciliter(value) {
+			return dlToFT3(value, true)
+		},
+		toCubicDecimeter(value) {
+			return dm3ToFT3(value, true)
+		},
+		toLiter(value) {
+			return lToFT3(value, true)
+		},
+		toGallon(value) {
+			return galToFT3(value, true)
+		},
+		toDecaliter(value) {
+			return dalToFT3(value, true)
+		},
+		toHectoliter: ft3ToHL,
+		toCubicMeter: ft3ToM3,
+		toKiloliter: ft3ToKL,
+	}
+
+	this.hectoliter = {
+		symbol: "hl",
+		toCubicCentimeter(value) {
+			cm3ToHL(value, true)
+		},
+		toMilliliter(value) {
+			return mlToHL(value, true)
+		},
+		toCentiliter(value) {
+			return clToHL(value, true)
+		},
+		toCubicInch(value) {
+			return in3ToHL(value, true)
+		},
+		toDeciliter(value) {
+			return dlToHL(value, true)
+		},
+		toCubicDecimeter(value) {
+			return dm3ToHL(value, true)
+		},
+		toLiter(value) {
+			return lToHL(value, true)
+		},
+		toGallon(value) {
+			return galToHL(value, true)
+		},
+		toDecaliter(value) {
+			return dalToHL(value, true)
+		},
+		toCubicFeet(value) {
+			return ft3ToHL(value, true)
+		},
+		toCubicMeter: hlToM3,
+		toKiloliter: hlToKL,
+	}
+
+	this["cubic meter"] = {
+		symbol: "m",
+		supPost: 3,
+		toCubicCentimeter(value) {
+			cm3ToM3(value, true)
+		},
+		toMilliliter(value) {
+			return mlToM3(value, true)
+		},
+		toCentiliter(value) {
+			return clToM3(value, true)
+		},
+		toCubicInch(value) {
+			return in3ToM3(value, true)
+		},
+		toDeciliter(value) {
+			return dlToM3(value, true)
+		},
+		toCubicDecimeter(value) {
+			return dm3ToM3(value, true)
+		},
+		toLiter(value) {
+			return lToM3(value, true)
+		},
+		toGallon(value) {
+			return galToM3(value, true)
+		},
+		toDecaliter(value) {
+			return dalToM3(value, true)
+		},
+		toCubicFeet(value) {
+			return ft3ToM3(value, true)
+		},
+		toHectoliter(value) {
+			return hlToM3(value, true)
+		},
+		toKiloliter: m3ToKL,
+	}
+
+	this.kiloliter = {
+		symbol: "kL",
+		toCubicCentimeter(value) {
+			cm3ToKL(value, true)
+		},
+		toMilliliter(value) {
+			return mlToKL(value, true)
+		},
+		toCentiliter(value) {
+			return clToKL(value, true)
+		},
+		toCubicInch(value) {
+			return in3ToKL(value, true)
+		},
+		toDeciliter(value) {
+			return dlToKL(value, true)
+		},
+		toCubicDecimeter(value) {
+			return dm3ToKL(value, true)
+		},
+		toLiter(value) {
+			return lToKL(value, true)
+		},
+		toGallon(value) {
+			return galToKL(value, true)
+		},
+		toDecaliter(value) {
+			return dalToKL(value, true)
+		},
+		toCubicFeet(value) {
+			return ft3ToKL(value, true)
+		},
+		toHectoliter(value) {
+			return hlToKL(value, true)
+		},
+		toCubicMeter(value) {
+			return m3ToKL(value, true)
+		},
+	}
+
+	this.defaults = ["centiliter", "kiloliter", "gallon"]
+}
+
+// export default Volume
+module.exports = Volume
