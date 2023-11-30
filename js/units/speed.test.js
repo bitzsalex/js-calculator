@@ -38,3 +38,8 @@ const runTests = (from, to, conversionRate, conversionReverse = false) => {
 // runTests("kilometer per hour", "mile per second", 0.00017260310895481, true)
 // runTests("kilometer per hour", "mile per hour", 0.62137119223733, true)
 // runTests("kilometer per hour", "knot", 0.53995680346039, true)
+
+// runTests("kilometer per second", "kilometer per hour", 3600, true)
+// runTests("kilometer per second", "mile per second", 0.62137119223733, true)
+// runTests("kilometer per second", "mile per hour", 2236.9362920544, true)
+runTests("kilometer per second", "knot", 1943.8444924574, true)
