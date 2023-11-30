@@ -30,4 +30,7 @@ const runTests = (from, to, conversionRate, conversionReverse = false) => {
 	testCases(to, from, testArray, reverse)
 }
 
-runTests("mile per hour", "knot", 0.86897624190816, true)
+// runTests("mile per hour", "knot", 0.86897624190816, true)
+
+// runTests("mile per second", "mile per hour", 3600, true)
+// runTests("mile per second", "knot", 3128.3144708694, true)
