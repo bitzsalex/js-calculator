@@ -71,12 +71,22 @@ const dm3ToM3 = (value, reverse = false) => {}
 const dm3ToKL = (value, reverse = false) => {}
 
 // liter conversion functions
-const lToGAL = (value, reverse = false) => {}
-const lToDAL = (value, reverse = false) => {}
-const lToFT3 = (value, reverse = false) => {}
-const lToHL = (value, reverse = false) => {}
-const lToM3 = (value, reverse = false) => {}
-const lToKL = (value, reverse = false) => {}
+const lToGAL = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.21996924829909)
+}
+const lToDAL = (value, reverse = false) => {
+	return galToDAL(lToGAL(value, reverse), reverse)
+}
+const lToFT3 = (value, reverse = false) => {
+	return dalToFT3(lToDAL(value, reverse), reverse)
+}
+const lToHL = (value, reverse = false) => {
+	return ft3ToHL(lToFT3(value, reverse), reverse)
+}
+const lToM3 = (value, reverse = false) => {
+	return hlToM3(lToHL(value, reverse), reverse)
+}
+const lToKL = lToM3
 
 // gallon conversion functions
 const galToDAL = (value, reverse = false) => {
