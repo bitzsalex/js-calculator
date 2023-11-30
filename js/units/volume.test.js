@@ -35,5 +35,9 @@ const runTests = (from, to, conversionRate, conversionReverse = false) => {
 // runTests("hectoliter", "cubic meter", 10)
 // runTests("hectoliter", "kiloliter", 10)
 
-runTests("cubic foot", "hectoliter", 0.28316846592, true)
-runTests("cubic foot", "cubic meter", 0.028316846592, true)
+// runTests("cubic foot", "hectoliter", 0.28316846592, true)
+// runTests("cubic foot", "cubic meter", 0.028316846592, true)
+
+runTests("decaliter", "cubic foot", 0.35314666721489, true)
+runTests("decaliter", "hectoliter", 0.1, true)
+runTests("decaliter", "cubic meter", 0.01, true)

@@ -86,10 +86,16 @@ const galToM3 = (value, reverse = false) => {}
 const galToKL = (value, reverse = false) => {}
 
 // decaliter conversion functions
-const dalToFT3 = (value, reverse = false) => {}
-const dalToHL = (value, reverse = false) => {}
-const dalToM3 = (value, reverse = false) => {}
-const dalToKL = (value, reverse = false) => {}
+const dalToFT3 = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.35314666721489)
+}
+const dalToHL = (value, reverse = false) => {
+	return ft3ToHL(dalToFT3(value, reverse), reverse)
+}
+const dalToM3 = (value, reverse = false) => {
+	return hlToM3(dalToHL(value, reverse), reverse)
+}
+const dalToKL = dalToM3
 
 // cubic foot conversion functions
 const ft3ToHL = (value, reverse = false) => {
