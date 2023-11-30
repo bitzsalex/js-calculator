@@ -30,4 +30,7 @@ const runTests = (from, to, conversionRate) => {
 	testCases(to, from, testArray, reverse)
 }
 
-runTests("cubic meter", "kiloliter", 1)
+// runTests("cubic meter", "kiloliter", 1)
+
+runTests("hectoliter", "cubic meter", 10)
+runTests("hectoliter", "kiloliter", 10)

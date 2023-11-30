@@ -97,8 +97,10 @@ const ft3ToM3 = (value, reverse = false) => {}
 const ft3ToKL = (value, reverse = false) => {}
 
 // hectoliter conversion functions
-const hlToM3 = (value, reverse = false) => {}
-const hlToKL = (value, reverse = false) => {}
+const hlToM3 = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 10)
+}
+const hlToKL = hlToM3
 
 // cubic meter conversion function
 const m3ToKL = (value, reverse = false) => {
