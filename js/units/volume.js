@@ -41,15 +41,31 @@ const clToM3 = (value, reverse = false) => {}
 const clToKL = (value, reverse = false) => {}
 
 // cubic inch conversion functions
-const in3ToDL = (value, reverse = false) => {}
-const in3ToDM3 = (value, reverse = false) => {}
-const in3ToL = (value, reverse = false) => {}
-const in3ToGAL = (value, reverse = false) => {}
-const in3ToDAL = (value, reverse = false) => {}
-const in3ToFT3 = (value, reverse = false) => {}
-const in3ToHL = (value, reverse = false) => {}
-const in3ToM3 = (value, reverse = false) => {}
-const in3ToKL = (value, reverse = false) => {}
+const in3ToDL = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.16387064)
+}
+const in3ToDM3 = (value, reverse = false) => {
+	return dlToDM3(in3ToDL(value, reverse), reverse)
+}
+const in3ToL = (value, reverse = false) => {
+	return dm3ToL(in3ToDM3(value, reverse), reverse)
+}
+const in3ToGAL = (value, reverse = false) => {
+	return lToGAL(in3ToL(value, reverse), reverse)
+}
+const in3ToDAL = (value, reverse = false) => {
+	return galToDAL(in3ToGAL(value, reverse), reverse)
+}
+const in3ToFT3 = (value, reverse = false) => {
+	return dalToFT3(in3ToDAL(value, reverse), reverse)
+}
+const in3ToHL = (value, reverse = false) => {
+	return ft3ToHL(in3ToFT3(value, reverse), reverse)
+}
+const in3ToM3 = (value, reverse = false) => {
+	return hlToM3(in3ToHL(value, reverse), reverse)
+}
+const in3ToKL = in3ToM3
 
 // deciliter conversion functions
 const dlToDM3 = (value, reverse = false) => {
@@ -217,15 +233,15 @@ function Volume() {
 		toCentiliter(value) {
 			return clToIN3(value, true)
 		},
-		toDeciliter: clToDL,
-		toCubicDecimeter: clToDM3,
-		toLiter: clToL,
-		toGallon: clToGAL,
-		toDecaliter: clToDAL,
-		toCubicFoot: clToFT3,
-		toHectoliter: clToHL,
-		toCubicMeter: clToM3,
-		toKiloliter: clToKL,
+		toDeciliter: in3ToDL,
+		toCubicDecimeter: in3ToDM3,
+		toLiter: in3ToL,
+		toGallon: in3ToGAL,
+		toDecaliter: in3ToDAL,
+		toCubicFoot: in3ToFT3,
+		toHectoliter: in3ToHL,
+		toCubicMeter: in3ToM3,
+		toKiloliter: in3ToKL,
 	}
 
 	this.deciliter = {
