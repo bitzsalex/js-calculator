@@ -1,12 +1,11 @@
-// import { calculateValue } from "../helper"
-const helper = require("../helper")
+import { calculateValue } from "../helper"
 
 // cubic centimeter conversion functions
 const cm3ToML = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 1)
+	return calculateValue(value, !reverse, 1)
 }
 const cm3ToCL = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.1)
+	return calculateValue(value, !reverse, 0.1)
 }
 const cm3ToIN3 = (value, reverse = false) => {
 	return clToIN3(cm3ToCL(value, reverse), reverse)
@@ -52,7 +51,7 @@ const mlToKL = cm3ToM3
 
 // centiliter conversion functions
 const clToIN3 = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.61023744094732)
+	return calculateValue(value, !reverse, 0.61023744094732)
 }
 const clToDL = (value, reverse = false) => {
 	return in3ToDL(clToIN3(value, reverse), reverse)
@@ -80,7 +79,7 @@ const clToKL = clToM3
 
 // cubic inch conversion functions
 const in3ToDL = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.16387064)
+	return calculateValue(value, !reverse, 0.16387064)
 }
 const in3ToDM3 = (value, reverse = false) => {
 	return dlToDM3(in3ToDL(value, reverse), reverse)
@@ -107,7 +106,7 @@ const in3ToKL = in3ToM3
 
 // deciliter conversion functions
 const dlToDM3 = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.1)
+	return calculateValue(value, !reverse, 0.1)
 }
 const dlToL = dlToDM3
 const dlToGAL = (value, reverse = false) => {
@@ -129,10 +128,10 @@ const dlToKL = dlToM3
 
 // cubic decimeter conversion functions
 const dm3ToL = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 1)
+	return calculateValue(value, !reverse, 1)
 }
 const dm3ToGAL = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.21996924829909)
+	return calculateValue(value, !reverse, 0.21996924829909)
 }
 const dm3ToDAL = (value, reverse = false) => {
 	return galToDAL(dm3ToGAL(value, reverse), reverse)
@@ -158,7 +157,7 @@ const lToKL = dm3ToKL
 
 // gallon conversion functions
 const galToDAL = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.454609)
+	return calculateValue(value, !reverse, 0.454609)
 }
 const galToFT3 = (value, reverse = false) => {
 	return dalToFT3(galToDAL(value, reverse), reverse)
@@ -173,7 +172,7 @@ const galToKL = galToM3
 
 // decaliter conversion functions
 const dalToFT3 = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.35314666721489)
+	return calculateValue(value, !reverse, 0.35314666721489)
 }
 const dalToHL = (value, reverse = false) => {
 	return ft3ToHL(dalToFT3(value, reverse), reverse)
@@ -185,7 +184,7 @@ const dalToKL = dalToM3
 
 // cubic foot conversion functions
 const ft3ToHL = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.28316846592)
+	return calculateValue(value, !reverse, 0.28316846592)
 }
 const ft3ToM3 = (value, reverse = false) => {
 	return hlToM3(ft3ToHL(value, reverse), reverse)
@@ -194,13 +193,13 @@ const ft3ToKL = ft3ToM3
 
 // hectoliter conversion functions
 const hlToM3 = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 10)
+	return calculateValue(value, reverse, 10)
 }
 const hlToKL = hlToM3
 
 // cubic meter conversion function
 const m3ToKL = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 1)
+	return calculateValue(value, reverse, 1)
 }
 
 function Volume() {
@@ -576,5 +575,4 @@ function Volume() {
 	this.defaults = ["centiliter", "kiloliter", "gallon"]
 }
 
-// export default Volume
-module.exports = Volume
+export default Volume
