@@ -52,14 +52,26 @@ const in3ToM3 = (value, reverse = false) => {}
 const in3ToKL = (value, reverse = false) => {}
 
 // deciliter conversion functions
-const dlToDM3 = (value, reverse = false) => {}
-const dlToL = (value, reverse = false) => {}
-const dlToGAL = (value, reverse = false) => {}
-const dlToDAL = (value, reverse = false) => {}
-const dlToFT3 = (value, reverse = false) => {}
-const dlToHL = (value, reverse = false) => {}
-const dlToM3 = (value, reverse = false) => {}
-const dlToKL = (value, reverse = false) => {}
+const dlToDM3 = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.1)
+}
+const dlToL = dlToDM3
+const dlToGAL = (value, reverse = false) => {
+	return lToGAL(dlToL(value, reverse), reverse)
+}
+const dlToDAL = (value, reverse = false) => {
+	return galToDAL(dlToGAL(value, reverse), reverse)
+}
+const dlToFT3 = (value, reverse = false) => {
+	return dalToFT3(dlToDAL(value, reverse), reverse)
+}
+const dlToHL = (value, reverse = false) => {
+	return ft3ToHL(dlToFT3(value, reverse), reverse)
+}
+const dlToM3 = (value, reverse = false) => {
+	return hlToM3(dlToHL(value, reverse), reverse)
+}
+const dlToKL = dlToM3
 
 // cubic decimeter conversion functions
 const dm3ToL = (value, reverse = false) => {
@@ -240,14 +252,14 @@ function Volume() {
 		toCubicInch(value) {
 			return in3ToDL(value, true)
 		},
-		toCubicDecimeter: clToDM3,
-		toLiter: clToL,
-		toGallon: clToGAL,
-		toDecaliter: clToDAL,
-		toCubicFoot: clToFT3,
-		toHectoliter: clToHL,
-		toCubicMeter: clToM3,
-		toKiloliter: clToKL,
+		toCubicDecimeter: dlToDM3,
+		toLiter: dlToL,
+		toGallon: dlToGAL,
+		toDecaliter: dlToDAL,
+		toCubicFoot: dlToFT3,
+		toHectoliter: dlToHL,
+		toCubicMeter: dlToM3,
+		toKiloliter: dlToKL,
 	}
 
 	this["cubic decimeter"] = {
