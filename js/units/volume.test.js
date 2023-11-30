@@ -18,12 +18,12 @@ const testCases = (from, to, arr, results) => {
 	})
 }
 
-const runTests = (from, to, conversionRate) => {
+const runTests = (from, to, conversionRate, conversionReverse = false) => {
 	let forward = testArray.map((value) => {
-		return helper.calculateValue(value, false, conversionRate)
+		return helper.calculateValue(value, conversionReverse, conversionRate)
 	})
 	let reverse = testArray.map((value) => {
-		return helper.calculateValue(value, true, conversionRate)
+		return helper.calculateValue(value, !conversionReverse, conversionRate)
 	})
 
 	testCases(from, to, testArray, forward)
@@ -32,5 +32,8 @@ const runTests = (from, to, conversionRate) => {
 
 // runTests("cubic meter", "kiloliter", 1)
 
-runTests("hectoliter", "cubic meter", 10)
-runTests("hectoliter", "kiloliter", 10)
+// runTests("hectoliter", "cubic meter", 10)
+// runTests("hectoliter", "kiloliter", 10)
+
+runTests("cubic foot", "hectoliter", 0.28316846592, true)
+runTests("cubic foot", "cubic meter", 0.028316846592, true)

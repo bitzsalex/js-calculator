@@ -91,10 +91,14 @@ const dalToHL = (value, reverse = false) => {}
 const dalToM3 = (value, reverse = false) => {}
 const dalToKL = (value, reverse = false) => {}
 
-// cubic feet conversion functions
-const ft3ToHL = (value, reverse = false) => {}
-const ft3ToM3 = (value, reverse = false) => {}
-const ft3ToKL = (value, reverse = false) => {}
+// cubic foot conversion functions
+const ft3ToHL = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.28316846592)
+}
+const ft3ToM3 = (value, reverse = false) => {
+	return hlToM3(ft3ToHL(value, reverse), reverse)
+}
+const ft3ToKL = ft3ToM3
 
 // hectoliter conversion functions
 const hlToM3 = (value, reverse = false) => {
@@ -119,7 +123,7 @@ function Volume() {
 		toLiter: cm3ToL,
 		toGallon: cm3ToGAL,
 		toDecaliter: cm3ToDAL,
-		toCubicFeet: cm3ToFT3,
+		toCubicFoot: cm3ToFT3,
 		toHectoliter: cm3ToHL,
 		toCubicMeter: cm3ToM3,
 		toKiloliter: cm3ToKL,
@@ -137,7 +141,7 @@ function Volume() {
 		toLiter: mlToL,
 		toGallon: mlToGAL,
 		toDecaliter: mlToDAL,
-		toCubicFeet: mlToFT3,
+		toCubicFoot: mlToFT3,
 		toHectoliter: mlToHL,
 		toCubicMeter: mlToM3,
 		toKiloliter: mlToKL,
@@ -157,7 +161,7 @@ function Volume() {
 		toLiter: clToL,
 		toGallon: clToGAL,
 		toDecaliter: clToDAL,
-		toCubicFeet: clToFT3,
+		toCubicFoot: clToFT3,
 		toHectoliter: clToHL,
 		toCubicMeter: clToM3,
 		toKiloliter: clToKL,
@@ -180,7 +184,7 @@ function Volume() {
 		toLiter: clToL,
 		toGallon: clToGAL,
 		toDecaliter: clToDAL,
-		toCubicFeet: clToFT3,
+		toCubicFoot: clToFT3,
 		toHectoliter: clToHL,
 		toCubicMeter: clToM3,
 		toKiloliter: clToKL,
@@ -204,7 +208,7 @@ function Volume() {
 		toLiter: clToL,
 		toGallon: clToGAL,
 		toDecaliter: clToDAL,
-		toCubicFeet: clToFT3,
+		toCubicFoot: clToFT3,
 		toHectoliter: clToHL,
 		toCubicMeter: clToM3,
 		toKiloliter: clToKL,
@@ -231,7 +235,7 @@ function Volume() {
 		toLiter: dm3ToL,
 		toGallon: dm3ToGAL,
 		toDecaliter: dm3ToDAL,
-		toCubicFeet: dm3ToFT3,
+		toCubicFoot: dm3ToFT3,
 		toHectoliter: dm3ToHL,
 		toCubicMeter: dm3ToM3,
 		toKiloliter: dm3ToKL,
@@ -259,7 +263,7 @@ function Volume() {
 		},
 		toGallon: lToGAL,
 		toDecaliter: lToDAL,
-		toCubicFeet: lToFT3,
+		toCubicFoot: lToFT3,
 		toHectoliter: lToHL,
 		toCubicMeter: lToM3,
 		toKiloliter: lToKL,
@@ -289,7 +293,7 @@ function Volume() {
 			return lToGAL(value, true)
 		},
 		toDecaliter: galToDAL,
-		toCubicFeet: galToFT3,
+		toCubicFoot: galToFT3,
 		toHectoliter: galToHL,
 		toCubicMeter: galToM3,
 		toKiloliter: galToKL,
@@ -321,13 +325,13 @@ function Volume() {
 		toGallon(value) {
 			return galToDAL(value, true)
 		},
-		toCubicFeet: dalToFT3,
+		toCubicFoot: dalToFT3,
 		toHectoliter: dalToHL,
 		toCubicMeter: dalToM3,
 		toKiloliter: dalToKL,
 	}
 
-	this["cubic feet"] = {
+	this["cubic foot"] = {
 		symbol: "ft",
 		supPost: 3,
 		toCubicCentimeter(value) {
@@ -391,7 +395,7 @@ function Volume() {
 		toDecaliter(value) {
 			return dalToHL(value, true)
 		},
-		toCubicFeet(value) {
+		toCubicFoot(value) {
 			return ft3ToHL(value, true)
 		},
 		toCubicMeter: hlToM3,
@@ -428,7 +432,7 @@ function Volume() {
 		toDecaliter(value) {
 			return dalToM3(value, true)
 		},
-		toCubicFeet(value) {
+		toCubicFoot(value) {
 			return ft3ToM3(value, true)
 		},
 		toHectoliter(value) {
@@ -466,7 +470,7 @@ function Volume() {
 		toDecaliter(value) {
 			return dalToKL(value, true)
 		},
-		toCubicFeet(value) {
+		toCubicFoot(value) {
 			return ft3ToKL(value, true)
 		},
 		toHectoliter(value) {
