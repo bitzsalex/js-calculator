@@ -35,13 +35,27 @@ const ftpsToMIPH = (value, reverse = false) => {}
 const ftpsToKN = (value, reverse = false) => {}
 
 // foot per hour conversion functions
-const ftphToMPS = (value, reverse = false) => {}
-const ftphToMPH = (value, reverse = false) => {}
-const ftphToKMPS = (value, reverse = false) => {}
-const ftphToKMPH = (value, reverse = false) => {}
-const ftphToMIPS = (value, reverse = false) => {}
-const ftphToMIPH = (value, reverse = false) => {}
-const ftphToKN = (value, reverse = false) => {}
+const ftphToMPS = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.0000846666667)
+}
+const ftphToMPH = (value, reverse = false) => {
+	return mpsToMPH(ftphToMPS(value, reverse), reverse)
+}
+const ftphToKMPS = (value, reverse = false) => {
+	return mphToKMPS(ftphToMPH(value, reverse), reverse)
+}
+const ftphToKMPH = (value, reverse = false) => {
+	return kmpsToKMPH(ftphToKMPS(value, reverse), reverse)
+}
+const ftphToMIPS = (value, reverse = false) => {
+	return kmphToMIPS(ftphToKMPH(value, reverse), reverse)
+}
+const ftphToMIPH = (value, reverse = false) => {
+	return mipsToMIPH(ftphToMIPS(value, reverse), reverse)
+}
+const ftphToKN = (value, reverse = false) => {
+	return miphToKN(ftphToMIPH(value, reverse), reverse)
+}
 
 // meter per second conversion functions
 const mpsToMPH = (value, reverse = false) => {
