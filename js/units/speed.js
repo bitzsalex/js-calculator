@@ -1,9 +1,8 @@
-// import { calculateValue } from "../helper"
-const helper = require("../helper.js")
+import { calculateValue } from "../helper"
 
 // inch per second conversion functions
 const inpsToINPH = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 3600)
+	return calculateValue(value, !reverse, 3600)
 }
 const inpsToFTPS = (value, reverse = false) => {
 	return inphToFTPS(inpsToINPH(value, reverse), reverse)
@@ -35,7 +34,7 @@ const inpsToKN = (value, reverse = false) => {
 
 // inch per hour conversion functions
 const inphToFTPS = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.0000231481)
+	return calculateValue(value, !reverse, 0.0000231481)
 }
 const inphToFTPH = (value, reverse = false) => {
 	return ftpsToFTPH(inphToFTPS(value, reverse), reverse)
@@ -64,7 +63,7 @@ const inphToKN = (value, reverse = false) => {
 
 // foot per second conversion functions
 const ftpsToFTPH = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 3600)
+	return calculateValue(value, !reverse, 3600)
 }
 const ftpsToMPS = (value, reverse = false) => {
 	return ftphToMPS(ftpsToFTPH(value, reverse), reverse)
@@ -90,7 +89,7 @@ const ftpsToKN = (value, reverse = false) => {
 
 // foot per hour conversion functions
 const ftphToMPS = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.0000846666667)
+	return calculateValue(value, !reverse, 0.0000846666667)
 }
 const ftphToMPH = (value, reverse = false) => {
 	return mpsToMPH(ftphToMPS(value, reverse), reverse)
@@ -113,7 +112,7 @@ const ftphToKN = (value, reverse = false) => {
 
 // meter per second conversion functions
 const mpsToMPH = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 3600)
+	return calculateValue(value, !reverse, 3600)
 }
 const mpsToKMPS = (value, reverse = false) => {
 	return mphToKMPS(mpsToMPH(value, reverse), reverse)
@@ -133,7 +132,7 @@ const mpsToKN = (value, reverse = false) => {
 
 // meter per hour conversion functions
 const mphToKMPS = (value, reverse = false) => {
-	return helper.calculateValue(value, reverse, 3600000)
+	return calculateValue(value, reverse, 3600000)
 }
 const mphToKMPH = (value, reverse = false) => {
 	return kmpsToKMPH(mphToKMPS(value, reverse), reverse)
@@ -150,7 +149,7 @@ const mphToKN = (value, reverse = false) => {
 
 // kilometer per second conversion functions
 const kmpsToKMPH = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 3600)
+	return calculateValue(value, !reverse, 3600)
 }
 const kmpsToMIPS = (value, reverse = false) => {
 	return kmphToMIPS(kmpsToKMPH(value, reverse), reverse)
@@ -164,7 +163,7 @@ const kmpsToKN = (value, reverse = false) => {
 
 // kilometer per hour conversion functions
 const kmphToMIPS = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.00017260310895481)
+	return calculateValue(value, !reverse, 0.00017260310895481)
 }
 const kmphToMIPH = (value, reverse = false) => {
 	return mipsToMIPH(kmphToMIPS(value, reverse), reverse)
@@ -175,7 +174,7 @@ const kmphToKN = (value, reverse = false) => {
 
 // mile per second conversion functions
 const mipsToMIPH = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 3600)
+	return calculateValue(value, !reverse, 3600)
 }
 const mipsToKN = (value, reverse = false) => {
 	return miphToKN(mipsToMIPH(value, reverse), reverse)
@@ -183,7 +182,7 @@ const mipsToKN = (value, reverse = false) => {
 
 // mile per hour conversion function
 const miphToKN = (value, reverse = false) => {
-	return helper.calculateValue(value, !reverse, 0.86897624190816)
+	return calculateValue(value, !reverse, 0.86897624190816)
 }
 
 function Speed() {
@@ -344,5 +343,4 @@ function Speed() {
 	this.defaults = ["inch per second", "kilometer per hour", "knot"]
 }
 
-// export default Speed
-module.exports = Speed
+export default Speed
