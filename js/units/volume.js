@@ -29,16 +29,32 @@ const mlToM3 = (value, reverse = false) => {}
 const mlToKL = (value, reverse = false) => {}
 
 // centiliter conversion functions
-const clToIN3 = (value, reverse = false) => {}
-const clToDL = (value, reverse = false) => {}
-const clToDM3 = (value, reverse = false) => {}
-const clToL = (value, reverse = false) => {}
-const clToGAL = (value, reverse = false) => {}
-const clToDAL = (value, reverse = false) => {}
-const clToFT3 = (value, reverse = false) => {}
-const clToHL = (value, reverse = false) => {}
-const clToM3 = (value, reverse = false) => {}
-const clToKL = (value, reverse = false) => {}
+const clToIN3 = (value, reverse = false) => {
+	return helper.calculateValue(value, !reverse, 0.61023744094732)
+}
+const clToDL = (value, reverse = false) => {
+	return in3ToDL(clToIN3(value, reverse), reverse)
+}
+const clToDM3 = (value, reverse = false) => {
+	return dlToDM3(clToDL(value, reverse), reverse)
+}
+const clToL = clToDM3
+const clToGAL = (value, reverse = false) => {
+	return lToGAL(clToL(value, reverse), reverse)
+}
+const clToDAL = (value, reverse = false) => {
+	return galToDAL(clToGAL(value, reverse), reverse)
+}
+const clToFT3 = (value, reverse = false) => {
+	return dalToFT3(clToDAL(value, reverse), reverse)
+}
+const clToHL = (value, reverse = false) => {
+	return ft3ToHL(clToFT3(value, reverse), reverse)
+}
+const clToM3 = (value, reverse = false) => {
+	return hlToM3(clToHL(value, reverse), reverse)
+}
+const clToKL = clToM3
 
 // cubic inch conversion functions
 const in3ToDL = (value, reverse = false) => {
