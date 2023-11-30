@@ -101,7 +101,9 @@ const hlToM3 = (value, reverse = false) => {}
 const hlToKL = (value, reverse = false) => {}
 
 // cubic meter conversion function
-const m3ToKL = (value, reverse = false) => {}
+const m3ToKL = (value, reverse = false) => {
+	return helper.calculateValue(value, reverse, 1)
+}
 
 function Volume() {
 	this["cubic centimeter"] = {
