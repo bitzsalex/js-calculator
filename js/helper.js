@@ -1,10 +1,10 @@
 const splitNumberAndDecimal = (number) => {
 	let numArr = number.toString().split(".")
-	return [Math.trunc(number), numArr.length > 1 ? numArr[1] : ""]
+	return [Number(numArr[0]), numArr.length > 1 ? numArr[1] : ""]
 }
 
-const getInfoOfConsecutive = (decimal, num, size = 3) => {
-	let i = -1
+const getInfoOfConsecutive = (decimal, num, size = 3, initIndex = 0) => {
+	let i = initIndex - 1
 	num = num.toString()
 
 	while (i < decimal.length - 2) {
@@ -18,7 +18,7 @@ const getInfoOfConsecutive = (decimal, num, size = 3) => {
 
 const round9s = (number) => {
 	let [num, decimal] = splitNumberAndDecimal(number)
-	let [index, _] = getInfoOfConsecutive(decimal, 9)
+	let [index, ] = getInfoOfConsecutive(decimal, 9)
 
 	if (index !== -1) {
 		if (index === 0) return ++num
@@ -30,38 +30,39 @@ const round9s = (number) => {
 	return number
 }
 
-const applyExponential = number => {
+const applyExponential = (number) => {
 	let [num, decimal] = splitNumberAndDecimal(number)
 	let [index, zeroCount] = getInfoOfConsecutive(decimal, 0, 5)
 
 	// if the index is 0, there are 5 consecutive zeros,
 	// and the number is zero; turn it into exponential
-	if (!index && zeroCount && !num)
-		return number.toExponential()
+	if (!index && zeroCount && !num) return number.toExponential()
 	// and if size of the digit is greater than 15
 	// turn it into exponential as well
-	else if (num && num.toString().length > 15)
-		return num.toExponential(2)
+	else if (num && num.toString().length > 15) return num.toExponential(2)
 
-	return number
+	return String(number)
 }
 
-// TODO: This has to be moved to the final step, at the time to display result
-const truncateLastConsecutiveZeros = (strNum) => {
-	let dot = strNum.indexOf(".")
+const truncateLastZeros = (number) => {
+	let [num, decimal] = splitNumberAndDecimal(number)
+	// if the number is expressed as exponential
+	let indexOfE = decimal.indexOf("e")
+	let eResult = indexOfE !== -1 ? decimal.substring(indexOfE) : ""
+	decimal = eResult ? decimal.substring(0, indexOfE) : decimal
+	let [idx, count] = getInfoOfConsecutive(decimal, 0)
 
-	if (dot !== -1)
-		// loop through each decimal point in reverse order
-		for (let itr = strNum.length - 2; itr > dot + 2; itr--) {
-			let count = 0
-			while (strNum[itr] == 0) {
-				count++
-				itr--
-			}
-			if (count >= 2) return strNum.slice(0, itr + 1)
+	// if both the idx and the number are zero;
+	// adjust the idx (i.e., find the last consecutive)
+	// if the number isn't zero, return the number itself
+	if (idx === 0) {
+		if (num !== 0) {
+			return num
 		}
+		;[idx, count] = getInfoOfConsecutive(decimal, 0, 2, idx + count + 1)
+	}
 
-	return strNum
+	return idx !== -1 ? parseFloat(num + "." + decimal.substring(0, idx) + eResult) : number
 }
 
 const calculateValue = (value, reverse, conversionRate) => {
@@ -74,5 +75,5 @@ const capitalize = (phrase) => {
 	}, "")
 }
 
-// export default { truncateLastConsecutiveZeros, calculateValue, capitalize }
-module.exports = { calculateValue, capitalize, round9s, applyExponential }
+// export default { calculateValue, capitalize }
+module.exports = { calculateValue, capitalize, round9s, applyExponential, truncateLastZeros }
