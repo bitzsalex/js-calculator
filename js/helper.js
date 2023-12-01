@@ -3,20 +3,22 @@ const splitNumberAndDecimal = (number) => {
 	return [Math.trunc(number), numArr.length > 1 ? numArr[1] : ""]
 }
 
-const getIndexOfConsecutive = (decimal, num) => {
-	let i = 0
+const getInfoOfConsecutive = (decimal, num, size = 3) => {
+	let i = -1
 	num = num.toString()
+
 	while (i < decimal.length - 2) {
-		if (decimal[i] === num && decimal[i + 1] === num && decimal[i + 2] === num) return i
-		i++
+		let count = 0
+		while (decimal[i++] === num) count++
+		if (count >= size) return [--i - count, count]
 	}
 
-	return -1
+	return [-1, 0]
 }
 
 const round9s = (number) => {
 	let [num, decimal] = splitNumberAndDecimal(number)
-	let index = getIndexOfConsecutive(decimal, 9)
+	let [index, _] = getInfoOfConsecutive(decimal, 9)
 
 	if (index !== -1) {
 		if (index === 0) return ++num
@@ -24,6 +26,22 @@ const round9s = (number) => {
 		decimal[decimal.length - 1] = parseInt(decimal[decimal.length - 1]) + 1
 		return parseFloat(num + "." + decimal.join(""))
 	}
+
+	return number
+}
+
+const applyExponential = number => {
+	let [num, decimal] = splitNumberAndDecimal(number)
+	let [index, zeroCount] = getInfoOfConsecutive(decimal, 0, 5)
+
+	// if the index is 0, there are 5 consecutive zeros,
+	// and the number is zero; turn it into exponential
+	if (!index && zeroCount && !num)
+		return number.toExponential()
+	// and if size of the digit is greater than 15
+	// turn it into exponential as well
+	else if (num && num.toString().length > 15)
+		return num.toExponential(2)
 
 	return number
 }
@@ -56,5 +74,5 @@ const capitalize = (phrase) => {
 	}, "")
 }
 
-// export { truncateLastConsecutiveZeros, calculateValue, capitalize }
-module.exports = { calculateValue, capitalize, round9s }
+// export default { truncateLastConsecutiveZeros, calculateValue, capitalize }
+module.exports = { calculateValue, capitalize, round9s, applyExponential }
