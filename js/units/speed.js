@@ -1,4 +1,4 @@
-import { calculateValue } from "../helper"
+import "../helper.js"
 
 // inch per second conversion functions
 const inpsToINPH = (value, reverse = false) => {
@@ -202,7 +202,9 @@ function Speed() {
 
 	this["inch per hour"] = {
 		symbol: "in/h",
-		toInchPerSecond(value) { return inpsToINPH(value, true) },
+		toInchPerSecond(value) {
+			return inpsToINPH(value, true)
+		},
 		toFootPerSecond: inphToFTPS,
 		toFootPerHour: inphToFTPH,
 		toMeterPerSecond: inphToMPS,
@@ -216,8 +218,12 @@ function Speed() {
 
 	this["foot per second"] = {
 		symbol: "ft/s",
-		toInchPerSecond(value) { return inpsToFTPS(value, true) },
-		toInchPerHour(value) { return inphToFTPS(value, true) },
+		toInchPerSecond(value) {
+			return inpsToFTPS(value, true)
+		},
+		toInchPerHour(value) {
+			return inphToFTPS(value, true)
+		},
 		toFootPerHour: ftpsToFTPH,
 		toMeterPerSecond: ftpsToMPS,
 		toMeterPerHour: ftpsToMPH,
@@ -230,9 +236,15 @@ function Speed() {
 
 	this["foot per hour"] = {
 		symbol: "ft/h",
-		toInchPerSecond(value) { return inpsToFTPH(value, true) },
-		toInchPerHour(value) { return inphToFTPH(value, true) },
-		toFootPerSecond(value) { return ftpsToFTPH(value, true) },
+		toInchPerSecond(value) {
+			return inpsToFTPH(value, true)
+		},
+		toInchPerHour(value) {
+			return inphToFTPH(value, true)
+		},
+		toFootPerSecond(value) {
+			return ftpsToFTPH(value, true)
+		},
 		toMeterPerSecond: ftphToMPS,
 		toMeterPerHour: ftphToMPH,
 		toKilometerPerSecond: ftphToKMPS,
@@ -244,10 +256,18 @@ function Speed() {
 
 	this["meter per second"] = {
 		symbol: "m/s",
-		toInchPerSecond(value) { return inpsToMPS(value, true) },
-		toInchPerHour(value) { return inphToMPS(value, true) },
-		toFootPerSecond(value) { return ftpsToMPS(value, true) },
-		toFootPerHour(value) { return ftphToMPS(value, true) },
+		toInchPerSecond(value) {
+			return inpsToMPS(value, true)
+		},
+		toInchPerHour(value) {
+			return inphToMPS(value, true)
+		},
+		toFootPerSecond(value) {
+			return ftpsToMPS(value, true)
+		},
+		toFootPerHour(value) {
+			return ftphToMPS(value, true)
+		},
 		toMeterPerHour: mpsToMPH,
 		toKilometerPerSecond: mpsToKMPS,
 		toKilometerPerHour: mpsToKMPH,
@@ -258,11 +278,21 @@ function Speed() {
 
 	this["meter per hour"] = {
 		symbol: "m/h",
-		toInchPerSecond(value) { return inpsToMPH(value, true) },
-		toInchPerHour(value) { return inphToMPH(value, true) },
-		toFootPerSecond(value) { return ftpsToMPH(value, true) },
-		toFootPerHour(value) { return ftphToMPH(value, true) },
-		toMeterPerSecond(value) { return mpsToMPH(value, true) },
+		toInchPerSecond(value) {
+			return inpsToMPH(value, true)
+		},
+		toInchPerHour(value) {
+			return inphToMPH(value, true)
+		},
+		toFootPerSecond(value) {
+			return ftpsToMPH(value, true)
+		},
+		toFootPerHour(value) {
+			return ftphToMPH(value, true)
+		},
+		toMeterPerSecond(value) {
+			return mpsToMPH(value, true)
+		},
 		toKilometerPerSecond: mphToKMPS,
 		toKilometerPerHour: mphToKMPH,
 		toMilePerSecond: mphToMIPS,
@@ -272,12 +302,24 @@ function Speed() {
 
 	this["kilometer per second"] = {
 		symbol: "km/s",
-		toInchPerSecond(value) { return inpsToKMPS(value, true) },
-		toInchPerHour(value) { return inphToKMPS(value, true) },
-		toFootPerSecond(value) { return ftpsToKMPS(value, true) },
-		toFootPerHour(value) { return ftphToKMPS(value, true) },
-		toMeterPerSecond(value) { return mpsToKMPS(value, true) },
-		toMeterPerHour(value) { return mphToKMPS(value, true) },
+		toInchPerSecond(value) {
+			return inpsToKMPS(value, true)
+		},
+		toInchPerHour(value) {
+			return inphToKMPS(value, true)
+		},
+		toFootPerSecond(value) {
+			return ftpsToKMPS(value, true)
+		},
+		toFootPerHour(value) {
+			return ftphToKMPS(value, true)
+		},
+		toMeterPerSecond(value) {
+			return mpsToKMPS(value, true)
+		},
+		toMeterPerHour(value) {
+			return mphToKMPS(value, true)
+		},
 		toKilometerPerHour: kmpsToKMPH,
 		toMilePerSecond: kmpsToMIPS,
 		toMilePerHour: kmpsToMIPH,
@@ -286,13 +328,27 @@ function Speed() {
 
 	this["kilometer per hour"] = {
 		symbol: "km/h",
-		toInchPerSecond(value) { return inpsToKMPH(value, true) },
-		toInchPerHour(value) { return inphToKMPH(value, true) },
-		toFootPerSecond(value) { return ftpsToKMPH(value, true) },
-		toFootPerHour(value) { return ftphToKMPH(value, true) },
-		toMeterPerSecond(value) { return mpsToKMPH(value, true) },
-		toMeterPerHour(value) { return mphToKMPH(value, true) },
-		toKilometerPerSecond(value) { return kmpsToKMPH(value, true) },
+		toInchPerSecond(value) {
+			return inpsToKMPH(value, true)
+		},
+		toInchPerHour(value) {
+			return inphToKMPH(value, true)
+		},
+		toFootPerSecond(value) {
+			return ftpsToKMPH(value, true)
+		},
+		toFootPerHour(value) {
+			return ftphToKMPH(value, true)
+		},
+		toMeterPerSecond(value) {
+			return mpsToKMPH(value, true)
+		},
+		toMeterPerHour(value) {
+			return mphToKMPH(value, true)
+		},
+		toKilometerPerSecond(value) {
+			return kmpsToKMPH(value, true)
+		},
 		toMilePerSecond: kmphToMIPS,
 		toMilePerHour: kmphToMIPH,
 		toKnot: kmphToKN,
@@ -300,44 +356,98 @@ function Speed() {
 
 	this["mile per second"] = {
 		symbol: "mi/s",
-		toInchPerSecond(value) { return inpsToMIPS(value, true) },
-		toInchPerHour(value) { return inphToMIPS(value, true) },
-		toFootPerSecond(value) { return ftpsToMIPS(value, true) },
-		toFootPerHour(value) { return ftphToMIPS(value, true) },
-		toMeterPerSecond(value) { return mpsToMIPS(value, true) },
-		toMeterPerHour(value) { return mphToMIPS(value, true) },
-		toKilometerPerSecond(value) { return kmpsToMIPS(value, true) },
-		toKilometerPerHour(value) { return kmphToMIPS(value, true) },
+		toInchPerSecond(value) {
+			return inpsToMIPS(value, true)
+		},
+		toInchPerHour(value) {
+			return inphToMIPS(value, true)
+		},
+		toFootPerSecond(value) {
+			return ftpsToMIPS(value, true)
+		},
+		toFootPerHour(value) {
+			return ftphToMIPS(value, true)
+		},
+		toMeterPerSecond(value) {
+			return mpsToMIPS(value, true)
+		},
+		toMeterPerHour(value) {
+			return mphToMIPS(value, true)
+		},
+		toKilometerPerSecond(value) {
+			return kmpsToMIPS(value, true)
+		},
+		toKilometerPerHour(value) {
+			return kmphToMIPS(value, true)
+		},
 		toMilePerHour: mipsToMIPH,
 		toKnot: mipsToKN,
 	}
 
 	this["mile per hour"] = {
 		symbol: "mi/h",
-		toInchPerSecond(value) { return inpsToMIPH(value, true) },
-		toInchPerHour(value) { return inphToMIPH(value, true) },
-		toFootPerSecond(value) { return ftpsToMIPH(value, true) },
-		toFootPerHour(value) { return ftphToMIPH(value, true) },
-		toMeterPerSecond(value) { return mpsToMIPH(value, true) },
-		toMeterPerHour(value) { return mphToMIPH(value, true) },
-		toKilometerPerSecond(value) { return kmpsToMIPH(value, true) },
-		toKilometerPerHour(value) { return kmphToMIPH(value, true) },
-		toMilePerSecond(value) { return mipsToMIPH(value, true) },
+		toInchPerSecond(value) {
+			return inpsToMIPH(value, true)
+		},
+		toInchPerHour(value) {
+			return inphToMIPH(value, true)
+		},
+		toFootPerSecond(value) {
+			return ftpsToMIPH(value, true)
+		},
+		toFootPerHour(value) {
+			return ftphToMIPH(value, true)
+		},
+		toMeterPerSecond(value) {
+			return mpsToMIPH(value, true)
+		},
+		toMeterPerHour(value) {
+			return mphToMIPH(value, true)
+		},
+		toKilometerPerSecond(value) {
+			return kmpsToMIPH(value, true)
+		},
+		toKilometerPerHour(value) {
+			return kmphToMIPH(value, true)
+		},
+		toMilePerSecond(value) {
+			return mipsToMIPH(value, true)
+		},
 		toKnot: miphToKN,
 	}
 
 	this["knot"] = {
 		symbol: "kn",
-		toInchPerSecond(value) { return inpsToKN(value, true) },
-		toInchPerHour(value) { return inphToKN(value, true) },
-		toFootPerSecond(value) { return ftpsToKN(value, true) },
-		toFootPerHour(value) { return ftphToKN(value, true) },
-		toMeterPerSecond(value) { return mpsToKN(value, true) },
-		toMeterPerHour(value) { return mphToKN(value, true) },
-		toKilometerPerSecond(value) { return kmpsToKN(value, true) },
-		toKilometerPerHour(value) { return kmphToKN(value, true) },
-		toMilePerSecond(value) { return mipsToKN(value, true) },
-		toMilePerHour(value) { return miphToKN(value, true) },
+		toInchPerSecond(value) {
+			return inpsToKN(value, true)
+		},
+		toInchPerHour(value) {
+			return inphToKN(value, true)
+		},
+		toFootPerSecond(value) {
+			return ftpsToKN(value, true)
+		},
+		toFootPerHour(value) {
+			return ftphToKN(value, true)
+		},
+		toMeterPerSecond(value) {
+			return mpsToKN(value, true)
+		},
+		toMeterPerHour(value) {
+			return mphToKN(value, true)
+		},
+		toKilometerPerSecond(value) {
+			return kmpsToKN(value, true)
+		},
+		toKilometerPerHour(value) {
+			return kmphToKN(value, true)
+		},
+		toMilePerSecond(value) {
+			return mipsToKN(value, true)
+		},
+		toMilePerHour(value) {
+			return miphToKN(value, true)
+		},
 	}
 
 	this.defaults = ["inch per second", "kilometer per hour", "knot"]

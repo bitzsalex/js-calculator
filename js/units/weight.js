@@ -1,4 +1,4 @@
-import { calculateValue } from "../helper"
+import "../helper.js"
 
 // milligram conversion functions
 const mgToCG = (value, reverse = false) => {

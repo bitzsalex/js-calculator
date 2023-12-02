@@ -577,6 +577,7 @@ main {
 .calculator--units .screen .screen__basic, .calculator__history, .select__input, .type__input, .keypad__scientific, .keypad__scientific--second .keypad__scientific__first, .keypad__scientific__second, .keypad__unit {
   width: 1px;
   height: 1px;
+  display: none;
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
@@ -589,6 +590,7 @@ main {
 .calculator--units .screen__unit, .keypad__scientific--second .keypad__scientific__second, .keypad__scientific__first {
   width: auto;
   height: auto;
+  display: block;
   overflow: visible;
   position: relative;
   white-space: nowrap;

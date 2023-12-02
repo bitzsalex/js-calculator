@@ -1,13 +1,12 @@
+import "./units.js"
+
 feather.replace()
 
 const SCIENTIFIC_CALC = "calculator--scientific"
 const UNITS_CALC = "calculator--units"
-const MAX_SELECT_ITEM_NUMS = 8
 
 const body = document.body
 const themeToggler = document.querySelector("#theme-toggler")
-const selects = document.querySelectorAll(".select")
-const selectOptions = document.querySelectorAll(".select__option")
 const growingField = document.querySelector("#growing-input")
 const calculator = document.querySelector("#calculator")
 const simpleCalculator = document.querySelector("#simple")
@@ -21,55 +20,8 @@ const inputTextField = document.querySelector(".screen__input--input")
 const resultTextField = document.querySelector(".screen__input--result")
 const historyContent = document.querySelector(".history__content")
 const clearHistoryButton = document.querySelector("#clear_history")
-const unitInputs = document.querySelectorAll(".unit__input")
 
 let historyItems
-let selectedUnitInputCurrentValue = ""
-
-const removeSelectedOption = (parent) => {
-	for (let option of parent.children) option.classList.remove("selected")
-}
-
-const selectOption = (event) => {
-	let option = event.target
-	let select = option.closest("div.select")
-	removeSelectedOption(option.parentNode)
-	option.classList.add("selected")
-
-	// update the input
-	select.querySelector("input.select__input").value = option.textContent
-	// update the placeholder
-	select.querySelector("span.select__placeholder").innerText = option.textContent
-}
-
-const closeSelectFromOutside = () => {
-	let isThereClosedOption = false
-	selects.forEach((select) => {
-		if (select.classList.contains("show")) {
-			select.classList.remove("show")
-			isThereClosedOption = true
-		}
-	})
-
-	return isThereClosedOption
-}
-
-selects.forEach((select) => {
-	let options = select.querySelector("ul.select__options")
-	options.style.maxHeight = options.firstElementChild.scrollHeight * MAX_SELECT_ITEM_NUMS + "px"
-
-	select.addEventListener("click", (event) => {
-		event.stopPropagation()
-		if (!closeSelectFromOutside()) select.classList.toggle("show")
-	})
-})
-
-selectOptions.forEach((option) => {
-	option.addEventListener("click", selectOption)
-})
-
-// this event is to hide the visible select option
-body.addEventListener("click", closeSelectFromOutside)
 
 const changeTheme = (theme) => {
 	if (theme === "dark") body.classList.add("dark-theme")
@@ -161,8 +113,6 @@ const getHistoryItems = () => {
 
 getHistoryItems()
 
-localStorage
-
 // this insure history closing event won't be fired
 // when clicked inside history__content element
 historyContent.addEventListener("click", (event) => {
@@ -203,23 +153,6 @@ clearHistoryButton.addEventListener("click", () => {
 pageButtons.forEach((button) => {
 	button.addEventListener("click", () => {
 		scientificKeypad.classList.toggle("keypad__scientific--second")
-	})
-})
-
-const readOnlyFloat = (value) => {
-	if (isNaN(value)) {
-		value = value.replace(/[^\d.]/g, "")
-		if (value.split(".").length > 2) value = value.replace(/\.+$/g, "")
-	}
-
-	return value
-}
-
-unitInputs.forEach((unitInput) => {
-	unitInput.addEventListener("input", (event) => {
-		event.stopPropagation()
-		unitInput.value = readOnlyFloat(unitInput.value)
-		// call the operation
 	})
 })
 

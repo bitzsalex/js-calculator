@@ -1,4 +1,4 @@
-import { calculateValue } from "../helper"
+import "../helper.js"
 
 // Nanosecond conversion functions
 const nsToMCs = (value, reverse = false) => {

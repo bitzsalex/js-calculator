@@ -1,4 +1,4 @@
-import { calculateValue } from "../helper"
+import "../helper.js"
 
 // cubic centimeter conversion functions
 const cm3ToML = (value, reverse = false) => {

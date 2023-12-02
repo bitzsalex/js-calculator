@@ -1,4 +1,4 @@
-import { calculateValue } from "../helper.js"
+import "../helper.js"
 
 // millimeter conversion functions
 const mmToCM = (value, reverse = false) => {

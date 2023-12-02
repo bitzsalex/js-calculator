@@ -1,3 +1,12 @@
+const readOnlyFloat = (value) => {
+	if (isNaN(value)) {
+		value = value.replace(/[^\d.]/g, "")
+		if (value.split(".").length > 2) value = value.replace(/\.+$/g, "")
+	}
+
+	return value
+}
+
 const splitNumberAndDecimal = (number) => {
 	let numArr = number.toString().split(".")
 	return [Number(numArr[0]), numArr.length > 1 ? numArr[1] : ""]
@@ -59,7 +68,7 @@ const truncateLastZeros = (number) => {
 		if (num !== 0) {
 			return num
 		}
-		;[idx, count] = getInfoOfConsecutive(decimal, 0, 2, idx + count + 1)
+		[idx, count] = getInfoOfConsecutive(decimal, 0, 2, idx + count + 1)
 	}
 
 	return idx !== -1 ? parseFloat(num + "." + decimal.substring(0, idx) + eResult) : number
@@ -75,5 +84,4 @@ const capitalize = (phrase) => {
 	}, "")
 }
 
-// export default { calculateValue, capitalize }
-module.exports = { calculateValue, capitalize, round9s, applyExponential, truncateLastZeros }
+export { applyExponential, calculateValue, capitalize, round9s, readOnlyFloat, truncateLastZeros }

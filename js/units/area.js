@@ -1,4 +1,4 @@
-import calculateValue from "../helper"
+import "../helper.js"
 
 // Square Millimeter conversion functions
 const squareMMToCM = (value, reverse = false) => {
