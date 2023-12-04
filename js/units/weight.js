@@ -1,8 +1,8 @@
-import "../helper.js"
+import * as helper from "../helper.js"
 
 // milligram conversion functions
 const mgToCG = (value, reverse = false) => {
-	return calculateValue(value, reverse, 10)
+	return helper.calculateValue(value, reverse, 10)
 }
 
 const mgToDG = (value, reverse = false) => {
@@ -43,7 +43,7 @@ const mgToT = (value, reverse = false) => {
 
 // centigram conversion functions
 const cgToDG = (value, reverse = false) => {
-	return calculateValue(value, reverse, 10)
+	return helper.calculateValue(value, reverse, 10)
 }
 
 const cgToCT = (value, reverse = false) => {
@@ -80,7 +80,7 @@ const cgToT = (value, reverse = false) => {
 
 // decigram conversion functions
 const dgToCT = (value, reverse = false) => {
-	return calculateValue(value, reverse, 2)
+	return helper.calculateValue(value, reverse, 2)
 }
 
 const dgToG = (value, reverse = false) => {
@@ -113,7 +113,7 @@ const dgToT = (value, reverse = false) => {
 
 // carat conversion functions
 const ctToG = (value, reverse = false) => {
-	return calculateValue(value, reverse, 5)
+	return helper.calculateValue(value, reverse, 5)
 }
 
 const ctToDAG = (value, reverse = false) => {
@@ -142,7 +142,7 @@ const ctToT = (value, reverse = false) => {
 
 // gram conversion functions
 const gToDAG = (value, reverse = false) => {
-	return calculateValue(value, reverse, 10)
+	return helper.calculateValue(value, reverse, 10)
 }
 
 const gToOZ = (value, reverse = false) => {
@@ -167,7 +167,7 @@ const gToT = (value, reverse = false) => {
 
 // decagram conversion functions
 const dagToOZ = (value, reverse = false) => {
-	return calculateValue(value, reverse, 2.8349523125)
+	return helper.calculateValue(value, reverse, 2.8349523125)
 }
 
 const dagToHG = (value, reverse = false) => {
@@ -188,7 +188,7 @@ const dagToT = (value, reverse = false) => {
 
 // ounce conversion functions
 const ozToHG = (value, reverse = false) => {
-	return calculateValue(value, reverse, 3.5273961949580412)
+	return helper.calculateValue(value, reverse, 3.5273961949580412)
 }
 
 const ozToLB = (value, reverse = false) => {
@@ -205,7 +205,7 @@ const ozToT = (value, reverse = false) => {
 
 // hectogram conversion functions
 const hgToLB = (value, reverse = false) => {
-	return calculateValue(value, reverse, 4.535923700000001)
+	return helper.calculateValue(value, reverse, 4.535923700000001)
 }
 
 const hgToKG = (value, reverse = false) => {
@@ -218,7 +218,7 @@ const hgToT = (value, reverse = false) => {
 
 // pound conversion functions
 const lbToKG = (value, reverse = false) => {
-	return calculateValue(value, reverse, 2.2046226218487757)
+	return helper.calculateValue(value, reverse, 2.2046226218487757)
 }
 
 const lbToT = (value, reverse = false) => {
@@ -227,7 +227,7 @@ const lbToT = (value, reverse = false) => {
 
 // kilogram conversion functions
 const kgToT = (value, reverse = false) => {
-	return calculateValue(value, reverse, 907.18474)
+	return helper.calculateValue(value, reverse, 907.18474)
 }
 
 function Weight() {

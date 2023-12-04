@@ -1,4 +1,4 @@
-import "../helper.js"
+import * as helper from "../helper.js"
 
 const multipleOf1024 = (value, reverse) => {
 	return helper.calculateValue(value, reverse, 1024)

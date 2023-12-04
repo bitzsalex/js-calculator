@@ -1,16 +1,16 @@
-import "../helper.js"
+import * as helper from "../helper.js"
 
 // Nanosecond conversion functions
 const nsToMCs = (value, reverse = false) => {
-	return calculateValue(value, reverse, 1000)
+	return helper.calculateValue(value, reverse, 1000)
 }
 
 const nsToMs = (value, reverse = false) => {
-	return calculateValue(value, reverse, 1000000)
+	return helper.calculateValue(value, reverse, 1000000)
 }
 
 const nsToS = (value, reverse = false) => {
-	return calculateValue(value, reverse, 1000000000)
+	return helper.calculateValue(value, reverse, 1000000000)
 }
 
 const nsToM = (value, reverse = false) => {
@@ -119,7 +119,7 @@ const msToC = (value, reverse = false) => {
 
 // Second conversion function
 const sToM = (value, reverse = false) => {
-	return calculateValue(value, reverse, 60)
+	return helper.calculateValue(value, reverse, 60)
 }
 
 const sToHr = (value, reverse = false) => {
@@ -179,7 +179,7 @@ const mToC = (value, reverse = false) => {
 
 // Hour conversion functions
 const hrToD = (value, reverse = false) => {
-	return calculateValue(value, reverse, 24)
+	return helper.calculateValue(value, reverse, 24)
 }
 
 const hrToWk = (value, reverse = false) => {
@@ -204,7 +204,7 @@ const hrToC = (value, reverse = false) => {
 
 // Day conversion functions
 const dToWk = (value, reverse = false) => {
-	return calculateValue(value, reverse, 7)
+	return helper.calculateValue(value, reverse, 7)
 }
 
 const dToMn = (value, reverse = false) => {
@@ -212,7 +212,7 @@ const dToMn = (value, reverse = false) => {
 }
 
 const dToYr = (value, reverse = false) => {
-	return calculateValue(value, reverse, 365)
+	return helper.calculateValue(value, reverse, 365)
 }
 
 const dToDc = (value, reverse = false) => {
@@ -225,7 +225,7 @@ const dToC = (value, reverse = false) => {
 
 // Week conversion functions
 const wkToMn = (value, reverse = false) => {
-	return calculateValue(value, reverse, 4.345238095238095238095238095)
+	return helper.calculateValue(value, reverse, 4.345238095238095238095238095)
 }
 
 const wkToYr = (value, reverse = false) => {
@@ -242,7 +242,7 @@ const wkToC = (value, reverse = false) => {
 
 // Month conversion functions
 const mnToYr = (value, reverse = false) => {
-	return calculateValue(value, reverse, 12)
+	return helper.calculateValue(value, reverse, 12)
 }
 
 const mnToDc = (value, reverse = false) => {
@@ -255,7 +255,7 @@ const mnToC = (value, reverse = false) => {
 
 // Year conversion functions
 const yrToDc = (value, reverse = false) => {
-	return calculateValue(value, reverse, 10)
+	return helper.calculateValue(value, reverse, 10)
 }
 
 const yrToC = (value, reverse = false) => {

@@ -84,4 +84,16 @@ const capitalize = (phrase) => {
 	}, "")
 }
 
-export { applyExponential, calculateValue, capitalize, round9s, readOnlyFloat, truncateLastZeros }
+const makeResultPrecise = (value) => {
+	return applyExponential(truncateLastZeros(round9s(value)))
+}
+
+export {
+	applyExponential,
+	calculateValue,
+	capitalize,
+	round9s,
+	readOnlyFloat,
+	truncateLastZeros,
+	makeResultPrecise,
+}

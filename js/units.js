@@ -28,6 +28,8 @@ const body = document.body
 const selects = document.querySelectorAll(".select")
 const unitSelect = document.querySelector(".select.select--unit")
 const unitInputs = document.querySelectorAll(".unit__input")
+// this ones hold the SI/Unit type
+const selectInputs = document.querySelectorAll(".screen__unit .select__input")
 
 // always focus on the first one when converting
 // calculator type to units
@@ -78,11 +80,32 @@ selects.forEach((select) => {
 	})
 })
 
+const computeConversion = () => {
+	let from = selectInputs[focusedUnitInputIndex].value
+	let convertibleValue = parseFloat(unitInputs[focusedUnitInputIndex].value)
+
+	unitInputs.forEach((input, index) => {
+		if (convertibleValue) {
+			if (from === selectInputs[index].value) input.value = convertibleValue
+			else {
+				let to = helper.capitalize(selectInputs[index].value)
+
+				// the following will prevent conversion trial
+				// before the content of the select DOM is fully updated
+				if (Object.hasOwn(selectedUnit[from], "to" + to)) {
+					let func = selectedUnit[from]["to" + to]
+					input.value = helper.makeResultPrecise(func(convertibleValue))
+				}
+			}
+		} else input.value = ""
+	})
+}
+
 unitInputs.forEach((unitInput, index) => {
 	unitInput.addEventListener("input", (event) => {
 		event.stopPropagation()
 		event.target.value = helper.readOnlyFloat(unitInput.value)
-		// call the operation
+		computeConversion()
 	})
 
 	unitInput.addEventListener("focus", (event) => {
@@ -160,6 +183,7 @@ const changeUnit = (event) => {
 
 	adjustUnitLabelsWidth()
 	focusOnSelectedUnitInput()
+	computeConversion()
 }
 
 const changeToSelectedUnit = (event) => {

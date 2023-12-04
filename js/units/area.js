@@ -1,12 +1,12 @@
-import "../helper.js"
+import * as helper from "../helper.js"
 
 // Square Millimeter conversion functions
 const squareMMToCM = (value, reverse = false) => {
-	return calculateValue(value, reverse, 100)
+	return helper.calculateValue(value, reverse, 100)
 }
 
 const squareMMToIn = (value, reverse = false) => {
-	return calculateValue(value, !reverse, 0.0015500031)
+	return helper.calculateValue(value, !reverse, 0.0015500031)
 }
 
 const squareMMToFt = (value, reverse = false) => {
@@ -22,11 +22,11 @@ const squareMMToAc = (value, reverse = false) => {
 }
 
 const squareMMToHa = (value, reverse = false) => {
-	return calculateValue(value, reverse, 1e10)
+	return helper.calculateValue(value, reverse, 1e10)
 }
 
 const squareMMToM = (value, reverse = false) => {
-	return calculateValue(value, reverse, 1000000)
+	return helper.calculateValue(value, reverse, 1000000)
 }
 
 const squareMMToKM = (value, reverse = false) => {
@@ -55,15 +55,15 @@ const squareCMToAc = (value, reverse = false) => {
 }
 
 const squareCMToHa = (value, reverse = false) => {
-	return calculateValue(value, reverse, 100000000)
+	return helper.calculateValue(value, reverse, 100000000)
 }
 
 const squareCMToM = (value, reverse = false) => {
-	return calculateValue(value, reverse, 10000)
+	return helper.calculateValue(value, reverse, 10000)
 }
 
 const squareCMToKM = (value, reverse = false) => {
-	return calculateValue(value, reverse, 10000000000)
+	return helper.calculateValue(value, reverse, 10000000000)
 }
 
 const squareCMToMi = (value, reverse = false) => {
@@ -72,11 +72,11 @@ const squareCMToMi = (value, reverse = false) => {
 
 // Square Inch conversion functions
 const squareINToFt = (value, reverse = false) => {
-	return calculateValue(value, !reverse, 0.0069444444)
+	return helper.calculateValue(value, !reverse, 0.0069444444)
 }
 
 const squareINToYd = (value, reverse = false) => {
-	return calculateValue(value, reverse, 1296)
+	return helper.calculateValue(value, reverse, 1296)
 }
 
 const squareINToAc = (value, reverse = false) => {
@@ -101,7 +101,7 @@ const squareINToMi = (value, reverse = false) => {
 
 // Square Foot conversion functions
 const squareFTToYd = (value, reverse = false) => {
-	return calculateValue(value, !reverse, 0.1111111111)
+	return helper.calculateValue(value, !reverse, 0.1111111111)
 }
 
 const squareFTToAc = (value, reverse = false) => {
@@ -126,7 +126,7 @@ const squareFTToMi = (value, reverse = false) => {
 
 // Square Yard conversion functions
 const squareYDToAc = (value, reverse = false) => {
-	return calculateValue(value, !reverse, 0.0002066116)
+	return helper.calculateValue(value, !reverse, 0.0002066116)
 }
 
 const squareYDToHa = (value, reverse = false) => {
@@ -147,7 +147,7 @@ const squareYDToMi = (value, reverse = false) => {
 
 // Acre conversion functions
 const acToHa = (value, reverse = false) => {
-	return calculateValue(value, !reverse, 0.4046856422)
+	return helper.calculateValue(value, !reverse, 0.4046856422)
 }
 
 const acToM = (value, reverse = false) => {
@@ -164,7 +164,7 @@ const acToMi = (value, reverse = false) => {
 
 // Hectare conversion functions
 const haToM = (value, reverse = false) => {
-	return calculateValue(value, !reverse, 10000)
+	return helper.calculateValue(value, !reverse, 10000)
 }
 
 const haToKM = (value, reverse = false) => {
@@ -177,7 +177,7 @@ const haToMi = (value, reverse = false) => {
 
 // Square Meter conversion functions
 const squareMToKM = (value, reverse = false) => {
-	return calculateValue(value, reverse, 1000000)
+	return helper.calculateValue(value, reverse, 1000000)
 }
 
 const squareMToMi = (value, reverse = false) => {
@@ -186,7 +186,7 @@ const squareMToMi = (value, reverse = false) => {
 
 // Square Kilometer conversion function
 const squareKMToMi = (value, reverse = false) => {
-	return calculateValue(value, reverse, 2.58998811)
+	return helper.calculateValue(value, reverse, 2.58998811)
 }
 
 function Area() {
