@@ -29,7 +29,9 @@ const selects = document.querySelectorAll(".select")
 const unitSelect = document.querySelector(".select.select--unit")
 const unitInputs = document.querySelectorAll(".unit__input")
 
-let selectedUnitInputCurrentValue = ""
+// always focus on the first one when converting
+// calculator type to units
+let focusedUnitInputIndex = 0
 let selectedUnit = null
 
 const removeSelectedOption = (parent) => {
@@ -76,11 +78,16 @@ selects.forEach((select) => {
 	})
 })
 
-unitInputs.forEach((unitInput) => {
+unitInputs.forEach((unitInput, index) => {
 	unitInput.addEventListener("input", (event) => {
 		event.stopPropagation()
-		unitInput.value = helper.readOnlyFloat(unitInput.value)
+		event.target.value = helper.readOnlyFloat(unitInput.value)
 		// call the operation
+	})
+
+	unitInput.addEventListener("focus", (event) => {
+		event.stopPropagation()
+		focusedUnitInputIndex = index
 	})
 })
 
@@ -130,7 +137,7 @@ const adjustUnitLabelsWidth = () => {
 
 	if (unitLabels) {
 		let maxWidth = getLabelsMaxWidth(unitLabels)
-		unitLabels.forEach(label => {
+		unitLabels.forEach((label) => {
 			label.style.width = maxWidth + "px"
 		})
 	}
@@ -152,6 +159,7 @@ const changeUnit = (event) => {
 	}
 
 	adjustUnitLabelsWidth()
+	focusOnSelectedUnitInput()
 }
 
 const changeToSelectedUnit = (event) => {
@@ -185,7 +193,12 @@ const populateSelectedUnitOptions = () => {
 	})
 }
 
+const focusOnSelectedUnitInput = () => {
+	unitInputs[focusedUnitInputIndex].focus()
+}
+
 // populating the unit select options
 populateUnitOptions()
+focusOnSelectedUnitInput()
 
-export { adjustUnitLabelsWidth }
+export { adjustUnitLabelsWidth, focusOnSelectedUnitInput }
