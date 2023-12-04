@@ -106,7 +106,6 @@ unitInputs.forEach((unitInput, index) => {
 	unitInput.addEventListener("input", (event) => {
 		event.stopPropagation()
 		event.target.value = helper.readOnlyFloat(event.target.value)
-		console.log(helper.readOnlyFloat(unitInput.value));
 		computeConversion()
 	})
 
@@ -227,4 +226,4 @@ const focusOnSelectedUnitInput = () => {
 populateUnitOptions()
 focusOnSelectedUnitInput()
 
-export { adjustUnitLabelsWidth, focusOnSelectedUnitInput }
+export { unitInputs, focusedUnitInputIndex, adjustUnitLabelsWidth, focusOnSelectedUnitInput, }

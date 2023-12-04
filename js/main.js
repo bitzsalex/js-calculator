@@ -1,5 +1,5 @@
 import "./units.js"
-import { adjustUnitLabelsWidth, focusOnSelectedUnitInput } from "./units.js"
+import { unitInputs, focusedUnitInputIndex, adjustUnitLabelsWidth, focusOnSelectedUnitInput } from "./units.js"
 
 feather.replace()
 
@@ -21,6 +21,7 @@ const inputTextField = document.querySelector(".screen__input--input")
 const resultTextField = document.querySelector(".screen__input--result")
 const historyContent = document.querySelector(".history__content")
 const clearHistoryButton = document.querySelector("#clear_history")
+const deleteButton = document.querySelector("button.btn__delete")
 
 let historyItems
 
@@ -162,6 +163,30 @@ pageButtons.forEach((button) => {
 })
 
 if (themeToggler) themeToggler.addEventListener("click", toggleTheme)
+
+const checkUnitsCalculatorIsActive = (event) => {
+	let calculator = event.target.closest("div.calculator")
+	return calculator.classList.contains("calculator--units")
+}
+
+const deleteLastChar = (value) => {
+	return value.substring(0, value.length - 1)
+}
+
+deleteButton.addEventListener("click", (event) => {
+	if (checkUnitsCalculatorIsActive(event)) {
+		let focused = unitInputs[focusedUnitInputIndex]
+		focused.value = deleteLastChar(focused.value)
+
+		let event = new Event("input", {
+			bubbles: true,
+			cancelable: true,
+		})
+		
+		focused.dispatchEvent(event)
+		focused.focus()
+	}
+})
 
 setTheme()
 setCalculatorType()
