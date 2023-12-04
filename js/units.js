@@ -63,11 +63,15 @@ const closeSelectFromOutside = () => {
 selects.forEach((select) => {
 	select.addEventListener("click", (event) => {
 		let options = select.querySelector("ul.select__options")
+		let selected = options.querySelector("li.selected")
 
 		event.stopPropagation()
 		if (!closeSelectFromOutside()) {
 			select.classList.toggle("show")
 			options.style.maxHeight = options.firstElementChild.scrollHeight * MAX_SELECT_ITEM_NUMS + "px"
+			setTimeout(() => {
+				selected.scrollIntoView()
+			}, 50)
 		}
 	})
 })
@@ -112,7 +116,8 @@ const createSelectOptions = (parent, list, defaultOption, eventCallback) => {
 }
 
 const changeUnit = () => {
-	console.log("changing the unit")
+	// will be back
+	// console.log("changing the unit")
 }
 
 const changeToSelectedUnit = (event) => {

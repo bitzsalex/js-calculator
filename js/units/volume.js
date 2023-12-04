@@ -572,7 +572,7 @@ function Volume() {
 		},
 	}
 
-	this.defaults = ["centiliter", "kiloliter", "gallon"]
+	this.defaults = ["centiliter", "gallon", "kiloliter"]
 }
 
 export default Volume
