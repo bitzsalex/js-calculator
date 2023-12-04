@@ -115,6 +115,27 @@ const createSelectOptions = (parent, list, defaultOption, eventCallback) => {
 	return children
 }
 
+const getLabelsMaxWidth = (unitLabels) => {
+	let maxWidth = 0
+
+	unitLabels.forEach((label) => {
+		maxWidth = label.scrollWidth > maxWidth ? label.scrollWidth : maxWidth
+	})
+
+	return maxWidth
+}
+
+const adjustUnitLabelsWidth = () => {
+	const unitLabels = document.querySelectorAll(".calculator--units label.screen__label")
+
+	if (unitLabels) {
+		let maxWidth = getLabelsMaxWidth(unitLabels)
+		unitLabels.forEach(label => {
+			label.style.width = maxWidth + "px"
+		})
+	}
+}
+
 const changeUnit = (event) => {
 	let target = event.target
 	let ancestor = target.closest("div.screen__group__item")
@@ -129,6 +150,8 @@ const changeUnit = (event) => {
 		sup.innerText = selected["supPost"]
 		label.append(sup)
 	}
+
+	adjustUnitLabelsWidth()
 }
 
 const changeToSelectedUnit = (event) => {
@@ -164,3 +187,5 @@ const populateSelectedUnitOptions = () => {
 
 // populating the unit select options
 populateUnitOptions()
+
+export { adjustUnitLabelsWidth }

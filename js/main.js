@@ -1,4 +1,5 @@
 import "./units.js"
+import { adjustUnitLabelsWidth } from "./units.js"
 
 feather.replace()
 
@@ -62,6 +63,7 @@ const changeCalculatorType = (type = "") => {
 		calculator.classList.add("zoom-fade-in")
 		setTimeout(() => {
 			calculator.classList.remove("zoom-fade-in")
+			if (type === "calculator--units") adjustUnitLabelsWidth()
 		}, 400)
 	}, 400)
 }
