@@ -22,6 +22,7 @@ const resultTextField = document.querySelector(".screen__input--result")
 const historyContent = document.querySelector(".history__content")
 const clearHistoryButton = document.querySelector("#clear_history")
 const deleteButton = document.querySelector("button.btn__delete")
+const clearButtons = document.querySelectorAll("button.btn__clear")
 
 let historyItems
 
@@ -173,19 +174,33 @@ const deleteLastChar = (value) => {
 	return value.substring(0, value.length - 1)
 }
 
+const deleteInputValue = (clearAll = false) => {
+	let focused = unitInputs[focusedUnitInputIndex]
+	focused.value = clearAll ? "" : deleteLastChar(focused.value)
+
+	let event = new Event("input", {
+		bubbles: true,
+		cancelable: true,
+	})
+
+	focused.dispatchEvent(event)
+	focused.focus()
+}
+
 deleteButton.addEventListener("click", (event) => {
 	if (checkUnitsCalculatorIsActive(event)) {
-		let focused = unitInputs[focusedUnitInputIndex]
-		focused.value = deleteLastChar(focused.value)
-
-		let event = new Event("input", {
-			bubbles: true,
-			cancelable: true,
-		})
-		
-		focused.dispatchEvent(event)
-		focused.focus()
+		deleteInputValue()
 	}
+})
+
+clearButtons.forEach((clearButton) => {
+	clearButton.addEventListener("click", (event) => {
+		if (checkUnitsCalculatorIsActive(event)) {
+			deleteInputValue(true)
+		} else {
+			// will be back
+		}
+	})
 })
 
 setTheme()
