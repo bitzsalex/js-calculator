@@ -115,9 +115,20 @@ const createSelectOptions = (parent, list, defaultOption, eventCallback) => {
 	return children
 }
 
-const changeUnit = () => {
-	// will be back
-	// console.log("changing the unit")
+const changeUnit = (event) => {
+	let target = event.target
+	let ancestor = target.closest("div.screen__group__item")
+	let label = ancestor.querySelector("label.screen__label")
+	let selected = selectedUnit[target.innerText.toLowerCase()]
+
+	label.innerHTML = ""
+	label.append(selected["symbol"])
+
+	if (Object.hasOwn(selected, "supPost")) {
+		let sup = document.createElement("sup")
+		sup.innerText = selected["supPost"]
+		label.append(sup)
+	}
 }
 
 const changeToSelectedUnit = (event) => {
