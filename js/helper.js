@@ -1,7 +1,7 @@
 const readOnlyFloat = (value) => {
 	if (isNaN(value)) {
 		value = value.replace(/[^\d.]/g, "")
-		if (value.split(".").length > 2) value = value.replace(/\.+$/g, "")
+		if (value.split(".").length > 2) value = value.replace(/\.$/g, "")
 	}
 
 	return value

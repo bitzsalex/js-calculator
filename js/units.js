@@ -82,7 +82,7 @@ selects.forEach((select) => {
 
 const computeConversion = () => {
 	let from = selectInputs[focusedUnitInputIndex].value
-	let convertibleValue = parseFloat(unitInputs[focusedUnitInputIndex].value)
+	let convertibleValue = unitInputs[focusedUnitInputIndex].value
 
 	unitInputs.forEach((input, index) => {
 		if (convertibleValue) {
@@ -94,7 +94,8 @@ const computeConversion = () => {
 				// before the content of the select DOM is fully updated
 				if (Object.hasOwn(selectedUnit[from], "to" + to)) {
 					let func = selectedUnit[from]["to" + to]
-					input.value = helper.makeResultPrecise(func(convertibleValue))
+					convertibleValue = parseFloat(convertibleValue)
+					input.value = isNaN(convertibleValue) ? "" : helper.makeResultPrecise(func(parseFloat(convertibleValue)))
 				}
 			}
 		} else input.value = ""
@@ -104,7 +105,8 @@ const computeConversion = () => {
 unitInputs.forEach((unitInput, index) => {
 	unitInput.addEventListener("input", (event) => {
 		event.stopPropagation()
-		event.target.value = helper.readOnlyFloat(unitInput.value)
+		event.target.value = helper.readOnlyFloat(event.target.value)
+		console.log(helper.readOnlyFloat(unitInput.value));
 		computeConversion()
 	})
 
